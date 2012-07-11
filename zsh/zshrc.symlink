@@ -36,7 +36,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
 # shortcut to this dotfiles path is $DOTS
 export DOTS=$HOME/.dotfiles
 
