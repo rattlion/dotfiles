@@ -1,11 +1,12 @@
 alias reload!='. ~/.zshrc'
-alias ll='ls++ -la'
+alias ll='ls++ -a'
 alias ls='ls -G'
 alias mysql='/Applications/MAMP/Library/bin/mysql -uroot -proot'
 alias mysqldump='/Applications/MAMP/Library/bin/mysqldump -u root -proot'
 alias d2u='find . -exec dos2unix {} \;'
+alias gd='pwd | pbcopy'
+alias ss='ssh sankyser@sankyserver.com'
 alias dev='ssh matt@devaldez.com'
 alias cmow='ssh mryan@citymeals.org'
-alias gd='pwd | pbcopy'
-
-# source ~/.git-completion.bash
+alias spark='php tools/spark'
+alias ack='ack-5.12'

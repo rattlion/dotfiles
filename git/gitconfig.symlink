@@ -1,26 +1,31 @@
 [user]
-	name = Matt Ryan
+	name  = Matt Ryan
 	email = mryan@sankynet.com
 [color]
-	diff = auto
-	branch = auto
-	status = auto
-	ui = auto
+  diff   = auto
+  branch = auto
+  status = auto
+  ui     = auto
 [alias]
-  st = status
-  co = checkout
+  st   = status
+  co   = checkout
   diff = diff --ignore-space-change
-  lol = log --graph --decorate --abbrev-commit
+  lol  = log --graph --decorate --abbrev-commit
   lola = log --graph --decorate --abbrev-commit --all
-  ls = ls-files
+  ls   = ls-files
 [diff]
-	tool = opendiff
+  tool = opendiff
 [difftool]
   prompt = false
 [mergetool]
-	prompt = false
-	keepBackup = false
+  prompt = false
+  keepBackup = false
 [merge]
-	tool = opendiff
+  tool = opendiff
+[apply]
+  whitespace = fix
 [core]
-	editor = /usr/local/bin/vim
+  editor     = /usr/local/bin/vim
+  whitespace = space-before-tab,tab-in-indent,trailing-space
+[github]
+	user = mattryan
