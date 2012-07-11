@@ -39,3 +39,5 @@ publish
 .idea
 
 vim/vim.symlink/.netrwhist
+
+cloudapp
