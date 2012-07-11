@@ -1,0 +1,336 @@
+" Personal preference .vimrc file
+" Maintained by Matt Ryan <mryan@sankynet.com>
+"
+" use the LDFLAGS as necessary (OS X Lion)
+" $ ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
+" $ LDFLAGS=-L/usr/lib ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
+
+" Vundle {{{
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle required!
+Bundle 'gmarik/vundle'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'AutoClose'
+Bundle 'jQuery'
+Bundle 'Markdown'
+Bundle 'vim-json-bundle'
+Bundle 'YankRing.vim'
+Bundle "snipmate-snippets"
+Bundle "PDV--phpDocumentor-for-Vim"
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'godlygeek/tabular'
+Bundle 'Shougo/neocomplcache'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'ervandew/supertab'
+Bundle 'mattryan/vim-insert-image'
+if executable('ctags')
+  Bundle 'majutsushi/tagbar'
+endif
+"}}}
+
+" VIM behaviour {{{
+let mapleader=","
+set showmode
+set nowrap
+set tabstop=2
+set softtabstop=2
+set expandtab
+set shiftwidth=2
+set shiftround
+set backspace=indent,eol,start
+set autoindent
+set copyindent
+set number
+set showmatch
+set ignorecase
+set smartcase
+set smarttab
+set scrolloff=4
+set virtualedit=all
+set hlsearch
+set incsearch
+set nolist
+set pastetoggle=<F2>
+set mouse=a
+set fileformats=
+set formatoptions+=1
+set shell=bash\ --login
+set hidden
+set switchbuf=useopen
+set history=1000
+set undolevels=1000
+if v:version >= 730
+  set undofile
+  set undodir=~/.vim/.undo,~/tmp,/tmp
+endif
+set nobackup
+set noswapfile
+set viminfo='20,\"80
+set wildmenu
+set wildmode=list:full
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set visualbell
+set noerrorbells
+set showcmd
+set nomodeline
+set cursorline
+set clipboard=unnamed
+" set ttyfast
+
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
+" Restore cursor position upon reopening files
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Remove straing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Folding {{{
+set foldmethod=marker foldlevel=0
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Creating folds for tags in HTML
+"nnoremap <leader>ft Vatzf
+"}}}
+" }}}
+
+" VIM appearance {{{
+colorscheme molokai
+syntax on
+filetype plugin indent on
+if has("gui_running")
+  set guioptions=egmrt
+  set guifont=Monaco\ for\ Powerline:h14
+endif
+let g:Powerline_symbols = 'fancy'
+set termencoding=utf-8
+set encoding=utf-8
+set lazyredraw
+set laststatus=2
+set cmdheight=2
+set title
+" }}}
+
+" VIM plugins {{{
+" NERDTree settings {{{
+" Put focus to the NERD Tree with F3 (tricked by quickly closing it and
+" immediately showing it again, since there is no :NERDTreeFocus command)
+nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <leader>N :NERDTreeClose<CR>
+nnoremap <silent> <C-f> :NERDTreeFind<CR>
+
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+
+" Show hidden files, too
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+
+" Quit on opening files from the tree
+let NERDTreeQuitOnOpen=1
+
+" Highlight the selected entry in the tree
+let NERDTreeHighlightCursorline=1
+
+" Use a single click to fold/unfold directories and a double click to open files
+let NERDTreeMouseMode=2
+
+" Don't display these kinds of files
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+            \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_Store' ]
+" }}}
+
+" Neocomplcache {{{
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"}}}
+
+" PHP Doc"{{{
+inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
+nnoremap <leader>pd :call PhpDocSingle()<CR>
+vnoremap <leader>pd :call PhpDocRange()<CR>
+"}}}
+"}}}
+
+" Markdown {{{
+" Creating underline/overline headings for markup languages
+" Inspired by http://sphinx.pocoo.org/rest.html#sections
+nnoremap <leader>1 yyPVr=jyypVr=
+nnoremap <leader>2 yyPVr*jyypVr*
+nnoremap <leader>3 yypVr=
+nnoremap <leader>4 yypVr-
+nnoremap <leader>5 yypVr^
+nnoremap <leader>6 yypVr"
+"}}}
+
+" FileType {{{
+if has("autocmd")
+  " Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+  augroup END
+
+  augroup sh
+    autocmd BufRead,BufNewFile .profile set filetype=sh
+  augroup END
+endif
+"}}}
+
+" Small plugin configs {{{
+" Yankring
+let g:yankring_history_dir = '$HOME/.vim/.tmp'
+nmap <leader>r :YRShow<CR>
+
+" Gist-vim
+let g:gist_open_browser_after_post = 1
+
+" PHP Documentaion
+" script contents:
+"    #!/bin/bash
+"    open http://php.net/"$*" with K
+autocmd FileType php set keywordprg=~/.vim/phpdoc.sh
+"}}}
+
+" Misc mappings {{{
+cmap w!! %!sudo tee > /dev/null %
+
+nnoremap ; :
+
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+
+nnoremap <leader>t :TagbarToggle<CR>
+
+" Complete whole filenames/lines with a quicker shortcut key in insert mode
+imap <C-f> <C-x><C-f>
+imap <C-l> <C-x><C-l>
+
+" Reselect pasted block
+nnoremap ,gp `[v`]
+
+" Reselect text that was just pasted with ,v
+nnoremap <leader>v V`]
+
+" Edit the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Edit the snippets file
+nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
+nmap <silent> <leader>ss :call ReloadAllSnippets()<CR>
+
+" Clears the search register
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Pull word under cursor into LHS of a substitute (for quick search and replace)
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
+" Jump to matching pairs easily, with Tab
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
+iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
+iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
+"}}}

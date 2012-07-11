@@ -1,0 +1,26 @@
+[user]
+	name = Matt Ryan
+	email = mryan@sankynet.com
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+	ui = auto
+[alias]
+  st = status
+  co = checkout
+  diff = diff --ignore-space-change
+  lol = log --graph --decorate --abbrev-commit
+  lola = log --graph --decorate --abbrev-commit --all
+  ls = ls-files
+[diff]
+	tool = opendiff
+[difftool]
+  prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+[merge]
+	tool = opendiff
+[core]
+	editor = /usr/local/bin/vim
