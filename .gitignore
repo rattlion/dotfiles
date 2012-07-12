@@ -22,22 +22,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 
-# Dreamweaver added files
-_notes
-dwsync.xml
-
-# Komodo
-*.komodoproject
-.komodotools
-
-# Folders to ignore
-.hg
-.svn
-.CVS
-intermediate
-publish
-.idea
-
-vim/vim.symlink/.netrwhist
-
+# dotfiles to ignore
 cloudapp
+drush/drush.symlink/cache
+vim/vim.symlink/.netrwhist
