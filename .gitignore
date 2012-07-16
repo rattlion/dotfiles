@@ -25,4 +25,5 @@ nbproject
 # dotfiles to ignore
 cloudapp
 drush/drush.symlink/cache
+drush/drush.symlink/*.drushrc.php
 vim/vim.symlink/.netrwhist

@@ -1,0 +1,1 @@
+alias dch='drush @ch'
