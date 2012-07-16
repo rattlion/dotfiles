@@ -29,6 +29,11 @@ syn keyword cssTagName link map menu meta noframes noscript ol optgroup
 syn keyword cssTagName option p param pre q s samp script select small
 syn keyword cssTagName span strike strong style sub sup tbody td
 syn keyword cssTagName textarea tfoot th thead title tr tt ul u var
+syn keyword cssTagName article aside audio bb canvas command datagrid
+syn keyword cssTagName datalist details dialog embed figure footer
+syn keyword cssTagName header hgroup keygen mark meter nav output
+syn keyword cssTagName progress time ruby rt rp section time video
+syn keyword cssTagName source figcaption
 syn match cssTagName "\<table\>"
 syn match cssTagName "\*"
 
