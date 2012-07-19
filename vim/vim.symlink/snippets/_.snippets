@@ -141,8 +141,6 @@ snippet fun
 	function ${1:funName} () {
 		${2}
 	}
-snippet input
-	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet boilerplate
 	<!doctype html>
 	<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
@@ -284,12 +282,12 @@ snippet gitignore
 
 	# OS or Editor folders
 	.DS_Store
+	._*
 	Thumbs.db
 	.cache
 	.project
 	.settings
 	.tmproj
-	*.esproj
 	nbproject
 	*.sublime-project
 	*.sublime-workspace
@@ -301,6 +299,13 @@ snippet gitignore
 	# Komodo
 	*.komodoproject
 	.komodotools
+
+	# Espresso
+	*.esproj
+	*.espressostorage
+
+	# Rubinius
+	*.rbc
 
 	# Folders to ignore
 	.hg
