@@ -49,6 +49,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'mattryan/vim-insert-image'
+Bundle 'henrik/vim-open-url'
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
