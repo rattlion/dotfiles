@@ -131,7 +131,7 @@ syntax on
 filetype plugin indent on
 if has("gui_running")
   set guioptions=egmrt
-  set guifont=Monaco\ for\ Powerline:h14
+  set guifont=Monaco\ for\ Powerline:h12
 endif
 let g:Powerline_symbols = 'fancy'
 set termencoding=utf-8
