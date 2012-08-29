@@ -14,4 +14,4 @@ alias config="sudo vim ~/Sites/_config"
 alias ack='ack-5.12'
 alias apachectl='sudo /opt/local/apache2/bin/apachectl'
 alias mysql='mysql5 -u root -proot'
-alias mysqldump='mysqldump5'
+alias mysqldump='mysqldump5 -u root -proot'
