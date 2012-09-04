@@ -11,7 +11,6 @@ alias imac='ssh matt@10.10.10.101'
 alias home='ssh matt@vnc.devaldez.com'
 alias spark='php tools/spark'
 alias config="sudo vim ~/Sites/_config"
-alias ack='ack-5.12'
 alias apachectl='sudo /opt/local/apache2/bin/apachectl'
 alias mysql='mysql5 -u root -proot'
 alias mysqldump='mysqldump5 -u root -proot'
