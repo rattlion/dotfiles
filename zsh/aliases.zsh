@@ -14,3 +14,4 @@ alias config="sudo vim ~/Sites/_config"
 alias apachectl='sudo /opt/local/apache2/bin/apachectl'
 alias mysql='mysql5 -u root -proot'
 alias mysqldump='mysqldump5 -u root -proot'
+alias h5bp='git clone git://github.com/h5bp/html5-boilerplate.git h5bp && cd h5bp'
