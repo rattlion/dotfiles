@@ -1,0 +1,6 @@
+#!/bin/sh
+windows="$1"
+pc=${windows//\\/\/}
+unix=${pc/L\:\//\/Volumes\/SankyNet\ Drive\/}
+unix=${unix/Z\:\//\/Volumes\/Sanky\ Direct\ Drive\/}
+open "$unix"
