@@ -85,7 +85,7 @@ set formatoptions+=1
 set shell=bash\ --login
 set hidden
 set switchbuf=useopen
-set history=1000
+set history=100
 set undolevels=1000
 if v:version >= 730
   set undofile
@@ -93,7 +93,6 @@ if v:version >= 730
 endif
 set nobackup
 set noswapfile
-set viminfo='20,\"80
 set wildmenu
 set wildmode=list:full
 set wildignore=*.swp,*.bak,*.pyc,*.class
