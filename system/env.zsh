@@ -1,1 +1,1 @@
-export EDITOR="/usr/local/bin/vim"
+export EDITOR="vim"
