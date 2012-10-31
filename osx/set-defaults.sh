@@ -14,7 +14,23 @@
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # Always open everything in Finder's list view. This is important.
-#defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
-# Show the ~/Library folder
+# Show the ~/Library folder.
 chflags nohidden ~/Library
+
+# Set a really fast key repeat.
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Set the Finder prefs for showing a few different volumes on the Desktop.
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+# Run the screensaver if we're in the top-right hot corner.
+defaults write com.apple.dock wvous-tr-corner -int 5
+defaults write com.apple.dock wvous-tr-modifier -int 0
+
+# Office Don't reopen files
+defaults write com.microsoft.Powerpoint NSQuitAlwaysKeepsWindows -bool false
+defaults write com.microsoft.Word NSQuitAlwaysKeepsWindows -bool false
+defaults write com.microsoft.Excel NSQuitAlwaysKeepsWindows -bool false
