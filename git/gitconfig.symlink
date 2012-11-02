@@ -9,15 +9,13 @@
   status = auto
   ui     = true
 [alias]
-  st   = status
-  co   = checkout
-  diff = diff --ignore-space-change
-  lol  = log --graph --decorate --abbrev-commit
-  lola = log --graph --decorate --abbrev-commit --all
-  ls   = ls-files
+  diff    = diff --ignore-space-change
+  lol     = log --graph --decorate --abbrev-commit
+  lola    = log --graph --decorate --abbrev-commit --all
+  ls      = ls-files
   promote = !$DOTS/bin/git-promote
   wtf     = !$DOTS/bin/git-wtf
-  rank-contributers = !$DOTS/bin/git-rank-contributers
+  rank    = !$DOTS/bin/git-rank-contributers
   count   = !git shortlog -sn
 [diff]
   tool = opendiff

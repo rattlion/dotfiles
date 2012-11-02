@@ -57,4 +57,4 @@ autoload -U compinit
 compinit
 
 # load every completion after autocomplete loads
-for config_file ($DOTS/**/completion.sh) source $config_file
+for config_file ($DOTS/**/completion.zsh) source $config_file
