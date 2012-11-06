@@ -20,7 +20,6 @@ set -g status-left ' #[default]'
 set -g status-right '#[fg=colour198]%H:%M#[default]'
 
 setw -g window-status-format '#[fg=colour235]#I #[fg=white]#W#[default]  '
-#FIXME: I want to be able to use: ⮁
 setw -g window-status-current-format '#[bg=white,fg=black]⮀ #W #[bg=black,fg=white]⮀'
 
 # Set pane divider

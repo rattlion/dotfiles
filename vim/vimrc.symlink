@@ -133,7 +133,6 @@ if has("gui_running")
   set guioptions=egmrt
   set guifont=Monaco\ for\ Powerline:h12
 endif
-let g:Powerline_symbols = 'fancy'
 set termencoding=utf-8
 set encoding=utf-8
 set lazyredraw
@@ -175,11 +174,20 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
             \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_Store' ]
 " }}}
 
-" PHP Doc"{{{
+" PHP Doc {{{
 inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
 nnoremap <leader>pd :call PhpDocSingle()<CR>
 vnoremap <leader>pd :call PhpDocRange()<CR>
 "}}}
+
+" CTRL-P {{{
+let g:ctrlp_working_path_mode = 'rw'
+"}}}
+
+" Powerline {{{
+ let g:Powerline_symbols = 'fancy'
+"}}}
+
 "}}}
 
 " Markdown {{{
