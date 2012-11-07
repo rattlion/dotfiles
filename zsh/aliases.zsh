@@ -9,7 +9,6 @@ alias cmow='ssh mryan@citymeals.org'
 alias mini='ssh mattryan@10.10.10.150'
 alias imac='ssh matt@10.10.10.101'
 alias home='ssh mryan@vnc.mrevd.me'
-alias spark='php tools/spark'
 alias mamp="sudo vim ~/Sites/_config"
 alias apachectl='sudo /opt/local/apache2/bin/apachectl'
 alias mysql='mysql5 -u root -proot'
