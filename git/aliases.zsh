@@ -7,6 +7,8 @@ then
 fi
 
 # The rest of my fun git aliases
+alias gf='git fetch --all -p'
+alias gm='git merge --no-ff'
 alias gl='git pull --prune'
 alias gp='git push origin HEAD'
 alias gd='git diff'
