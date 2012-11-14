@@ -48,7 +48,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
-Bundle 'mattryan/vim-insert-image'
+Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'matthias-guenther/hammer.vim'
 if executable('ctags')
@@ -225,6 +225,8 @@ let g:yankring_history_dir = '$HOME/.vim/.tmp'
 nmap <leader>r :YRShow<CR>
 
 " Gist-vim
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
 " PHP Documentaion
