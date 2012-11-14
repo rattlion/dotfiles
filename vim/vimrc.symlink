@@ -216,6 +216,10 @@ if has("autocmd")
   augroup sh
     autocmd BufRead,BufNewFile .profile set filetype=sh
   augroup END
+
+  augroup crontab
+    set nowritebackup
+  augroup end
 endif
 "}}}
 
