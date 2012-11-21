@@ -4,7 +4,6 @@
 " use the LDFLAGS as necessary (OS X Lion)
 " $ ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
 " $ LDFLAGS=-L/usr/lib ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
-
 " Vundle {{{
 set nocompatible
 filetype off
@@ -225,6 +224,8 @@ if has("autocmd")
   augroup crontab
     set nowritebackup
   augroup end
+
+  autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
 endif
 "}}}
 
