@@ -113,6 +113,10 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Return turns off search highlining, but not in quickfix
+nmap  :nohlsearch<CR>
+autocmd BufReadPost quickfix nmap <buffer> ^M <CR>
+
 " Restore cursor position upon reopening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
