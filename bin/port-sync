@@ -1,0 +1,5 @@
+#! /bin/sh
+while read line
+do
+  /opt/local/bin/port install $line
+done < $1
