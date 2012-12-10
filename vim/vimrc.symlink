@@ -276,7 +276,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Edit the snippets file
 nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
-nmap <silent> <leader>ss :call ReloadAllSnippets()<CR>
 
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
