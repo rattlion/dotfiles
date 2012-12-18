@@ -5,7 +5,7 @@ aquaterm @1.1.1_0
 atk @2.6.0_0
 autoconf @2.69_0
 autoconf213 @2.13_1
-automake @1.12.5_0
+automake @1.12.6_0
 bash @4.2.39_0
 bzip2 @1.0.6_0
 cairo @1.12.8_2+x11
@@ -39,7 +39,7 @@ gawk @4.0.1_0
 gcc_select @0.1_7
 gd2 @2.0.35_13
 gdbm @1.10_2
-gdk-pixbuf2 @2.26.5_0
+gdk-pixbuf2 @2.26.5_1+x11
 getopt @1.1.4_1
 gettext @0.18.1.1_2
 ghostscript @9.06_1
@@ -50,7 +50,7 @@ gnome-common @2.28.0_0
 gnome-doc-utils @0.20.10_0+python27
 gnuplot @4.6.1_0+aquaterm+luaterm+pangocairo+x11
 gnutls @2.12.19_0
-gobject-introspection @1.34.1.1_1
+gobject-introspection @1.34.1.1_2
 gperf @3.0.4_2
 gsed @4.2.1_2
 gtk-doc @1.18_0+python27
@@ -70,7 +70,7 @@ jpeg @8d_0
 lame @3.99.5_0
 lcms @1.19_2
 lcms2 @2.4_0
-ld64 @134.9_0+llvm30
+ld64 @134.9_1+llvm30
 libedit @20120601-3.0_0
 libevent @2.0.19_0
 libffi @3.0.11_1
@@ -153,7 +153,7 @@ ruby @1.8.7-p371_0
 schroedinger @1.0.11_0
 shared-mime-info @1.0_0
 speex @1.2rc1_0
-sqlite3 @3.7.14.1_0
+sqlite3 @3.7.15_0
 cp_wrappers @20_2
 exi2html @5.0_0
 iff @3.9.7_0
@@ -163,7 +163,7 @@ odotxt @2.9_1
 urw-fonts @1.0.7pre44_0
 vim @7.3.661_0+cscope+huge+python+python25+ruby
 webp @0.2.1_0
-weechat @0.3.8_1
+weechat @0.3.9_0
 wget @1.14_0+ssl
 x264 @20111210_0
 Xft2 @2.3.1_0
@@ -179,7 +179,7 @@ xorg-libpthread-stubs @0.3_0
 xorg-libsm @1.2.1_0
 xorg-libX11 @1.5.0_0
 xorg-libXau @1.0.7_0
-xorg-libxcb @1.8.1_2+python27
+xorg-libxcb @1.9_0+python27
 xorg-libXcomposite @0.4.3_0
 xorg-libXcursor @1.1.13_0
 xorg-libXdamage @1.1.3_0
@@ -188,12 +188,12 @@ xorg-libXext @1.3.1_0
 xorg-libXfixes @5.0_0
 xorg-libXi @1.6.1_0
 xorg-libXinerama @1.1.2_0
-xorg-libXrandr @1.3.2_0
+xorg-libXrandr @1.4.0_0
 xorg-libXt @1.1.3_0
 xorg-randrproto @1.4.0_0
 xorg-renderproto @0.11.1_0
 xorg-util-macros @1.17_0
-xorg-xcb-proto @1.7.1_0+python27
+xorg-xcb-proto @1.8_0+python27
 xorg-xcb-util @0.3.9_0
 xorg-xcmiscproto @1.2.2_0
 xorg-xextproto @7.2.1_0

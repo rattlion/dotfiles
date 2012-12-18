@@ -10,6 +10,7 @@ fi
 alias gf='git fetch --all -p'
 alias gm='git merge --no-ff'
 alias gl='git pull --prune'
+alias glr='git pull --rebase'
 alias gp='git push origin HEAD'
 alias gd='git diff'
 alias gs='git status -sb'
