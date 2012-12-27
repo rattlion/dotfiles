@@ -18,4 +18,4 @@ alias ga='git add -A'
 alias gr='git reset'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias stage="git push staging develop:develop"
-alias production="git push producting master:master"
+alias deploy="git push production master:master"
