@@ -226,6 +226,10 @@ if has("autocmd")
     autocmd BufRead,BufNewFile .profile set filetype=sh
   augroup END
 
+  augroup vagrant
+    autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+  augroup END
+
   augroup crontab
     set nowritebackup
   augroup end
