@@ -82,7 +82,7 @@ set pastetoggle=<F2>
 set mouse=a
 set fileformats=
 set formatoptions+=1
-set shell=bash\ --login
+"set shell=bash\ --login
 set hidden
 set switchbuf=useopen
 set history=100
