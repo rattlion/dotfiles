@@ -1,0 +1,2 @@
+-R
+--langmap=php:+.engine.inc.module.theme
