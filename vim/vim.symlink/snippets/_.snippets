@@ -379,3 +379,6 @@ snippet auth
 	AuthName "My Protected Area"
 	AuthUserFile ${1:/path/to/.htpasswd}
 	Require valid-user
+snippet die
+	echo '<pre>'; print_r(${1}); echo '</pre>';
+	die();

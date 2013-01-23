@@ -1,3 +1,4 @@
+alias sudo="nocorrect sudo"
 alias reload!='. ~/.zshrc'
 alias ll='ls++ -a'
 alias d2u='find . -exec dos2unix {} \;'
@@ -8,6 +9,8 @@ alias cmow='ssh mryan@citymeals.org'
 alias ch='ssh mryan@covenanthouse.org'
 alias dmfa='ssh mryan@dmfa.org'
 alias nycafp='ssh mryan@nycafp.org'
+alias gcw='ssh mryan@gildasclubwestchester.org'
+alias chp='ssh mryan@supportbethisrael.org'
 alias mini='ssh mryan@10.10.10.150'
 alias imac='ssh mryan@10.10.10.101'
 alias home='ssh mryan@vnc.mrevd.me'
