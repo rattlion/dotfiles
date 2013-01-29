@@ -1,1 +1,3 @@
--ia
+-i
+--type-set=drupal=.php,.inc,.module,.install,.info,.engine
+--nosql
