@@ -1,6 +1,0 @@
-#! /bin/sh
-# sync macports from file
-while read line
-do
-  /opt/local/bin/port install $line
-done < $HOME/.dotfiles/port/port_list.txt

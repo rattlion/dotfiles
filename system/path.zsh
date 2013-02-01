@@ -1,1 +1,1 @@
-export PATH="$DOTS/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/X11/bin:/bin"
+export PATH="$DOTS/bin:$HOME/.rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin"

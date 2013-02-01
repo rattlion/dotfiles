@@ -113,6 +113,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Edit the snippets file
+nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
+
 " Return turns off search highlining, but not in quickfix
 nmap  :nohlsearch<CR>
 autocmd BufReadPost quickfix nmap <buffer> ^M <CR>

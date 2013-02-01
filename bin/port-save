@@ -1,2 +1,0 @@
-#! /bin/sh
-/opt/local/bin/port installed active | tail -n +2 | sed 's/(active)//g; s/^[ \t]*//g; s/[ \t]*$//' > $HOME/.dotfiles/port/port_list.txt

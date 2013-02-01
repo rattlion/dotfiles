@@ -32,7 +32,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   vagrant
-  macports
 )
 
 source $ZSH/oh-my-zsh.sh

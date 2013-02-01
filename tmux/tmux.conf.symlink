@@ -1,5 +1,5 @@
 # TMUX PASTE WRAPPER
-set -g default-command "/opt/local/bin/reattach-to-user-namespace -l zsh"
+set -g default-command "reattach-to-user-namespace -l zsh"
 
 # TERM SETTINGS
 set -g default-terminal "screen-256color"
