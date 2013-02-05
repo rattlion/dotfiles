@@ -1,7 +1,13 @@
 #!/bin/bash
 #
 # Guess what the fuck this does
-MYSQL='mysql5 -u root -proot'
+echo "Enter user:"
+read user
+
+echo "And their password:"
+read -s pw
+
+MYSQL="mysql -u $user -p$pw"
 
 if [ $1 ]
 then
