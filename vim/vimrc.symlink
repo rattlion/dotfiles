@@ -23,6 +23,7 @@ Bundle 'vim-json-bundle'
 Bundle 'YankRing.vim'
 Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
+Bundle "greplace.vim"
 
 " original repos on github
 Bundle 'tpope/vim-fugitive'

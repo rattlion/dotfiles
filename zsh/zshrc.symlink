@@ -34,6 +34,8 @@ plugins=(
   vagrant
 )
 
+setopt NO_NOMATCH
+
 source $ZSH/oh-my-zsh.sh
 
 # shortcut to this dotfiles path is $DOTS
