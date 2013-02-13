@@ -114,6 +114,10 @@ bind l refresh-client
 unbind |
 bind | split-window
 
+# layout
+unbind space
+bind space next-layout
+
 # :kB: focus up
 unbind Tab
 bind Tab select-pane -t:.+
