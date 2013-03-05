@@ -1,6 +1,5 @@
 alias sudo="nocorrect sudo"
 alias reload!='. ~/.zshrc'
-alias ll='ls++ -a'
 alias d2u='find . -exec dos2unix {} \;'
 alias slice='ssh matt@mattryan.me'
 alias sanky='ssh mryan@sanky.info'
