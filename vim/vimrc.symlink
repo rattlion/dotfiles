@@ -1,9 +1,6 @@
 " Personal preference .vimrc file
 " Maintained by Matt Ryan <mryan@sankynet.com>
 "
-" use the LDFLAGS as necessary (OS X Lion)
-" $ ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
-" $ LDFLAGS=-L/usr/lib ./configure --enable-multibyte --with-features=huge --with-compiledby=mryan@sankynet.com --enable-gnome-check --enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-cscope
 " Vundle {{{
 set nocompatible
 filetype off
