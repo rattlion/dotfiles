@@ -125,6 +125,8 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " Remove straing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+let g:netrw_home="~/.vim/.tmp"
+
 " Folding {{{
 set foldmethod=marker foldlevel=0
 nnoremap <Space> za
