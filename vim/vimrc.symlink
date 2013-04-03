@@ -22,6 +22,7 @@ Bundle "PDV--phpDocumentor-for-Vim"
 Bundle "greplace.vim"
 
 " original repos on github
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -101,8 +102,10 @@ set showcmd
 set nomodeline
 set cursorline
 set clipboard=unnamed
+set iskeyword+=-
 " set ttyfast
 
+nnoremap ; :
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <C-e> 2<C-e>
