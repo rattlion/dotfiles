@@ -116,14 +116,6 @@ snippet tr
 	<tr>
 		${1}
 	</tr>
-snippet td
-	<td>
-		${1}
-	</td>
-snippet ul
-	<ul>
-		<li>${1}</li>
-	</ul>
 snippet a
 	<a href="${1}">${2}</a>
 snippet img
@@ -166,14 +158,8 @@ snippet h2
 	<h2>${1}</h2>
 snippet flr
 	float: right;
-snippet mr
-	margin-right: ${1}px;
 snippet fwb
 	font-weight: bold;
-snippet pb
-	padding-bottom: ${1}px;
-snippet mb
-	margin-bottom: ${1}px;
 snippet ss
 	<link rel=stylesheet type="text/css" media=screen href="${1}" />
 snippet bgc
@@ -302,6 +288,8 @@ snippet gitignore
 	capybara-*.html
 	.rspec
 	.rvmrc
+	.ruby-version
+	.ruby-gemset
 	/.bundle
 	/vendor/bundle
 	/log/*
@@ -339,3 +327,6 @@ snippet auth
 snippet die
 	echo '<pre>'; print_r(${1}); echo '</pre>';
 	die();
+snippet scrollto
+	$('html,body').animate({ scrollTop: $('${1}').offset().top - ${2:15} }, ${3:500}); })
+	${4}
