@@ -20,10 +20,10 @@ Bundle 'YankRing.vim'
 Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
 Bundle "greplace.vim"
+Bundle 'AutoClose'
 
 " original repos on github
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
