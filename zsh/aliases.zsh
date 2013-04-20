@@ -17,3 +17,4 @@ alias home='ssh mryan@vnc.mrevd.me'
 alias mamp="sudo vim ~/Sites/_config"
 alias h5bp='git clone git://github.com/h5bp/html5-boilerplate.git h5bp && cd h5bp'
 alias speed="sudo find /private/var/log/asl/* -mtime +5 -exec rm -rf {} \;"
+alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
