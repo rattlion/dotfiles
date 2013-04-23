@@ -13,7 +13,6 @@ Bundle 'gmarik/vundle'
 
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'jQuery'
 Bundle 'vim-json-bundle'
 Bundle 'YankRing.vim'
@@ -23,10 +22,10 @@ Bundle "greplace.vim"
 Bundle 'AutoClose'
 
 " original repos on github
+Bundle 'edsono/vim-matchit'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-surround'
@@ -46,7 +45,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'ervandew/supertab'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'matthias-guenther/hammer.vim'
@@ -113,6 +113,10 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" increment and decrement
+nnoremap <leader>i <C-a>
+nnoremap <leader>d <C-x>
 
 " Edit the snippets file
 nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
@@ -286,15 +290,21 @@ nnoremap <leader>v V`]
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Jump to matching pairs easily, with Tab
+"nnoremap <Tab> %
+"vnoremap <Tab> %
+"map <Tab> %
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
-
-" Jump to matching pairs easily, with Tab
-nnoremap <Tab> %
-vnoremap <Tab> %
 
 iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
 iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
