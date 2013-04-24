@@ -51,6 +51,7 @@ Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/syntastic'
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
@@ -213,6 +214,22 @@ let g:ctrlp_use_caching = 0
   let g:ycm_key_list_select_completion = ['<C-N>']
   let g:ycm_key_list_previous_completion = ['<C-P>']
 "}}}
+
+" Syntastic {{{
+
+  let g:syntastic_check_on_open=1
+  let g:syntastic_error_symbol='✗'
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_auto_jump=1
+
+  let g:syntastic_mode_map = { 'mode': 'active',
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': ['html'] }
+
+  let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
+  let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+
+" }}}
 
 "}}}
 
