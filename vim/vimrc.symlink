@@ -209,6 +209,11 @@ let g:ctrlp_use_caching = 0
  let g:Powerline_symbols = 'fancy'
 "}}}
 
+" YouCompleteMe {{{
+  let g:ycm_key_list_select_completion = ['<C-N>']
+  let g:ycm_key_list_previous_completion = ['<C-P>']
+"}}}
+
 "}}}
 
 " Markdown {{{
@@ -294,6 +299,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "nnoremap <Tab> %
 "vnoremap <Tab> %
 "map <Tab> %
+
+" alternate buffer
+map <leader>b :b#<CR>
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j

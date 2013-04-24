@@ -5,6 +5,7 @@ set -g default-command "reattach-to-user-namespace -l zsh"
 set -g default-terminal "screen-256color"
 set -g status-utf8 on
 set-window-option -g mode-keys vi
+set-option -g renumber-windows on
 
 # Reload key
 bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
