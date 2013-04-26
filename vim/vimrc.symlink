@@ -265,6 +265,10 @@ if has("autocmd")
     set nowritebackup
   augroup end
 
+  augroup apache
+    autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
+  augroup end
+
   autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
 endif
 "}}}
