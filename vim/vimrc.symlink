@@ -48,7 +48,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'matthias-guenther/hammer.vim'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
