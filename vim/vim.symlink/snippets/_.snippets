@@ -332,3 +332,11 @@ snippet die
 snippet scrollto
 	$('html,body').animate({ scrollTop: $('${1}').offset().top - ${2:15} }, ${3:500}); })
 	${4}
+snippet phptest
+	class ${1} extends PHPUnit_Framework_TestCase
+	{
+		public function test${2}()
+		{
+			${3}
+		}
+	}
