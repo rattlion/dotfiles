@@ -35,9 +35,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
@@ -48,7 +48,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
-Bundle 'matthias-guenther/hammer.vim'
 Bundle 'mhinz/vim-signify'
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
