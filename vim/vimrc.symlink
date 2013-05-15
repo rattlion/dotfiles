@@ -19,9 +19,9 @@ Bundle 'YankRing.vim'
 Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
 Bundle "greplace.vim"
-Bundle 'AutoClose'
 
 " original repos on github
+Bundle 'Raimondi/delimitMate'
 Bundle 'edsono/vim-matchit'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-rails.git'
