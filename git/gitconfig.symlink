@@ -1,6 +1,6 @@
 [user]
 	name  = Matt Ryan
-	email = mryan@sankynet.com
+	email = m@mrevd.me
 [credential]
 	helper = osxkeychain
 [color]
@@ -33,6 +33,6 @@
   whitespace = space-before-tab,tab-in-indent,trailing-space
   excludesfile = ~/.gitignore_global
 [github]
-	user = mattryan
+	user = mrevd
 [help]
 	autocorrect = 1
