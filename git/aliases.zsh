@@ -19,3 +19,5 @@ alias gr='git reset'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias stage="git push staging develop:develop"
 alias deploy="git push production master:master"
+alias gmt="git mergetool"
+alias gdt="git difftool"

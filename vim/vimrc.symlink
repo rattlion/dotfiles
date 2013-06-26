@@ -102,6 +102,7 @@ set showcmd
 set nomodeline
 set cursorline
 set clipboard=unnamed
+set linebreak
 " set ttyfast
 
 nnoremap ; :

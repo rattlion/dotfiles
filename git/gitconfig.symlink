@@ -1,8 +1,8 @@
 [user]
-	name  = Matt Ryan
-	email = m@mrevd.me
+  name  = Matt Ryan
+  email = m@mrevd.me
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [color]
   diff   = auto
   branch = auto
@@ -18,14 +18,14 @@
   rank    = !$DOTS/bin/git-rank-contributers
   count   = !git shortlog -sn
 [diff]
-  tool = opendiff
+  tool = Kaleidoscope
 [difftool]
   prompt = false
 [mergetool]
   prompt = false
   keepBackup = false
 [merge]
-  tool = opendiff
+  tool = Kaleidoscope
 [apply]
   whitespace = fix
 [core]
@@ -33,6 +33,11 @@
   whitespace = space-before-tab,tab-in-indent,trailing-space
   excludesfile = ~/.gitignore_global
 [github]
-	user = mrevd
+  user = mrevd
 [help]
-	autocorrect = 1
+  autocorrect = 1
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
