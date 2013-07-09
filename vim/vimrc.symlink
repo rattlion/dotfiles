@@ -257,6 +257,10 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.view set filetype=php
   augroup END
 
+  augroup conf
+    autocmd BufRead,BufNewFile *.symlink set filetype=zsh
+  augroup END
+
   augroup sh
     autocmd BufRead,BufNewFile .profile set filetype=sh
   augroup END
