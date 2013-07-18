@@ -105,6 +105,7 @@ set cursorline
 set clipboard=unnamed
 set linebreak
 " set ttyfast
+set dictionary+=/usr/share/dict/words
 
 nnoremap ; :
 nnoremap / /\v
@@ -307,10 +308,6 @@ nnoremap ; :
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 nnoremap <leader>t :TagbarToggle<CR>
-
-" Complete whole filenames/lines with a quicker shortcut key in insert mode
-imap <C-f> <C-x><C-f>
-imap <C-l> <C-x><C-l>
 
 " Reselect pasted block
 nnoremap ,gp `[v`]
