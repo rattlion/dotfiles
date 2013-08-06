@@ -45,7 +45,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'mhinz/vim-signify'
@@ -124,10 +124,6 @@ nnoremap <leader>d <C-x>
 " Edit the snippets file
 nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
 
-" Return turns off search highlining, but not in quickfix
-nmap  :nohlsearch<CR>
-autocmd BufReadPost quickfix nmap <buffer> ^M <CR>
-
 " Restore cursor position upon reopening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
@@ -204,7 +200,6 @@ vnoremap <leader>pd :call PhpDocRange()<CR>
 " CTRL-P {{{
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_use_caching = 0
 "}}}
 
 " Powerline {{{
