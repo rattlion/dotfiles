@@ -274,7 +274,17 @@ if has("autocmd")
     autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
   augroup end
 
-  autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
+  augroup liquid
+    autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
+  augroup end
+
+  augroup text
+    autocmd BufWritePre * :%s/“/"/e
+    autocmd BufWritePre * :%s/”/"/e
+    autocmd BufWritePre * :%s/”/"/e
+    autocmd BufWritePre * :%s/‘/'/e
+    autocmd BufWritePre * :%s/’/'/e
+  augroup end
 endif
 "}}}
 
