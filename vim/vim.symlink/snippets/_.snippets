@@ -2,35 +2,34 @@
 
 # (c) holds no legal value ;)
 snippet c)
-	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
+	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${0}
 snippet date
 	`strftime("%Y-%m-%d")`
 snippet ddate
 	`strftime("%B %d, %Y")`
 snippet dcc
-	<div class="clear"></div>${1}
+	<div class="clear"></div>
 snippet pc
 	/**
 	 * @author		Matt Ryan, SankyNet <mryan@sankynet.com>
 	 * @date			`strftime("%Y-%m-%d")`
 	 * @comments	${1}
 	 **/
-	${2}
+	${0}
 snippet sc
 	# @author		Matt Ryan, SankyNet <mryan@sanknet.com>
 	# @date			`strftime("%Y-%m-%d")`
 	# @comments	${1}
-
-	${2}
+	${0}
 snippet hc
 	<!--
 	- @author		matt ryan
 	- @date			`strftime("%Y-%m-%d")`
 	- @comments  ${1}
 	-->
-	${2}
+	${0}
 snippet sd
-	style="display:block;border:none;"${1}
+	style="display:block;border:none;"
 snippet dsc
 	<div style="clear:both;"></div>
 snippet dr
@@ -38,11 +37,11 @@ snippet dr
 		${1}
 	});
 snippet sp
-	<span style="${1}">${2}</span>
+	<span style="${1}">${0}</span>
 snippet spc
-	<span class="${1}">${2}</span>
+	<span class="${1}">${0}</span>
 snippet tar
-	target="_blank"${1}
+	target="_blank"
 snippet ajax
 	\$.ajax({
 		url: '${1}',
@@ -56,18 +55,18 @@ snippet ajax
 		},
 		error: function(data) {
 			console.log('error');
-			${4}
+			${0}
 		}
 	});
 snippet log
 	var test = ${1};
 	console.log(test);
 snippet ph
-	<?= ${1} ?>
+	<?= ${0} ?>
 snippet php
-	<?php ${1} ?>
+	<?php ${0} ?>
 snippet pd
-	preventDefault();${1}
+	preventDefault();
 snippet email
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns:v="urn:schemas-microsoft-com:vml">
@@ -94,7 +93,7 @@ snippet email
 		<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="margin:0;padding:0;min-height:100%!important;width:100%!important;">
 			<tr>
 				<td>
-					${2}
+					${0}
 				</td>
 			</tr>
 		</table>
@@ -103,75 +102,73 @@ snippet email
 	</body>
 	</html>
 snippet table
-	<table cellspacing="0" cellpadding="0" border="0" align="center">
+	<table cellspacing="0" cellpadding="0" border="0" align="center" width="${1:100%}">
 		<tr>
 			<td>
-				${1}
+				${0}
 			</td>
 		</tr>
 	</table>
 snippet tr
 	<tr>
-		${1}
+		${0}
 	</tr>
 snippet td
 	<td>
-		${1}
+		${0}
 	</td>
 snippet a
-	<a href="${1}">${2}</a>
+	<a href="${1}">${0}</a>
 snippet img
-	<img src="${1}" alt="${2}" ${3}/>
+	<img src="${1}" alt="${2}" ${0}/>
 snippet br
-	<br />${1}
+	<br />
 snippet divc
 	<div class="${1:name}">
-		${2}
+		${0}
 	</div>
 snippet tac
 	text-align: center;
 snippet oh
 	overflow: hidden;
 snippet h1
-	<h1>${1}</h1>
+	<h1>${0}</h1>
 snippet div
-	<div${1}>${2}</div>
+	<div${1}>${0}</div>
 snippet divi
 	<div id="${1:name}">
-		${2}
+		${0}
 	</div> <!-- #$1 -->
 snippet ttu
-	text-transform: uppercase;${1}
+	text-transform: uppercase;
 snippet tdn
-	text-decoration: none;${1}
+	text-decoration: none;
 snippet ti
-	text-indent: -99999em;${1}
+	text-indent: -99999em;
 snippet fll
-	float: left;${1}
+	float: left;
 snippet lstn
-	list-style-type: none;${1}
+	list-style-type: none;
 snippet db
-	display: block;${1}
+	display: block;
 snippet dn
-	display: none;${1}
+	display: none;
 snippet h3
-	<h3>${1}</h3>
+	<h3>${0}</h3>
 snippet h2
-	<h2>${1}</h2>
+	<h2>${0}</h2>
 snippet flr
 	float: right;
 snippet fwb
 	font-weight: bold;
-snippet ss
-	<link rel=stylesheet type="text/css" media=screen href="${1}" />
 snippet bgc
-	background-color: #${1};
+	background-color: #${0};
 snippet por
 	position: relative;
 snippet h4
-	<h4>${1}</h4>
+	<h4>${0}</h4>
 snippet hr
-	<hr />${1}
+	<hr />
 snippet gitignore
 	# Numerous always-ignore extensions
 	*.diff
@@ -319,7 +316,7 @@ snippet robots
 	Disallow: /
 snippet nav
 	<nav>
-		${1}
+		${0}
 	</nav>
 snippet auth
 	AuthType Basic
@@ -327,24 +324,23 @@ snippet auth
 	AuthUserFile ${1:/path/to/.htpasswd}
 	Require valid-user
 snippet die
-	echo '<pre>'; print_r(${1}); echo '</pre>';
+	echo '<pre>'; print_r(${0}); echo '</pre>';
 	die();
 snippet scrollto
-	$('html,body').animate({ scrollTop: $('${1}').offset().top - ${2:15} }, ${3:500}); })
-	${4}
+	$('html,body').animate({ scrollTop: $('${1}').offset().top - ${2:15} }, ${0:500}); })
 snippet phptest
 	class ${1} extends PHPUnit_Framework_TestCase
 	{
 		public function test${2}()
 		{
-			${3}
+			${0}
 		}
 	}
 snippet border
-	border: 1px solid red;${1}
+	border: 1px solid red;
 snippet nbsp
-	<span style="height: 0; line-height: 0;">&nbsp;</span>${1}
+	<span style="height: 0; line-height: 0;">&nbsp;</span>
 snippet vt
-	valign="top"${1}
+	valign="top"
 snippet 301
-	[R=301,NC,L]${1}
+	[R=301,NC,L]
