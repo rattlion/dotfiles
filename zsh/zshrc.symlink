@@ -33,6 +33,7 @@ plugins=(
   git
   rvm
   vagrant
+  laravel
 )
 
 setopt NO_NOMATCH

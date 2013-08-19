@@ -45,7 +45,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Valloric/YouCompleteMe'
-"Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'mhinz/vim-signify'
@@ -279,11 +279,11 @@ if has("autocmd")
   augroup end
 
   augroup text
-    autocmd BufWritePre * :%s/“/"/e
-    autocmd BufWritePre * :%s/”/"/e
-    autocmd BufWritePre * :%s/”/"/e
-    autocmd BufWritePre * :%s/‘/'/e
-    autocmd BufWritePre * :%s/’/'/e
+    autocmd BufWritePre *.php,*.html :%s/“/"/e
+    autocmd BufWritePre *.php,*.html :%s/”/"/e
+    autocmd BufWritePre *.php,*.html :%s/”/"/e
+    autocmd BufWritePre *.php,*.html :%s/‘/'/e
+    autocmd BufWritePre *.php,*.html :%s/’/'/e
   augroup end
 endif
 "}}}
