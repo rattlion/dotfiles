@@ -136,9 +136,6 @@ let g:netrw_home="~/.vim/.tmp"
 set foldmethod=marker foldlevel=0
 nnoremap <Space> za
 vnoremap <Space> za
-
-" Creating folds for tags in HTML
-"nnoremap <leader>ft Vatzf
 "}}}
 " }}}
 
@@ -165,7 +162,6 @@ set title
 nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap <leader>N :NERDTreeClose<CR>
-nnoremap <silent> <C-f> :NERDTreeFind<CR>
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
@@ -207,10 +203,11 @@ let g:ctrlp_show_hidden = 1
 "}}}
 
 " YouCompleteMe {{{
+  set completeopt-=preview
   let g:ycm_key_list_select_completion = ['<C-N>']
   let g:ycm_key_list_previous_completion = ['<C-P>']
   let g:ycm_cache_omnifunc = 1
-  let g:ycm_collect_identifiers_from_tags_files = 0
+  let g:ycm_collect_identifiers_from_tags_files = 1
 "}}}
 
 " Syntastic {{{
@@ -280,7 +277,6 @@ if has("autocmd")
 
   augroup text
     autocmd BufWritePre *.php,*.html :%s/“/"/e
-    autocmd BufWritePre *.php,*.html :%s/”/"/e
     autocmd BufWritePre *.php,*.html :%s/”/"/e
     autocmd BufWritePre *.php,*.html :%s/‘/'/e
     autocmd BufWritePre *.php,*.html :%s/’/'/e
