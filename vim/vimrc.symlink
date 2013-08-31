@@ -13,7 +13,6 @@ Bundle 'gmarik/vundle'
 
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'jQuery'
 Bundle 'vim-json-bundle'
 Bundle 'YankRing.vim'
 Bundle "snipmate-snippets"
@@ -29,6 +28,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-liquid'
+Bundle 'tpope/vim-fugitive'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Lokaltog/vim-powerline'
