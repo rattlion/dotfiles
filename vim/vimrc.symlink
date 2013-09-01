@@ -11,6 +11,15 @@ call vundle#rc()
 " let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
 
+" Trial PHP Bundles
+Bundle 'phpvim'
+Bundle '2072/PHP-Indenting-for-VIm'
+"Bundle 'arnaud-lb/vim-php-namespace'
+"Bundle 'stephpy/vim-php-cs-fixer'
+"Bundle 'joonty/vdebug.git'
+"Bundle 'joonty/vim-phpqa'
+"Bundle 'joonty/vim-phpunitqf.git'
+
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'vim-json-bundle'
@@ -50,9 +59,7 @@ Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
 Bundle 'mhinz/vim-signify'
 Bundle 'itspriddle/vim-marked'
-if executable('ctags')
-  Bundle 'majutsushi/tagbar'
-endif
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 "}}}
