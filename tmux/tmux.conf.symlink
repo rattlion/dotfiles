@@ -11,6 +11,7 @@ set-option -g renumber-windows on
 bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
 
 # set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+set display-time 5000
 
 # THEME
 set -g status-bg black
@@ -30,19 +31,6 @@ set -g pane-active-border-bg black
 set -g pane-active-border-fg black
 
 ######################### SCREEN BINDINGS ######################
-
-# $Id: screen-keys.conf,v 1.7 2010/07/31 11:39:13 nicm Exp $
-#
-# By Nicholas Marriott. Public domain.
-#
-# This configuration file binds many of the common GNU screen key bindings to
-# appropriate tmux key bindings. Note that for some key bindings there is no
-# tmux analogue and also that this set omits binding some commands available in
-# tmux but not in screen.
-#
-# Note this is only a selection of key bindings and they are in addition to the
-# normal tmux key bindings. This is intended as an example not as to be used
-# as-is.
 
 # Set the prefix to ^A.
 unbind C-b
@@ -113,6 +101,10 @@ bind l refresh-client
 # split -v |
 unbind |
 bind | split-window
+
+# small split \
+unbind '\'
+bind '\' split -l10
 
 # layout
 unbind space

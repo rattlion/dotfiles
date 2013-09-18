@@ -12,7 +12,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Trial PHP Bundles
-Bundle 'phpvim'
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'arnaud-lb/vim-php-namespace'
 "Bundle 'stephpy/vim-php-cs-fixer'
@@ -111,7 +110,8 @@ set nomodeline
 set cursorline
 set clipboard=unnamed
 set linebreak
-" set ttyfast
+set synmaxcol=800
+set ttyfast
 set dictionary+=/usr/share/dict/words
 
 nnoremap ; :
