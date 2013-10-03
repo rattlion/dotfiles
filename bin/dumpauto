@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+USAGE = <<EOS
+Usage: dumpauto
+
+There are no arguements. Simply run the command in a composer project
+root or a laravel project root.
+
+  -l, --help  Display this message
+
+dumpauto relies on a global installation of composer.
+EOS
+
+if ARGV.delete("--help") || ARGV.delete("-h")
+  puts USAGE
+  exit
+end
+
+require 'rubygems'
+
+['colorize'].each do | gem |
+  begin
+    require gem
+  rescue LoadError
+    puts "You'll need to install #{gem}: gem install #{gem}"
+    exit
+  end
+end
+
+dependancies = {
+  laravel: {
+    file: "artisan",
+    command: "php artisan dump-auto"
+  },
+  composer: {
+    file: "composer.json",
+    command: "composer dump-autoload -o"
+  }
+}
+
+dependancies.each do | parent, dependancy |
+  if File.exists? dependancy[:file]
+    if system("#{dependancy[:command]}")
+      puts "#{parent} auto-loader flushed.".colorize(:green)
+    else
+      puts "#{parent} auto-loader failed to flush.".colorize(:red)
+    end
+  else
+    puts "Sorry, there was no #{parent} commands found in this directory.".colorize(:yellow)
+  end
+end
