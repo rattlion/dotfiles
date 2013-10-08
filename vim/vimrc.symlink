@@ -13,11 +13,6 @@ Bundle 'gmarik/vundle'
 
 " Trial PHP Bundles
 Bundle '2072/PHP-Indenting-for-VIm'
-"Bundle 'arnaud-lb/vim-php-namespace'
-"Bundle 'stephpy/vim-php-cs-fixer'
-"Bundle 'joonty/vdebug.git'
-"Bundle 'joonty/vim-phpqa'
-"Bundle 'joonty/vim-phpunitqf.git'
 
 " vim-scripts repos
 Bundle 'L9'
