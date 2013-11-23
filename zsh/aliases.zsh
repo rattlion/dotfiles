@@ -23,5 +23,3 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimul
 alias pt="phpunit"
 alias ptc="phpunit --coverage-text"
 alias dump="artisan dump-auto && composer dump-autoload -o"
-alias symfony="./symfony"
-alias nara="ssh dev@nara-table-contractor.secondstory.net"
