@@ -108,6 +108,7 @@ set linebreak
 set synmaxcol=800
 set ttyfast
 set dictionary+=/usr/share/dict/words
+set viminfo+=n~/.vim/.viminfo/viminfo
 
 nnoremap ; :
 nnoremap / /\v
@@ -152,7 +153,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set lazyredraw
 set laststatus=2
-set cmdheight=2
+set cmdheight=1
 set title
 " }}}
 
@@ -325,7 +326,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Jump to matching pairs easily, with Tab
 nmap <Tab> %
 vmap <Tab> %
-map <Tab> %
+"map <Tab> %
 
 " alternate buffer
 map <leader>b :b#<CR>

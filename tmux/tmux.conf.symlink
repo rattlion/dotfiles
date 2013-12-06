@@ -11,7 +11,7 @@ set-option -g renumber-windows on
 bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
 
 # set -g terminal-overrides 'xterm*:smcup@:rmcup@'
-set display-time 5000
+set display-time 10000
 
 # THEME
 set -g status-bg black

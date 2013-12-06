@@ -68,10 +68,10 @@ tags
 sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
-cache/
-files/
-sites/*/files
-sites/*/private
+/cache/
+/files/
+/sites/*/files
+/sites/*/private
 
 # Ignore default text files
 robots.txt
