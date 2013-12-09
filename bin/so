@@ -4,4 +4,9 @@ pc=${windows//\\/\/}
 unix=${pc/L\:\//\/Volumes\/SankyNet\ Drive\/}
 unix=${unix/Z\:\//\/Volumes\/Sanky\ Direct\ Drive\/Sanky\ Shared\/}
 unix=${unix/smb\:\/\/sankycomserver\//\/Volumes\/}
+
+if [[ ! $unix =~ ^/?Volumes ]]; then
+  unix="/Volumes/${unix}"
+fi
+
 open "$unix"
