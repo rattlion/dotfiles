@@ -109,6 +109,9 @@ set synmaxcol=800
 set ttyfast
 set dictionary+=/usr/share/dict/words
 set viminfo+=n~/.vim/.viminfo/viminfo
+set autoread
+
+nmap <leader>e :checktime<CR>
 
 nnoremap ; :
 nnoremap / /\v
