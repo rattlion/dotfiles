@@ -1,12 +1,54 @@
-#!/bin/sh
-windows="$1"
-pc=${windows//\\/\/}
-unix=${pc/L\:\//\/Volumes\/SankyNet\ Drive\/}
-unix=${unix/Z\:\//\/Volumes\/Sanky\ Direct\ Drive\/Sanky\ Shared\/}
-unix=${unix/smb\:\/\/sankycomserver\//\/Volumes\/}
+#!/usr/bin/env ruby
 
-if [[ ! $unix =~ ^/?Volumes ]]; then
-  unix="/Volumes/${unix}"
-fi
+['rubygems', 'colorize'].each do |gem|
+  begin
+    require gem
+  rescue LoadError
+    puts "You need to install #{gem}: gem install #{gem}"
+    exit!(1)
+  end
+end
 
-open "$unix"
+class SankyPathfinder
+  def initialize(arguments)
+    @arguments = arguments
+  end
+
+  def to_s
+    @arguments
+  end
+
+  def convert
+    @arguments.map! do |original|
+      # subsitute windows backslashes for forwardslashes
+      original = original.gsub(/\\/, "/")
+      original.sub!(/L:/, "/Volumes/SankNet Drive")
+      original.sub!(/Z:/, "/Volumes/Sanky Direct Drive/Sanky Shared")
+      original.sub!(/Z:/, "/Volumes/Sanky Direct Drive/Sanky Shared")
+      original.sub!(/smb:\/\/sankycomserver/, "/Volumes")
+      # if no leading / add one
+      original.sub!(/^(?!\/)/, "/\1")
+      # String.sub returns nil if no sub was performed, always return the og
+      original
+    end
+
+    self
+  end
+
+  def open
+    @arguments.each do |target|
+      begin
+        # pipe STDERR to dev null in favor of custom prompt
+        `open -g '#{target}' > /dev/null 2>/dev/null`
+      ensure
+        if $? == 0
+          puts "Opening the file in the background...".yellow
+        else
+          puts "Failed to find #{target.red}!"
+        end
+      end
+    end
+  end
+end
+
+SankyPathfinder.new(ARGV).convert.open;
