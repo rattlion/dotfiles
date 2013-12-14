@@ -13,10 +13,6 @@
   lol     = log --graph --decorate --abbrev-commit
   lola    = log --graph --decorate --abbrev-commit --all
   ls      = ls-files
-  promote = !$DOTS/bin/git-promote
-  wtf     = !$DOTS/bin/git-wtf
-  rank    = !$DOTS/bin/git-rank-contributers
-  count   = !git shortlog -sn
 [diff]
   tool = opendiff
 [difftool]
