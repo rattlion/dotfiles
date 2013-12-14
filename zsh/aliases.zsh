@@ -1,4 +1,5 @@
 alias sudo="sudo "
+alias dots="cd $ZSH"
 alias reload!='. ~/.zshrc'
 alias d2u='find . -exec dos2unix {} \;'
 alias slice='ssh matt@mattryan.me'
