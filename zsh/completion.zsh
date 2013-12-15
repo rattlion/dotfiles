@@ -8,8 +8,8 @@ WORDCHARS=''
 
 zmodload -i zsh/complist
 
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
 
 # should this be in keybindings?
 bindkey -M menuselect '^o' accept-and-infer-next-history
