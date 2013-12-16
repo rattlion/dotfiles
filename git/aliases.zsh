@@ -23,8 +23,8 @@ alias gm='git merge --no-ff'
 alias gmt="git mergetool --no-prompt"
 alias gp='git push origin HEAD'
 alias gr='git reset'
-alias grh='git reset HEAD'
-alias grhh='git reset HEAD --hard'
+alias grh='git reset --hard'
+alias grhh='git reset --hard HEAD'
 alias gs='git status -sb'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias stage="git push staging develop:develop"
