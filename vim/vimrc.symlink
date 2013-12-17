@@ -325,8 +325,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Jump to matching pairs easily, with Tab
 nmap <Tab> %
-vmap <Tab> %
-"map <Tab> %
+xmap <Tab> %
 
 " alternate buffer
 map <leader>b :b#<CR>
