@@ -30,10 +30,6 @@ setopt HIST_REDUCE_BLANKS
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 
-# don't expand aliases _before_ completion has finished
-#   like: git comm-[tab]
-setopt complete_aliases
-
 zle -N newtab
 
 bindkey -v
