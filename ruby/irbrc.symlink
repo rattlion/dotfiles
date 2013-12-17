@@ -1,5 +1,4 @@
 # .irbrc
-# vim: set syntax=ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'fileutils'
