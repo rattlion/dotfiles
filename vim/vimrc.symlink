@@ -11,16 +11,12 @@ call vundle#rc()
 " let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
 
-" Trial PHP Bundles
-Bundle '2072/PHP-Indenting-for-VIm'
-
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'vim-json-bundle'
 Bundle 'YankRing.vim'
 Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
-Bundle "greplace.vim"
 
 " original repos on github
 Bundle 'Raimondi/delimitMate'
@@ -33,27 +29,25 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-fugitive'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'mhinz/vim-signify'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'mrevd/vim-insert-image'
 Bundle 'henrik/vim-open-url'
-Bundle 'mhinz/vim-signify'
-Bundle 'itspriddle/vim-marked'
 Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
@@ -85,7 +79,7 @@ set pastetoggle=<F2>
 set mouse=a
 set fileformats=
 set formatoptions+=1
-"set shell=bash\ --login
+set shell=/bin/sh
 set hidden
 set switchbuf=useopen
 set history=100
