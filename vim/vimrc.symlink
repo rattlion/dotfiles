@@ -315,10 +315,7 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 nnoremap <leader>t :TagbarToggle<CR>
 
 " Reselect pasted block
-nnoremap ,gp `[v`]
-
-" Reselect text that was just pasted with ,v
-nnoremap <leader>v V`]
+nnoremap <leader>gp `[v`]
 
 " Edit the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
