@@ -32,10 +32,28 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
+
+  # MAMP Files
+  config_folder = "#{ENV["HOME"]}/.mamp"
+  php = `php -i | grep 'Loaded Configuration File'`[/(?<=\=>\s).+$/]
+  targets = [
+    '/private/var/log/apache2',
+    '/etc/hosts',
+    '/etc/apache2/extra/httpd-vhosts.conf',
+    '/etc/apache2/httpd.conf',
+    php
+  ]
+
+  Dir.mkdir(config_folder) unless File.exists?(config_folder)
+  targets.each do |target|
+    unless File.exists?(config_folder + target[/\/[^\/]+$/])
+      puts "ln -s #{target} #{config_folder}/#{target[/[^\/]+$/]}"
+      `ln -s "#{target}" "#{config_folder}/#{target[/[^\/]+$/]}"`
+    end
+  end
 end
 
 task :uninstall do
-
   Dir.glob('**/*.symlink').each do |linkable|
 
     file = linkable.split('/').last.split('.symlink').last
@@ -45,10 +63,10 @@ task :uninstall do
     if File.symlink?(target)
       FileUtils.rm(target)
     end
-    
+
     # Replace any backups made during installation
     if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
-      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"` 
+      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"`
     end
 
   end
