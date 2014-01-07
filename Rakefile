@@ -47,7 +47,6 @@ task :install do
   Dir.mkdir(config_folder) unless File.exists?(config_folder)
   targets.each do |target|
     unless File.exists?(config_folder + target[/\/[^\/]+$/])
-      puts "ln -s #{target} #{config_folder}/#{target[/[^\/]+$/]}"
       `ln -s "#{target}" "#{config_folder}/#{target[/[^\/]+$/]}"`
     end
   end
