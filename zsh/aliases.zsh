@@ -4,7 +4,6 @@ alias l="ls -lAh"
 alias so="sanky-pf"
 alias reload!='. ~/.zshrc'
 alias d2u='find . -exec dos2unix {} \;'
-alias slice='ssh matt@mattryan.me'
 alias sanky='ssh mryan@sanky.info'
 alias inacsl='ssh mryan@inacsl.org'
 alias cmow='ssh mryan@citymeals.org'
