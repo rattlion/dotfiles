@@ -19,6 +19,7 @@ Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
 
 " original repos on github
+Bundle 'Arkham/vim-quickfixdo'
 Bundle 'Raimondi/delimitMate'
 Bundle 'edsono/vim-matchit'
 Bundle 'cakebaker/scss-syntax.vim'
