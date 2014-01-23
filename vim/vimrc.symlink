@@ -320,8 +320,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Jump to matching pairs easily, with Tab
-nmap <Tab> %
-xmap <Tab> %
+nmap <Space> %
+vmap <Space> %
 
 " alternate buffer
 map <leader>b :b#<CR>
