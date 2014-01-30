@@ -28,4 +28,4 @@ drush/drush.symlink/cache
 drush/drush.symlink/*.drushrc.php
 vim/vim.symlink/.netrwhist
 vim/vim.symlink/.viminfo
-local/localrc.symlink
+local/*
