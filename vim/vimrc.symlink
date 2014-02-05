@@ -148,7 +148,7 @@ if has("gui_running")
   set guioptions=egmrt
   set guifont=Monaco\ for\ Powerline:h12
 endif
-colorscheme badwolf
+colorscheme Tomorrow-Night-Bright
 syntax on
 set termencoding=utf-8
 set encoding=utf-8
