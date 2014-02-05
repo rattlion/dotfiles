@@ -316,7 +316,7 @@ nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>gp `[v`]
 
 " Edit the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Jump to matching pairs easily, with Tab
