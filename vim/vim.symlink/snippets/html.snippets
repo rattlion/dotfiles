@@ -182,10 +182,13 @@ snippet select
                 <option value="${3:option}">${4:$3}</option>
         </select>${5}
 snippet table
-        <table border="${1:0}">
-                <tr><th>${2:Header}</th></tr>
-                <tr><th>${3:Data}</th></tr>
-        </table>${4}
+        <table cellspacing="0" cellpadding="0" border="0" align="center" width="${1:100%}">
+                <tr>
+                        <td>
+                                ${0}
+                        </td>
+                </tr>
+        </table>
 snippet textarea
         <textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 snippet #

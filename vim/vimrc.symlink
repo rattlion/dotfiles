@@ -202,7 +202,8 @@ let g:ctrlp_show_hidden = 1
 "}}}
 
 " Powerline {{{
- let g:Powerline_symbols = 'fancy'
+  let g:Powerline_symbols = 'fancy'
+  let g:Powerline_colorscheme = 'solarized256'
 "}}}
 
 " YouCompleteMe {{{
