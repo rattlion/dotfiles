@@ -21,7 +21,7 @@
   prompt = false
   keepBackup = false
 [merge]
-  tool = opendiff
+  tool = fugitive
 [apply]
   whitespace = fix
 [core]
@@ -32,3 +32,5 @@
   user = mrevd
 [help]
   autocorrect = 1
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"

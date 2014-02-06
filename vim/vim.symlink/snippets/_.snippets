@@ -153,7 +153,7 @@ snippet tac
 snippet oh
 	overflow: hidden;
 snippet h1
-	<h1>${1}</h1>
+	<h1>${1}</h1>${0}
 snippet div
 	<div${1}>${0}</div>
 snippet divi
@@ -369,3 +369,7 @@ snippet =
 	<%= ${1} %> ${0}
 snippet -
 	<% ${1} %> ${0}
+snippet do
+	do ${1:|param|}
+		${0}
+	end
