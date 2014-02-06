@@ -15,7 +15,6 @@ Bundle 'gmarik/vundle'
 Bundle 'L9'
 Bundle 'vim-json-bundle'
 Bundle 'YankRing.vim'
-Bundle "snipmate-snippets"
 Bundle "PDV--phpDocumentor-for-Vim"
 
 " original repos on github
