@@ -1,160 +1,159 @@
 " Personal preference .vimrc file
-" Maintained by Matt Ryan <mryan@sankynet.com>
+" Maintained by Matt Ryan <m@mrevd.me>
 "
 " Vundle {{{
-set nocompatible
-filetype off
+  set nocompatible
+  filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
 
-" let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
+  " let Vundle manage Vundle required!
+  Bundle 'gmarik/vundle'
 
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'vim-json-bundle'
-Bundle 'YankRing.vim'
-Bundle "PDV--phpDocumentor-for-Vim"
+  " vim-scripts repos
+  Bundle 'L9'
+  Bundle 'vim-json-bundle'
+  Bundle 'YankRing.vim'
+  Bundle "PDV--phpDocumentor-for-Vim"
 
-" original repos on github
-Bundle 'Arkham/vim-quickfixdo'
-Bundle 'Raimondi/delimitMate'
-Bundle 'edsono/vim-matchit'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'mhinz/vim-signify'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'mrevd/vim-insert-image'
-Bundle 'henrik/vim-open-url'
-Bundle 'majutsushi/tagbar'
+  " original repos on github
+  Bundle 'Arkham/vim-quickfixdo'
+  Bundle 'Raimondi/delimitMate'
+  Bundle 'edsono/vim-matchit'
+  Bundle 'cakebaker/scss-syntax.vim'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'tpope/vim-rails.git'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-liquid'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-commentary'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'kana/vim-textobj-user'
+  Bundle 'nelstrom/vim-textobj-rubyblock'
+  Bundle 'mattn/webapi-vim'
+  Bundle 'mattn/gist-vim'
+  Bundle 'Lokaltog/vim-powerline'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'mhinz/vim-signify'
+  Bundle 'MarcWeber/vim-addon-mw-utils'
+  Bundle 'tomtom/tlib_vim'
+  Bundle 'garbas/vim-snipmate'
+  Bundle 'godlygeek/tabular'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'mileszs/ack.vim'
+  Bundle 'terryma/vim-multiple-cursors'
+  Bundle 'Valloric/YouCompleteMe'
+  Bundle 'mrevd/vim-insert-image'
+  Bundle 'henrik/vim-open-url'
+  Bundle 'majutsushi/tagbar'
 
-filetype plugin indent on
+  filetype plugin indent on
 "}}}
 
 " VIM behaviour {{{
-let mapleader=","
-set showmode
-set nowrap
-set tabstop=2
-set softtabstop=2
-set expandtab
-set shiftwidth=2
-set shiftround
-set backspace=indent,eol,start
-set autoindent
-set copyindent
-set number
-set showmatch
-set ignorecase
-set smartcase
-set smarttab
-set scrolloff=4
-set virtualedit=all
-set hlsearch
-set incsearch
-set nolist
-set pastetoggle=<F2>
-set mouse=a
-set fileformats=
-set formatoptions+=1
-set shell=/bin/sh
-set hidden
-set switchbuf=useopen
-set history=100
-set undolevels=1000
-if v:version >= 730
-  set undofile
-  set undodir=~/.vim/.undo,~/tmp,/tmp
-endif
-set nobackup
-set noswapfile
-set wildmenu
-set wildmode=list:full
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set visualbell
-set noerrorbells
-set showcmd
-set nomodeline
-set cursorline
-set clipboard=unnamed
-set linebreak
-set synmaxcol=800
-set ttyfast
-set dictionary+=/usr/share/dict/words
-set viminfo+=n~/.vim/.viminfo/viminfo
-set autoread
+  let mapleader=","
+  set showmode
+  set nowrap
+  set tabstop=2
+  set softtabstop=2
+  set expandtab
+  set shiftwidth=2
+  set shiftround
+  set backspace=indent,eol,start
+  set autoindent
+  set copyindent
+  set number
+  set showmatch
+  set ignorecase
+  set smartcase
+  set smarttab
+  set scrolloff=4
+  set virtualedit=all
+  set hlsearch
+  set incsearch
+  set nolist
+  set pastetoggle=<F2>
+  set mouse=a
+  set fileformats=
+  set formatoptions+=1
+  set shell=/bin/sh
+  set hidden
+  set switchbuf=useopen
+  set history=100
+  set undolevels=1000
+  if v:version >= 730
+    set undofile
+    set undodir=~/.vim/.undo,~/tmp,/tmp
+  endif
+  set nobackup
+  set noswapfile
+  set wildmenu
+  set wildmode=list:full
+  set wildignore=*.swp,*.bak,*.pyc,*.class
+  set visualbell
+  set noerrorbells
+  set showcmd
+  set nomodeline
+  set cursorline
+  set clipboard=unnamed
+  set linebreak
+  set synmaxcol=800
+  set ttyfast
+  set dictionary+=/usr/share/dict/words
+  set viminfo+=n~/.vim/.viminfo/viminfo
+  set autoread
 
-nmap <leader>e :checktime<CR>
+  nmap <leader>e :checktime<CR>
 
-nnoremap ; :
-nnoremap / /\v
-vnoremap / /\v
-nnoremap <C-e> 2<C-e>
-nnoremap <C-y> 2<C-y>
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+  nnoremap ; :
+  nnoremap / /\v
+  vnoremap / /\v
+  nnoremap <C-e> 2<C-e>
+  nnoremap <C-y> 2<C-y>
+  nnoremap j gj
+  nnoremap k gk
+  vnoremap j gj
+  vnoremap k gk
 
-" increment and decrement
-nnoremap <leader>i <C-a>
-nnoremap <leader>d <C-x>
+  " increment and decrement
+  nnoremap <leader>i <C-a>
+  nnoremap <leader>d <C-x>
 
-" Edit the snippets file
-nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
+  " Edit the snippets file
+  nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
 
-" Restore cursor position upon reopening files
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  " Restore cursor position upon reopening files
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" Remove straing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+  " Remove straing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
 
-let g:netrw_home="~/.vim/.tmp"
+  let g:netrw_home="~/.vim/.tmp"
 
-" Folding {{{
-set foldmethod=marker foldlevel=0
-nnoremap <Space> za
-vnoremap <Space> za
-"}}}
+  " Folding {{{
+    set foldmethod=marker foldlevel=0
+    nnoremap <Space> za
+    vnoremap <Space> za
+  "}}}
 " }}}
 
 " VIM appearance {{{
-if has("gui_running")
-  set guioptions=egmrt
-  set guifont=Monaco\ for\ Powerline:h12
-endif
-colorscheme Tomorrow-Night-Bright
-syntax on
-set termencoding=utf-8
-set encoding=utf-8
-set lazyredraw
-set laststatus=2
-set cmdheight=1
-set title
+  if has("gui_running")
+    set guioptions=egmrt
+    set guifont=Monaco\ for\ Powerline:h12
+  endif
+  colorscheme Tomorrow-Night-Bright
+  syntax on
+  set termencoding=utf-8
+  set encoding=utf-8
+  set laststatus=2
+  set cmdheight=2
+  set title
 " }}}
 
 " VIM plugins {{{
@@ -162,43 +161,43 @@ set title
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)
-nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
-nmap <leader>N :NERDTreeClose<CR>
+  nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+  nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+  nmap <leader>N :NERDTreeClose<CR>
 
-" Store the bookmarks file
-let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+  " Store the bookmarks file
+  let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 
-" Show the bookmarks table on startup
-let NERDTreeShowBookmarks=1
+  " Show the bookmarks table on startup
+  let NERDTreeShowBookmarks=1
 
-" Show hidden files, too
-let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
+  " Show hidden files, too
+  let NERDTreeShowFiles=1
+  let NERDTreeShowHidden=1
 
-" Quit on opening files from the tree
-let NERDTreeQuitOnOpen=1
+  " Quit on opening files from the tree
+  let NERDTreeQuitOnOpen=1
 
-" Highlight the selected entry in the tree
-let NERDTreeHighlightCursorline=1
+  " Highlight the selected entry in the tree
+  let NERDTreeHighlightCursorline=1
 
-" Use a single click to fold/unfold directories and a double click to open files
-let NERDTreeMouseMode=2
+  " Use a single click to fold/unfold directories and a double click to open files
+  let NERDTreeMouseMode=2
 
-" Don't display these kinds of files
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-            \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_Store' ]
+  " Don't display these kinds of files
+  let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+              \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_Store' ]
 " }}}
 
 " PHP Doc {{{
-inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
-nnoremap <leader>pd :call PhpDocSingle()<CR>
-vnoremap <leader>pd :call PhpDocRange()<CR>
+  inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
+  nnoremap <leader>pd :call PhpDocSingle()<CR>
+  vnoremap <leader>pd :call PhpDocRange()<CR>
 "}}}
 
 " CTRL-P {{{
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_show_hidden = 1
+  let g:ctrlp_working_path_mode = '0'
+  let g:ctrlp_show_hidden = 1
 "}}}
 
 " Powerline {{{
@@ -215,7 +214,6 @@ let g:ctrlp_show_hidden = 1
 "}}}
 
 " Syntastic {{{
-
   let g:syntastic_check_on_open=1
   let g:syntastic_error_symbol='✗'
   let g:syntastic_warning_symbol='⚠'
@@ -226,81 +224,78 @@ let g:ctrlp_show_hidden = 1
 
   let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
   let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-
 " }}}
 
+" Yankring {{{
+  let g:yankring_history_dir = '$HOME/.vim/.tmp'
+  nmap <leader>r :YRShow<CR>
+" }}}
+
+" Gist-vim {{{
+  let g:gist_clip_command = 'pbcopy'
+  let g:gist_detect_filetype = 1
+  let g:gist_open_browser_after_post = 1
+" }}}
+
+" Tabular wrapper for TabFirst {{{
+  command! -nargs=1 -range TabFirst exec <line1> . ',' . <line2> . 'Tabularize /^[^' . escape(<q-args>, '\^$.[?*~') . ']*\zs/l0r1'
 "}}}
 
-" Markdown {{{
-" Creating underline/overline headings for markup languages
-" Inspired by http://sphinx.pocoo.org/rest.html#sections
-nnoremap <leader>1 yyPVr=jyypVr=
-nnoremap <leader>2 yyPVr*jyypVr*
-nnoremap <leader>3 yypVr=
-nnoremap <leader>4 yypVr-
-nnoremap <leader>5 yypVr^
-nnoremap <leader>6 yypVr"
+" Tagbar {{{
+  nnoremap <leader>t :TagbarToggle<CR>
+"}}}
+
 "}}}
 
 " FileType {{{
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-  augroup END
+  if has("autocmd")
+    " Drupal *.module and *.install files.
+    augroup module
+      autocmd BufRead,BufNewFile *.module set filetype=php
+      autocmd BufRead,BufNewFile *.install set filetype=php
+      autocmd BufRead,BufNewFile *.test set filetype=php
+      autocmd BufRead,BufNewFile *.inc set filetype=php
+      autocmd BufRead,BufNewFile *.profile set filetype=php
+      autocmd BufRead,BufNewFile *.view set filetype=php
+    augroup END
 
-  augroup conf
-    autocmd BufRead,BufNewFile *.symlink set filetype=zsh
-  augroup END
+    augroup conf
+      autocmd BufRead,BufNewFile *.symlink set filetype=zsh
+    augroup END
 
-  augroup sh
-    autocmd BufRead,BufNewFile .profile set filetype=sh
-  augroup END
+    augroup sh
+      autocmd BufRead,BufNewFile .profile set filetype=sh
+    augroup END
 
-  augroup crontab
-    set nowritebackup
-  augroup end
+    augroup crontab
+      set nowritebackup
+    augroup end
 
-  augroup apache
-    autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
-  augroup end
+    augroup apache
+      autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
+    augroup end
 
-  augroup liquid
-    autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
-  augroup end
+    augroup liquid
+      autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
+    augroup end
 
-  augroup text
-    autocmd BufWritePre *.php,*.html :%s/“/"/e
-    autocmd BufWritePre *.php,*.html :%s/”/"/e
-    autocmd BufWritePre *.php,*.html :%s/‘/'/e
-    autocmd BufWritePre *.php,*.html :%s/’/'/e
-  augroup end
-endif
-"}}}
+    augroup text
+      autocmd BufWritePre *.php,*.html :%s/“/"/e
+      autocmd BufWritePre *.php,*.html :%s/”/"/e
+      autocmd BufWritePre *.php,*.html :%s/‘/'/e
+      autocmd bufwritepre *.php,*.html :%s/’/'/e
+    augroup end
 
-" Small plugin configs {{{
-" Yankring
-let g:yankring_history_dir = '$HOME/.vim/.tmp'
-nmap <leader>r :YRShow<CR>
+    augroup dots
+      autocmd BufRead,BufNewFile vimrc.symlink set filetype=vim
+    augroup end
 
-" Gist-vim
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" PHP Documentaion
-" script contents:
-"    #!/bin/bash
-"    open http://php.net/"$*" with K
-autocmd FileType php set keywordprg=~/.vim/phpdoc.sh
-
-" Tabular wrapper for TabFirst
-command! -nargs=1 -range TabFirst exec <line1> . ',' . <line2> . 'Tabularize /^[^' . escape(<q-args>, '\^$.[?*~') . ']*\zs/l0r1'
+    " PHP Documentaion
+    " script contents:
+    "    #!/bin/bash
+    "    open http://php.net/"$*" with K
+    autocmd FileType php set keywordprg=~/.vim/phpdoc.sh
+  endif
 "}}}
 
 " Misc mappings {{{
@@ -309,8 +304,6 @@ cmap w!! %!sudo tee > /dev/null %
 nnoremap ; :
 
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
-nnoremap <leader>t :TagbarToggle<CR>
 
 " Reselect pasted block
 nnoremap <leader>gp `[v`]
