@@ -31,6 +31,7 @@
   Bundle 'tpope/vim-liquid'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-commentary'
+  Bundle 'tpope/vim-endwise'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'kana/vim-textobj-user'
   Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -209,7 +210,6 @@
   set completeopt-=preview
   let g:ycm_key_list_select_completion = ['<C-N>']
   let g:ycm_key_list_previous_completion = ['<C-P>']
-  let g:ycm_cache_omnifunc = 1
   let g:ycm_collect_identifiers_from_tags_files = 1
 "}}}
 
@@ -312,7 +312,7 @@ nnoremap <leader>gp `[v`]
 nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Jump to matching pairs easily, with Tab
+" Jump to matching pairs easily, with space
 nmap <Space> %
 vmap <Space> %
 
