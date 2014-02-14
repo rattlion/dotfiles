@@ -122,4 +122,4 @@ bind '"' choose-window
 
 # easy split
 unbind '%'
-bind '%' split-window -h -l 70
+bind '%' split-window -h -p 25
