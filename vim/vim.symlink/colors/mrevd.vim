@@ -1,7 +1,5 @@
-" Tomorrow Night Bright - Full Colour and 256 Colour
-" http://chriskempson.com
-"
-" Hex colour conversion functions borrowed from the theme "Desert256""
+" MREVD - Full Colour and 256 Colour
+" http://mrevd.me
 
 " Default GUI Colours
 let s:foreground = "eaeaea"
@@ -9,19 +7,19 @@ let s:background = "000000"
 let s:selection = "424242"
 let s:line = "2a2a2a"
 let s:comment = "969896"
-let s:red = "d54e53"
-let s:orange = "e78c45"
-let s:yellow = "e7c547"
-let s:green = "b9ca4a"
-let s:aqua = "70c0b1"
-let s:blue = "7aa6da"
+let s:red = "ff546d"
+let s:orange = "e4863c"
+let s:yellow = "ffa724"
+let s:green = "b8c854"
+let s:aqua = "8abeb7"
+let s:blue = "76a6d7"
 let s:purple = "c397d8"
 let s:window = "4d5057"
 
 hi clear
 syntax reset
 
-let g:colors_name = "Tomorrow-Night-Bright"
+let g:colors_name = "MREVD"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level
