@@ -30,10 +30,10 @@ bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
 unbind C-b
 set -g prefix ^A
 
-bind c new-window -c $PWD
-bind | split-window
-bind '\' split -l10
-bind '%' split-window -h -p 25
+bind c new-window -c "#{pane_current_path}"
+bind | split-window -c "#{pane_current_path}"
+bind '\' split -l10 -c "#{pane_current_path}"
+bind '%' split-window -h -p 25 -c "#{pane_current_path}"
 
 bind * list-clients
 set -g display-panes-time 4000
@@ -47,8 +47,4 @@ bind K confirm-before "kill-window"
 bind k confirm-before "kill-pane"
 
 # LAYOUT
-unbind space
 bind space next-layout
-
-bind Tab select-pane -t:.+
-bind BTab select-pane -t:.-
