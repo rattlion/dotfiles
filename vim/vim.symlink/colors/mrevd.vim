@@ -1,4 +1,4 @@
-" MREVD - Full Colour and 256 Colour
+" mrevd - full colour and 256 colour
 " http://mrevd.me
 
 " Default GUI Colours
@@ -19,7 +19,7 @@ let s:window = "4d5057"
 hi clear
 syntax reset
 
-let g:colors_name = "MREVD"
+let g:colors_name = "mrevd"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level

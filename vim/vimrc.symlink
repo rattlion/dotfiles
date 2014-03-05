@@ -149,7 +149,7 @@
     set guioptions=egmrt
     set guifont=Monaco\ for\ Powerline:h12
   endif
-  colorscheme MREVD
+  colorscheme mrevd
   syntax on
   set termencoding=utf-8
   set encoding=utf-8
