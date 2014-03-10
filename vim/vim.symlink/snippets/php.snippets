@@ -133,12 +133,12 @@ snippet lambda
 	};
 # pre_dump();
 snippet pd
-	echo '<pre>'; var_dump(${1}); echo '</pre>';
+        echo '<pre>'; print_r(${1}); echo '</pre>';
 # pre_dump(); die();
-snippet die
-	echo '<pre>'; var_dump(${1}); echo '</pre>'; die(${2:});
 snippet vd
 	var_dump(${1});
+snippet d
+        die(${1});${0}
 snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently");
 	header ("Location: ".URL);
