@@ -1,6 +1,8 @@
 [user]
   name  = Matt Ryan
   email = m@mrevd.me
+[github]
+  user = mrevd
 [credential]
   helper = osxkeychain
 [color]
@@ -28,8 +30,6 @@
   editor     = vim
   whitespace = space-before-tab,tab-in-indent,trailing-space
   excludesfile = ~/.gitignore_global
-[github]
-  user = mrevd
 [help]
   autocorrect = 1
 [mergetool "fugitive"]
