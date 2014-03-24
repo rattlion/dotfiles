@@ -31,7 +31,6 @@
   Bundle 'kana/vim-textobj-user'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'majutsushi/tagbar'
   Bundle 'mattn/gist-vim'
   Bundle 'mattn/webapi-vim'
   Bundle 'mhinz/vim-signify'
@@ -43,7 +42,9 @@
   Bundle 'scrooloose/syntastic'
   Bundle 'sunaku/vim-ruby-minitest'
   Bundle 'terryma/vim-multiple-cursors'
+  Bundle 'thoughtbot/vim-rspec'
   Bundle 'tomtom/tlib_vim'
+  Bundle 'tpope/vim-dispatch'
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-liquid'
@@ -83,7 +84,7 @@
   set mouse=a
   set fileformats=
   set formatoptions+=1
-  set shell=/bin/zsh
+  set shell=sh
   set hidden
   set switchbuf=useopen
   set history=100
@@ -153,6 +154,14 @@
 " }}}
 
 " VIM plugins {{{
+
+" RSpec.vim mappings {{{
+  map <Leader>t :call RunCurrentSpecFile()<CR>
+  map <Leader>s :call RunNearestSpec()<CR>
+  map <Leader>l :call RunLastSpec()<CR>
+  map <Leader>a :call RunAllSpecs()<CR>
+  let g:rspec_command = "Dispatch rspec {spec}"
+" }}}
 
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
@@ -227,10 +236,6 @@
 
 " Tabular wrapper for TabFirst {{{
   command! -nargs=1 -range TabFirst exec <line1> . ',' . <line2> . 'Tabularize /^[^' . escape(<q-args>, '\^$.[?*~') . ']*\zs/l0r1'
-"}}}
-
-" Tagbar {{{
-  nnoremap <leader>t :TagbarToggle<CR>
 "}}}
 
 "}}}
