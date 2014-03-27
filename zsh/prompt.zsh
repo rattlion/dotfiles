@@ -65,7 +65,7 @@ directory_name() {
 }
 
 machine_name() {
-  echo "%{$fg_bold[magenta]%}%m:%{$reset_color%}"
+  echo "%{$fg_bold[magenta]%}%M:%{$reset_color%}"
 }
 
 user_name() {
