@@ -23,8 +23,6 @@ nbproject
 *.sublime-workspace
 
 # dotfiles to ignore
-drush/drush.symlink/cache
-drush/drush.symlink/*.drushrc.php
 vim/vim.symlink/.netrwhist
 vim/vim.symlink/.viminfo
 local/*

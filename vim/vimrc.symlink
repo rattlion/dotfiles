@@ -29,6 +29,8 @@
   Bundle 'henrik/vim-open-url'
   Bundle 'itspriddle/vim-marked'
   Bundle 'kana/vim-textobj-user'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'jelera/vim-javascript-syntax'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'kien/ctrlp.vim'
   Bundle 'mattn/gist-vim'
