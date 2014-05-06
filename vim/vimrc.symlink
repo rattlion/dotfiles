@@ -146,7 +146,8 @@
     set guioptions=egmrt
     set guifont=Monaco\ for\ Powerline:h12
   endif
-  colorscheme mrevd
+  set background=dark
+  colorscheme base16-default
   syntax on
   set termencoding=utf-8
   set encoding=utf-8
@@ -222,7 +223,7 @@
     \ 'passive_filetypes': ['html', 'xhtml'] }
 
   let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
-  let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+  let g:syntastic_php_checkers=['php']
 " }}}
 
 " Yankring {{{

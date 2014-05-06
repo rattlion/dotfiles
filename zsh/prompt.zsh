@@ -54,14 +54,14 @@ ruby_version() {
 rb_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
+    echo "%{$fg[grey]%}$(ruby_version)%{$reset_color%}"
   else
     echo ""
   fi
 }
 
 directory_name() {
-  echo "%{$fg_bold[blue]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg[blue]%}%1/%\/%{$reset_color%}"
 }
 
 machine_name() {
