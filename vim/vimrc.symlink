@@ -55,6 +55,7 @@
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
+  Bundle 'tpope/vim-bundler'
   Bundle 'vim-ruby/vim-ruby'
 
   filetype plugin indent on
