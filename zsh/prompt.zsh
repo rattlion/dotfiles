@@ -54,7 +54,7 @@ ruby_version() {
 rb_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg[grey]%}$(ruby_version)%{$reset_color%}"
+    echo "%{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
   else
     echo ""
   fi
