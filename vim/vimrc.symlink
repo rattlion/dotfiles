@@ -57,6 +57,7 @@
   Bundle 'tpope/vim-unimpaired'
   Bundle 'tpope/vim-bundler'
   Bundle 'vim-ruby/vim-ruby'
+  Bundle 'rizzatti/dash.vim'
 
   filetype plugin indent on
 "}}}
@@ -245,6 +246,10 @@
   command! -nargs=1 -range TabFirst exec <line1> . ',' . <line2> . 'Tabularize /^[^' . escape(<q-args>, '\^$.[?*~') . ']*\zs/l0r1'
 "}}}
 
+" Dash {{{
+  nmap <silent> <leader>d <Plug>DashGlobalSearch
+"}}}
+
 "}}}
 
 " FileType {{{
@@ -289,12 +294,6 @@
     augroup dots
       autocmd BufRead,BufNewFile vimrc.symlink set filetype=vim
     augroup end
-
-    " PHP Documentaion
-    " script contents:
-    "    #!/bin/bash
-    "    open http://php.net/"$*" with K
-    autocmd FileType php set keywordprg=~/.vim/phpdoc.sh
   endif
 "}}}
 

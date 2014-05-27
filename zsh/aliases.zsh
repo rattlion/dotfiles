@@ -5,5 +5,5 @@ alias so="sanky-pf"
 alias reload!='. ~/.zshrc'
 alias mamp="sudo vim ~/.mamp"
 alias speed="sudo find /private/var/log/asl/* -mtime +5 -exec rm -rf {} \;"
-alias selfupdate="speed && brew update && brew upgrade && brew cleanup && rvm get stable"
+alias selfupdate="brew update && brew upgrade && brew cleanup && rvm get stable"
 alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
