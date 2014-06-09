@@ -1,5 +1,5 @@
 " Maintained by Matt Ryan <m@mrevd.me>
-"
+
 " Vundle {{{
   set nocompatible
   filetype off
@@ -58,6 +58,7 @@
   Bundle 'tpope/vim-bundler'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'rizzatti/dash.vim'
+  Bundle 'chriskempson/base16-vim'
 
   filetype plugin indent on
 "}}}
