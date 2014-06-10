@@ -1,3 +1,4 @@
 -i
---type-set=drupal=.php,.inc,.module,.install,.info,.engine
 --nosql
+--ignore-file=is:tags
+--type-set=drupal:ext:.php,.inc,.module,.install,.info,.engine

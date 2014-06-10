@@ -150,7 +150,7 @@
     set guifont=Monaco\ for\ Powerline:h12
   endif
   set background=dark
-  colorscheme base16-default
+  colorscheme base16-bright
   syntax on
   set termencoding=utf-8
   set encoding=utf-8
