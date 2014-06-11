@@ -160,6 +160,10 @@
   set laststatus=2
   set cmdheight=2
   set title
+
+  " cursor appearance in insert mode
+  let &t_SI = "\<Esc>[5 q"
+  let &t_EI = "\<Esc>[0 q"
 " }}}
 
 " VIM plugins {{{
