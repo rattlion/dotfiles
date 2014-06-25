@@ -74,7 +74,6 @@ sites/*/*settings*.php
 /sites/*/private
 
 # Ignore default text files
-robots.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
 /INSTALL*.txt
