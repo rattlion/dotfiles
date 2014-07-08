@@ -23,6 +23,7 @@
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'Raimondi/delimitMate'
   Bundle 'cakebaker/scss-syntax.vim'
+  Bundle 'othree/html5.vim'
   Bundle 'edsono/vim-matchit'
   Bundle 'garbas/vim-snipmate'
   Bundle 'godlygeek/tabular'

@@ -1,5 +1,6 @@
 # Aliases
 alias g='git'
+alias gi="git init"
 alias ga='git add -A :/'
 alias gb='git branch'
 alias gba='git branch -a'
