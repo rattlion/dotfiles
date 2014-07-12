@@ -103,7 +103,7 @@
   set noswapfile
   set wildmenu
   set wildmode=list:full
-  set wildignore=*.swp,*.bak,*.pyc,*.class
+  set wildignore+=tags
   set visualbell
   set noerrorbells
   set showcmd
@@ -217,6 +217,8 @@
 " CTRL-P {{{
   let g:ctrlp_working_path_mode = '0'
   let g:ctrlp_show_hidden = 1
+  let g:ctrlp_custom_ignore = 'bower_components\|node_modules\|\v[\/]\.(git|hg|svn)$'
+
 "}}}
 
 " Powerline {{{
