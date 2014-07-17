@@ -1,3 +1,3 @@
 alias rubies='rvm list rubies'
-alias gemsets='rvm gemset list'
+alias gemsets='rvm list gemsets'
 alias gems="gem list"

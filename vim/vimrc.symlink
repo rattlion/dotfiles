@@ -5,7 +5,7 @@
   filetype off
 
   set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+  call vundle#begin()
 
   " let vundle manage vundle
   Bundle 'gmarik/vundle'
@@ -60,6 +60,8 @@
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'rizzatti/dash.vim'
   Bundle 'chriskempson/base16-vim'
+
+  call vundle#end()
 
   filetype plugin indent on
 "}}}
