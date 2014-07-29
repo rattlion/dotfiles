@@ -72,7 +72,13 @@ user_name() {
   echo "%{$fg[yellow]%}%n%{$reset_color%}"
 }
 
-export PROMPT=$'$(user_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%} '
+host_name() {
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "%{$fg[yellow]%}@%m%{$reset_color%}"
+  fi
+}
+
+export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%} '
 set_prompt () {
   export RPROMPT="$(rb_prompt)"
 }
