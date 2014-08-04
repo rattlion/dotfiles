@@ -7,7 +7,7 @@ A grossly opinionated set of system configurations, specific to UNIX.
 Run this:
 
 ```sh
-git clone https://github.com/mattryan/dotfiles.git ~/.dotfiles
+git clone https://github.com/mrevd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
