@@ -11,24 +11,24 @@
   status = auto
   ui     = true
 [alias]
-  diff    = diff --ignore-space-change
-  lol     = log --graph --decorate --abbrev-commit
-  lola    = log --graph --decorate --abbrev-commit --all
-  ls      = ls-files
+  diff = diff --ignore-space-change
+  lol  = log --graph --decorate --abbrev-commit
+  lola = log --graph --decorate --abbrev-commit --all
+  ls   = ls-files
 [diff]
   tool = opendiff
 [difftool]
   prompt = false
 [mergetool]
-  prompt = false
+  prompt     = false
   keepBackup = false
 [merge]
   tool = opendiff
 [apply]
   whitespace = fix
 [core]
-  editor     = vim
-  whitespace = space-before-tab,tab-in-indent,trailing-space
+  editor       = vim
+  whitespace   = space-before-tab,tab-in-indent,trailing-space
   excludesfile = ~/.gitignore_global
 [help]
   autocorrect = 1
