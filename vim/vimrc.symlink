@@ -119,7 +119,7 @@
   set viminfo+=n~/.vim/.viminfo/viminfo
   set completefunc=syntaxcomplete#Complete
 
-  autocmd CursorMovedI *  if pumvisible() == 0|silent! pclose|endif
+  autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
   autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
   nnoremap ; :
@@ -156,7 +156,7 @@
     set guifont=Monaco\ for\ Powerline:h12
   endif
   set background=dark
-  colorscheme base16-bright
+  colorscheme base16-default
   syntax on
   set termencoding=utf-8
   set encoding=utf-8
@@ -206,8 +206,7 @@
   let NERDTreeMouseMode=2
 
   " Don't display these kinds of files
-  let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-              \ '\.o$', '\.so$', '\.egg$', '^\.git$', '\.DS_Store' ]
+  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store' ]
 " }}}
 
 " PHP Doc {{{
