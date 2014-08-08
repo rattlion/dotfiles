@@ -30,10 +30,12 @@ bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
 unbind C-b
 set -g prefix ^A
 
+# ALL SPLITS SHOULD OPEN IN CURRENT DIRECTORY
 bind c new-window -c "#{pane_current_path}"
-bind | split-window -c "#{pane_current_path}"
-bind '\' split -l10 -c "#{pane_current_path}"
-bind '%' split-window -h -p 25 -c "#{pane_current_path}"
+bind '|' split -h -c "#{pane_current_path}"
+bind '\' split -h -p 25 -c "#{pane_current_path}"
+bind '_' split -c "#{pane_current_path}"
+bind '-' split -l10 -c "#{pane_current_path}"
 
 bind * list-clients
 set -g display-panes-time 4000
