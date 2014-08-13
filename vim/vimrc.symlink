@@ -152,7 +152,7 @@
 
 " VIM appearance {{{
   if has("gui_running")
-    set guioptions=egmrt
+    set guioptions=egmt
     set guifont=Monaco\ for\ Powerline:h12
   endif
   set background=dark
