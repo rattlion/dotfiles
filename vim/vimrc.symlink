@@ -130,6 +130,17 @@
   vnoremap j gj
   vnoremap k gk
 
+  " Jump to matching pairs easily, with space
+  nmap <Space> %
+  vmap <Space> %
+
+  " Kill window and fast buffer navigaion
+  noremap K <C-w>c
+  noremap <C-h> <C-w>h
+  noremap <C-j> <C-w>j
+  noremap <C-k> <C-w>k
+  noremap <C-l> <C-w>l
+
   " increment and decrement
   nnoremap <leader>i <C-a>
   nnoremap <leader>d <C-x>
@@ -326,15 +337,6 @@
   " Edit the vimrc file
   nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
   nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-  " Jump to matching pairs easily, with space
-  nmap <Space> %
-  vmap <Space> %
-
-  noremap <C-h> <C-w>h
-  noremap <C-j> <C-w>j
-  noremap <C-k> <C-w>k
-  noremap <C-l> <C-w>l
 
   " Clears the search register
   nmap <silent> <leader>/ :nohlsearch<CR>
