@@ -143,7 +143,7 @@
 
   " increment and decrement
   nnoremap <leader>i <C-a>
-  nnoremap <leader>d <C-x>
+  nnoremap <leader>I <C-x>
 
   " Edit the snippets file
   nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
