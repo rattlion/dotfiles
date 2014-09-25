@@ -218,7 +218,7 @@
   let NERDTreeMouseMode=2
 
   " Don't display these kinds of files
-  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store' ]
+  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store', '^\.sass-cache' ]
 " }}}
 
 " PHP Doc {{{
