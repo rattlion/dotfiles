@@ -32,25 +32,6 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
-
-  # MAMP Files
-  config_folder = "#{ENV["HOME"]}/.mamp"
-  php = `php -i | grep 'Loaded Configuration File'`[/(?<=\=>\s).+$/]
-  targets = [
-    "/etc/hosts",
-    "/var/log/apache2",
-    "/private/var/log/apache2",
-    "/etc/apache2/extra/httpd-vhosts.conf",
-    "/etc/apache2/httpd.conf",
-    php
-  ]
-
-  Dir.mkdir(config_folder) unless File.exists?(config_folder)
-  targets.each do |target|
-    if !File.exists?(File.join(config_folder,  target[/[^\/]+$/])) && File.exists?(target)
-      `ln -s "#{target}" "#{config_folder}/#{target[/[^\/]+$/]}"`
-    end
-  end
 end
 
 task :uninstall do
