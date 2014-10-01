@@ -1,5 +1,5 @@
 .tmp/*
 .undo/*
 bundle/*
-!bundle/vundle
+!bundle/Vundle.vim
 NERDTreeBookmarks
