@@ -135,7 +135,7 @@
   nmap <Space> %
   vmap <Space> %
 
-  " Kill window and fast buffer navigaion
+  " Fast buffer navigaion
   noremap K <C-w>c
   noremap <C-h> <C-w>h
   noremap <C-j> <C-w>j
