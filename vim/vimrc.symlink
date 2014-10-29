@@ -143,8 +143,8 @@
   noremap <C-l> <C-w>l
 
   " increment and decrement
-  nnoremap <leader>i <C-a>
-  nnoremap <leader>I <C-x>
+  nnoremap + <C-a>
+  nnoremap - <C-x>
 
   " Edit the snippets file
   nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
@@ -336,8 +336,10 @@
 
   vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-  " Reselect pasted block
+  " Reselect text
   nnoremap <leader>gp `[v`]
+  vnoremap < <gv
+  vnoremap > >gv
 
   " Edit the vimrc file
   nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
