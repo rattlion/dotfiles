@@ -135,12 +135,18 @@
   nmap <Space> %
   vmap <Space> %
 
-  " Fast buffer navigaion
+  " Fast buffer navigation
   noremap K <C-w>c
   noremap <C-h> <C-w>h
   noremap <C-j> <C-w>j
   noremap <C-k> <C-w>k
   noremap <C-l> <C-w>l
+
+  " Command mode navigation
+  cnoremap <C-h> <Left>
+  cnoremap <C-l> <Right>
+  cnoremap <C-k> <Up>
+  cnoremap <C-j> <Down>
 
   " increment and decrement
   nnoremap + <C-a>
@@ -165,7 +171,7 @@
 " VIM appearance {{{
   if has("gui_running")
     set guioptions=egmt
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+    set guifont=Monaco\ for\ Powerline:h14
   endif
   set background=dark
   colorscheme base16-default
@@ -338,8 +344,6 @@
 
   " Reselect text
   nnoremap <leader>gp `[v`]
-  vnoremap < <gv
-  vnoremap > >gv
 
   " Edit the vimrc file
   nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
