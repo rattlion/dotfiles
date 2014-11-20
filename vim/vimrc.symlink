@@ -171,7 +171,7 @@
 " VIM appearance {{{
   if has("gui_running")
     set guioptions=egmt
-    set guifont=Monaco\ for\ Powerline:h14
+    set guifont=Monaco\ for\ Powerline:h12
   endif
   set background=dark
   colorscheme base16-default
@@ -325,10 +325,10 @@
     augroup end
 
     augroup text
-      autocmd BufWritePre *.php,*.html :%s/“/"/e
-      autocmd BufWritePre *.php,*.html :%s/”/"/e
-      autocmd BufWritePre *.php,*.html :%s/‘/'/e
-      autocmd bufwritepre *.php,*.html :%s/’/'/e
+      autocmd BufWritePre *.php,*.html,*.erb :%s/“/"/e
+      autocmd BufWritePre *.php,*.html,*.erb :%s/”/"/e
+      autocmd BufWritePre *.php,*.html,*.erb :%s/‘/'/e
+      autocmd bufwritepre *.php,*.html,*.erb :%s/’/'/e
     augroup end
 
     augroup dots

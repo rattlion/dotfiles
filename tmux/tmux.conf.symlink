@@ -14,13 +14,13 @@ set -g status-fg white
 set -g status-left-length 30
 set -g status-right-length 60
 set -g status-left " #[fg=magenta]#(hostname) #[default]"
-set -g status-right "#[fg=blue]ⓦ #(curl icanhazip.com)  #[fg=red]%H:%M #[default]"
+set -g status-right "#[fg=colour235]⮂#[bg=colour235,fg=colour1] ⓦ #(curl icanhazip.com) #[bg=colour235,fg=colour237]⮂#[bg=colour237,fg=white] %d %b %I:%M %p #[default]"
 set -g pane-border-bg black
 set -g pane-border-fg black
 set -g pane-active-border-bg black
 set -g pane-active-border-fg black
 
-setw -g window-status-format '#[fg=colour235]#I #[fg=white]#W#[default]  '
+setw -g window-status-format '#[fg=colour237]#I #[fg=white]#W#[default] '
 setw -g window-status-current-format '#[bg=white,fg=black]⮀ #W #[bg=black,fg=white]⮀'
 
 # RELOAD KEY
