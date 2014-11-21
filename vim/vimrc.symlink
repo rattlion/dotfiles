@@ -119,6 +119,7 @@
   set dictionary+=/usr/share/dict/words
   set viminfo+=n~/.vim/.viminfo/viminfo
   set completefunc=syntaxcomplete#Complete
+  set textwidth=80
 
   autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
   autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
