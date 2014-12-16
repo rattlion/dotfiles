@@ -43,7 +43,8 @@ set -g display-panes-time 4000
 bind n next-window
 bind p previous-window
 
-bind ^A last-window
+bind a last-window
+bind . command-prompt -p "swap-window" "swap-window -t %%"
 
 bind K confirm-before "kill-window"
 bind k confirm-before "kill-pane"
