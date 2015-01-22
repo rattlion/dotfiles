@@ -1,11 +1,11 @@
 require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
-task :install do
+task :install, :overwrite do |t, args|
   linkables = Dir.glob('**/*{.symlink}')
 
   skip_all = false
-  overwrite_all = false
+  overwrite_all = args.overwrite || false
   backup_all = false
 
   linkables.each do |linkable|
