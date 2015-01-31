@@ -312,6 +312,10 @@
       autocmd BufRead,BufNewFile .profile set filetype=sh
     augroup END
 
+    augroup elasticbeanstalk
+      autocmd BufRead,BufNewFile *.config set filetype=yaml
+    augroup end
+
     augroup crontab
       set nowritebackup
     augroup end
