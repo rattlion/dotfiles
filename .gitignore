@@ -24,5 +24,3 @@ nbproject
 
 # dotfiles to ignore
 vim/vim.symlink/.netrwhist
-vim/vim.symlink/.viminfo
-secret/*
