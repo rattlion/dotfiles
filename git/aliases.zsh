@@ -23,6 +23,7 @@ alias glr='git pull --rebase'
 alias gm='git merge --no-ff'
 alias gmt="git mergetool --no-prompt"
 alias gp='git push origin HEAD'
+alias gp!='git push origin HEAD -f'
 alias gr='git reset'
 alias grh='git reset --hard'
 alias grhh='git reset --hard HEAD'
