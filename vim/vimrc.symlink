@@ -33,6 +33,7 @@
   Plugin 'jelera/vim-javascript-syntax'
   Plugin 'kana/vim-textobj-user'
   Plugin 'kchmck/vim-coffee-script'
+  Plugin 'keith/swift.vim'
   Plugin 'kien/ctrlp.vim'
   Plugin 'mattn/gist-vim'
   Plugin 'mattn/webapi-vim'
