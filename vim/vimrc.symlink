@@ -19,10 +19,10 @@
   " github repos
   Plugin '2072/PHP-Indenting-for-VIm'
   Plugin 'Arkham/vim-quickfixdo'
-  Plugin 'Lokaltog/vim-powerline'
   Plugin 'MarcWeber/vim-addon-mw-utils'
   Plugin 'Raimondi/delimitMate'
   Plugin 'StanAngeloff/php.vim'
+  Plugin 'bling/vim-airline'
   Plugin 'cakebaker/scss-syntax.vim'
   Plugin 'chriskempson/base16-vim'
   Plugin 'edsono/vim-matchit'
@@ -190,7 +190,6 @@
 " }}}
 
 " VIM plugins {{{
-
 " RSpec.vim mappings {{{
   map <Leader>t :call RunCurrentSpecFile()<CR>
   map <Leader>s :call RunNearestSpec()<CR>
@@ -242,10 +241,10 @@
 
 "}}}
 
-" Powerline {{{
-  let g:Powerline_symbols = 'fancy'
-  let g:Powerline_colorscheme = 'solarized256'
-"}}}
+"" Powerline {{{
+  "let g:Powerline_symbols = 'fancy'
+  "let g:Powerline_colorscheme = 'solarized256'
+""}}}
 
 " Syntastic {{{
   let g:syntastic_error_symbol='✗'
@@ -289,6 +288,21 @@
 
 " Marked "{{{
   let g:marked_app = "Marked"
+"}}}
+
+" Airline "{{{
+  let g:airline_powerline_fonts = 1
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_left_sep = '⮀'
+  let g:airline_left_alt_sep = '⮁'
+  let g:airline_right_sep = '⮂'
+  let g:airline_right_alt_sep = '⮃'
+  let g:airline_symbols.branch = '⭠'
+  let g:airline_symbols.readonly = '⭤'
+  let g:airline_symbols.linenr = '⭡'
+  let g:airline_theme="base16"
 "}}}
 
 "}}}
