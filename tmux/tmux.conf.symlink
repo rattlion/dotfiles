@@ -49,5 +49,8 @@ bind . command-prompt -p "swap-window" "swap-window -t %%"
 bind K confirm-before "kill-window"
 bind k confirm-before "kill-pane"
 
+# CLEAR HISTORY
+bind BSpace clear-history\; display-message "Cleared history"
+
 # LAYOUT
 bind space next-layout

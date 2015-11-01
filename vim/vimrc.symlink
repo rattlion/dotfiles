@@ -174,7 +174,7 @@
 " VIM appearance {{{
   if has("gui_running")
     set guioptions=egmt
-    set guifont=Monaco\ for\ Powerline:h12
+    set guifont=DejaVu\ Sans\ Mono:h14
   endif
   set background=dark
   colorscheme base16-default
@@ -241,11 +241,6 @@
   let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|node_modules\|\v[\/]\.(git|hg|svn)$'
 
 "}}}
-
-"" Powerline {{{
-  "let g:Powerline_symbols = 'fancy'
-  "let g:Powerline_colorscheme = 'solarized256'
-""}}}
 
 " Syntastic {{{
   let g:syntastic_error_symbol='✗'
