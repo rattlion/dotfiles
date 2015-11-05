@@ -71,6 +71,7 @@
 
 " VIM behaviour {{{
   let mapleader=","
+  set gdefault
   set showmode
   set nowrap
   set tabstop=2
@@ -201,8 +202,6 @@
 " }}}
 
 " NERDTree settings {{{
-" Put focus to the NERD Tree with F3 (tricked by quickly closing it and
-" immediately showing it again, since there is no :NERDTreeFocus command)
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
   nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
   nmap <leader>N :NERDTreeClose<CR>
