@@ -38,13 +38,13 @@
   Plugin 'mattn/gist-vim'
   Plugin 'mattn/webapi-vim'
   Plugin 'mhinz/vim-signify'
+  Plugin 'mileszs/ack.vim'
   Plugin 'mrevd/vim-insert-image'
   Plugin 'nelstrom/vim-textobj-rubyblock'
   Plugin 'othree/html5.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'rcyrus/snipmate-snippets-rubymotion'
   Plugin 'rizzatti/dash.vim'
-  Plugin 'rking/ag.vim'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
@@ -114,7 +114,7 @@
   set noerrorbells
   set showcmd
   set nomodeline
-  set cursorline
+  set nocursorline
   set clipboard=unnamed
   set linebreak
   set synmaxcol=800
@@ -122,6 +122,7 @@
   set dictionary+=/usr/share/dict/words
   set viminfo+=n~/.vim/.viminfo/viminfo
   set completefunc=syntaxcomplete#Complete
+  set lazyredraw
 
   autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
   autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
