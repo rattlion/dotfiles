@@ -71,59 +71,57 @@
 
 " VIM behaviour {{{
   let mapleader=","
-  set gdefault
-  set showmode
-  set nowrap
-  set tabstop=2
-  set softtabstop=2
-  set expandtab
-  set shiftwidth=2
-  set shiftround
-  set backspace=indent,eol,start
   set autoindent
+  set backspace=indent,eol,start
+  set clipboard=unnamed
+  set completefunc=syntaxcomplete#Complete
   set copyindent
-  set number
-  set showmatch
-  set ignorecase
-  set smartcase
-  set smarttab
-  set scrolloff=4
-  set virtualedit=all
-  set hlsearch
-  set incsearch
-  set nolist
-  set pastetoggle=<F2>
-  set mouse=a
+  set dictionary+=/usr/share/dict/words
+  set expandtab
   set fileformats=
   set formatoptions+=1
-  set shell=sh
+  set gdefault
   set hidden
-  set switchbuf=useopen
   set history=100
-  set undolevels=1000
-  if v:version >= 730
-    set undofile
-    set undodir=~/.vim/.undo,~/tmp,/tmp
-  endif
+  set hlsearch
+  set ignorecase
+  set incsearch
   set iskeyword+=-
+  set lazyredraw
+  set linebreak
+  set mouse=a
   set nobackup
+  set nocursorline
+  set noerrorbells
+  set nolist
+  set nomodeline
   set noswapfile
+  set nowrap
+  set number
+  set pastetoggle=<F2>
+  set scrolloff=4
+  set shell=sh
+  set shiftround
+  set shiftwidth=2
+  set showcmd
+  set showmatch
+  set showmode
+  set smartcase
+  set smarttab
+  set softtabstop=2
+  set switchbuf=useopen
+  set synmaxcol=800
+  set tabstop=2
+  set ttyfast
+  set undodir=~/.vim/.undo,~/tmp,/tmp
+  set undofile
+  set undolevels=1000
+  set viminfo+=n~/.vim/.viminfo/viminfo
+  set virtualedit=all
+  set visualbell
+  set wildignore+=tags
   set wildmenu
   set wildmode=list:full
-  set wildignore+=tags
-  set visualbell
-  set noerrorbells
-  set showcmd
-  set nomodeline
-  set nocursorline
-  set clipboard=unnamed
-  set linebreak
-  set synmaxcol=800
-  set ttyfast
-  set dictionary+=/usr/share/dict/words
-  set viminfo+=n~/.vim/.viminfo/viminfo
-  set completefunc=syntaxcomplete#Complete
-  set lazyredraw
 
   autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
   autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
