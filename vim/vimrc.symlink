@@ -123,9 +123,6 @@
   set wildmenu
   set wildmode=list:full
 
-  autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
-  autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
   nnoremap ; :
   nnoremap <C-e> 2<C-e>
   nnoremap <C-y> 2<C-y>
