@@ -32574,15 +32574,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>983 394 541 281 0 0 2560 1440 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>309 352 606 456 0 0 1440 877 </string>
+	<string>309 410 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 769 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1280 13 1274 1404 0 0 2560 1417 </string>
+	<string>147 94 1138 724 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>811 4 1060 898 0 0 2560 1417 </string>
+	<string>206 4 1210 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>314 384 1434 1033 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
@@ -33209,7 +33209,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.20500395569620253</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
