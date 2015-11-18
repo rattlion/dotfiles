@@ -32502,7 +32502,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<true/>
 	<key>HighlightTabLabels</key>
@@ -32566,11 +32566,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>498 184 445 77 0 0 1440 877 </string>
+	<string>698 288 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>390 412 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>970 769 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1210 873 0 0 1440 877 </string>
+	<string>3 123 1074 741 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -32814,7 +32816,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>150</integer>
+			<integer>133</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -33213,7 +33215,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>50</integer>
+			<integer>42</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -33379,7 +33381,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0323383377259037</real>
+			<real>1.0262259977409642</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -33392,6 +33394,10 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>468793142.58845198</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -33451,6 +33457,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -33460,7 +33468,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-09T21:49:33Z</date>
+	<date>2015-11-18T04:22:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -33508,6 +33516,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20151105-nightly</string>
+	<string>2.9.20151114-nightly</string>
 </dict>
 </plist>

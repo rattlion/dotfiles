@@ -22,6 +22,7 @@
   Plugin 'MarcWeber/vim-addon-mw-utils'
   Plugin 'Raimondi/delimitMate'
   Plugin 'StanAngeloff/php.vim'
+  Plugin 'alvan/vim-closetag'
   Plugin 'bling/vim-airline'
   Plugin 'cakebaker/scss-syntax.vim'
   Plugin 'chriskempson/base16-vim'
@@ -30,7 +31,6 @@
   Plugin 'godlygeek/tabular'
   Plugin 'henrik/vim-open-url'
   Plugin 'itspriddle/vim-marked'
-  Plugin 'jelera/vim-javascript-syntax'
   Plugin 'kana/vim-textobj-user'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'keith/swift.vim'
@@ -41,9 +41,9 @@
   Plugin 'mileszs/ack.vim'
   Plugin 'mrevd/vim-insert-image'
   Plugin 'nelstrom/vim-textobj-rubyblock'
+  Plugin 'mxw/vim-jsx'
   Plugin 'othree/html5.vim'
   Plugin 'pangloss/vim-javascript'
-  Plugin 'rcyrus/snipmate-snippets-rubymotion'
   Plugin 'rizzatti/dash.vim'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
@@ -87,7 +87,6 @@
   set ignorecase
   set incsearch
   set iskeyword+=-
-  set lazyredraw
   set linebreak
   set mouse=a
   set nobackup
@@ -188,6 +187,10 @@
 " }}}
 
 " VIM plugins {{{
+" DelimitMate  {{{
+    au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
+" }}}
+
 " RSpec.vim mappings {{{
   map <Leader>t :call RunCurrentSpecFile()<CR>
   map <Leader>s :call RunNearestSpec()<CR>
