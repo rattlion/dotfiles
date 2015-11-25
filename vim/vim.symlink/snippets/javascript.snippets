@@ -111,3 +111,16 @@ snippet c
 	${0}
 snippet log
 	console.log(${1})$0
+snippet react
+	'use strict';
+
+	var React = require('react');
+	var ReactDOM = require('react-dom');
+
+	var ${1:Class} = React.createClass({
+		render: function() {
+			return ${0}
+		}
+	});
+
+	module.exports = $1
