@@ -153,6 +153,9 @@
 
   " Edit the snippets file
   nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
+  
+  " Remove trailing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
 
   " Restore cursor position upon reopening files
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
