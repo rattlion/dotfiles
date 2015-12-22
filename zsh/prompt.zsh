@@ -37,13 +37,6 @@ unpushed () {
   $git cherry -v @{upstream} 2>/dev/null
 }
 
-need_push () {
-  if [[ $(unpushed) != "" ]]
-  then
-    echo "⚡"
-  fi
-}
-
 ruby_version() {
   if (( $+commands[rvm-prompt] ))
   then
@@ -78,7 +71,7 @@ host_name() {
   fi
 }
 
-export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
+export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
 set_prompt () {
   export RPROMPT="$(rb_prompt)"
 }
