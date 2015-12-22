@@ -32568,7 +32568,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>1235 935 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>21 35 2514 1359 0 0 2560 1417 </string>
+	<string>21 35 2506 1359 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>685 308 1074 783 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -33365,7 +33365,7 @@
 			<key>Thin Strokes</key>
 			<false/>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.049967640532544377</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
