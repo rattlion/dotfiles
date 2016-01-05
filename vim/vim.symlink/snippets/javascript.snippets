@@ -117,10 +117,14 @@ snippet react
 	var React = require('react');
 	var ReactDOM = require('react-dom');
 
-	var ${1:Class} = React.createClass({
-		render: function() {
+	class ${1:Class} extends React.Component {
+		constructor(props) {
+			super(props);
+		}
+
+		render() {
 			return ${0}
 		}
-	});
+	};
 
 	module.exports = $1
