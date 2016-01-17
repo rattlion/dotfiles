@@ -11,8 +11,8 @@
   Plugin 'gmarik/Vundle.vim'
 
   " vim-scripts repos
-  Plugin 'PDV--phpDocumentor-for-Vim'
   Plugin 'L9'
+  Plugin 'PDV--phpDocumentor-for-Vim'
   Plugin 'YankRing.vim'
   Plugin 'vim-json-bundle'
 
@@ -27,6 +27,7 @@
   Plugin 'cakebaker/scss-syntax.vim'
   Plugin 'chriskempson/base16-vim'
   Plugin 'edsono/vim-matchit'
+  Plugin 'fadein/FIGlet.vim'
   Plugin 'garbas/vim-snipmate'
   Plugin 'godlygeek/tabular'
   Plugin 'henrik/vim-open-url'
@@ -67,7 +68,6 @@
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'vim-ruby/vim-ruby'
-
   call vundle#end()
   filetype plugin indent on
 "}}}
@@ -239,6 +239,9 @@
 
   " Use a single click to fold/unfold directories and a double click to open files
   let NERDTreeMouseMode=2
+
+  " Don't flatten single child directories
+  let NERDTreeCascadeOpenSingleChildDir=1
 
   " Don't display these kinds of files
   let NERDTreeIgnore=[ '^\.git$', '\.DS_Store', '^\.sass-cache' ]
