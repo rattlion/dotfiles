@@ -1,6 +1,4 @@
 autoload colors && colors
-# cheers, @ehrenmurdick
-# http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
 if [[ $+commands[git] == 1 ]]
 then
@@ -37,19 +35,14 @@ unpushed () {
   $git cherry -v @{upstream} 2>/dev/null
 }
 
-ruby_version() {
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
-}
-
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
-  else
-    echo ""
+need_push () {
+  st=$($git status 2>/dev/null)
+  if [[ $st =~ "diverged" ]]; then
+    echo "💥"
+  elif [[ $st =~ "ahead" ]] ; then
+    echo "🚀"
+  elif [[ $st =~ "behind" ]] ; then
+    echo "🎯"
   fi
 }
 
@@ -71,9 +64,40 @@ host_name() {
   fi
 }
 
-export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
-set_prompt () {
-  export RPROMPT="$(rb_prompt)"
+ruby_version() {
+  if (( $+commands[rvm-prompt] ))
+  then
+    echo "$(rvm-prompt v g p | awk '{print $1}')"
+  fi
+}
+
+rb_prompt() {
+  if ! [[ -z "$(ruby_version)" ]]
+  then
+    echo "%{$fg[red]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
+  else
+    echo ""
+  fi
+}
+
+node_version() {
+  if (( $+commands[node] ))
+  then
+    echo "$(node -v | cut -c 2-)"
+  fi
+}
+
+node_prompt() {
+  echo "%{$fg[green]%}⬢%{$reset_color%}%{$fg_bold[grey]%} $(node_version)%{$reset_color%}"
+}
+
+r_prompt() {
+  echo "$(node_prompt) $(rb_prompt)"
+}
+
+export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
+set_prompt() {
+  export RPROMPT="$(r_prompt)"
 }
 
 precmd() {
