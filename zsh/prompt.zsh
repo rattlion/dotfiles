@@ -40,9 +40,9 @@ need_push () {
   if [[ $st =~ "diverged" ]]; then
     echo "💥"
   elif [[ $st =~ "ahead" ]] ; then
-    echo "🚀"
+    echo "⚡️"
   elif [[ $st =~ "behind" ]] ; then
-    echo "🎯"
+    echo "✨"
   fi
 }
 

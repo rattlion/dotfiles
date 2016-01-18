@@ -83,7 +83,6 @@
   set expandtab
   set fileformats=
   set formatoptions+=1
-  set gdefault
   set hidden
   set history=100
   set hlsearch
