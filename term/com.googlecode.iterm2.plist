@@ -32570,11 +32570,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>3317 492 445 256 2560 127 1920 1080 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>1237 935 606 456 0 0 2560 1417 </string>
+	<string>390 410 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>140 22 1258 837 0 0 1440 877 </string>
+	<string>149 91 1074 747 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>140 6 1074 765 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -33461,6 +33461,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/mryan/.dotfiles/term</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -33480,7 +33482,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-14T19:22:01Z</date>
+	<date>2016-01-17T23:52:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -33528,6 +33530,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160113-nightly</string>
+	<string>2.9.20160115-nightly</string>
 </dict>
 </plist>
