@@ -369,13 +369,6 @@
       autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
     augroup end
 
-    "augroup text
-      "autocmd BufWritePre *.php,*.html,*.erb :%s/“/"/e
-      "autocmd BufWritePre *.php,*.html,*.erb :%s/”/"/e
-      "autocmd BufWritePre *.php,*.html,*.erb :%s/‘/'/e
-      "autocmd bufwritepre *.php,*.html,*.erb :%s/’/'/e
-    "augroup end
-
     augroup dots
       autocmd BufRead,BufNewFile vimrc.symlink set filetype=vim
     augroup end
