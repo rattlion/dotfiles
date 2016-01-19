@@ -32574,9 +32574,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>504 88 570 627 0 0 1440 877 </string>
+	<string>497 87 878 672 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>140 6 1074 765 0 0 1440 877 </string>
+	<string>140 141 605 627 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>2942 304 1074 783 2560 127 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -32590,12 +32590,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.098540015518665314</real>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.079498283565044403</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.070959068834781647</real>
+				<real>0.0</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -32608,12 +32612,16 @@
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.27450981736183167</real>
+				<real>0.077523812651634216</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.23921568691730499</real>
+				<real>0.077522493898868561</real>
 				<key>Red Component</key>
-				<real>0.20392157137393951</real>
+				<real>0.077524803578853607</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -32738,12 +32746,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.10089083760976791</real>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.08139483630657196</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.072651907801628113</real>
+				<real>0.0</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -33327,7 +33339,7 @@
 			<key>Thin Strokes</key>
 			<false/>
 			<key>Transparency</key>
-			<real>0.035717917899408286</real>
+			<real>0.088202662721893491</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -33438,7 +33450,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-17T23:52:29Z</date>
+	<date>2016-01-19T03:17:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
