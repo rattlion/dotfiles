@@ -76,7 +76,7 @@
   let mapleader=","
   set autoindent
   set backspace=indent,eol,start
-  set clipboard=unnamed
+  set clipboard=unnamedplus,unnamed
   set completefunc=syntaxcomplete#Complete
   set copyindent
   set dictionary+=/usr/share/dict/words
@@ -244,6 +244,10 @@
 
   " Don't display these kinds of files
   let NERDTreeIgnore=[ '^\.git$', '\.DS_Store', '^\.sass-cache' ]
+" }}}
+
+" NERDCommenter settings {{{
+  let NERDSpaceDelims = 1
 " }}}
 
 " PHP Doc {{{
