@@ -179,8 +179,8 @@
 
 " VIM appearance {{{
   if has("gui_running")
-    set guioptions=egmt
-    set guifont=DejaVu\ Sans\ Mono\ For\ Powerline:h14
+    set guioptions=t
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
   endif
   set background=dark
   colorscheme base16-default
