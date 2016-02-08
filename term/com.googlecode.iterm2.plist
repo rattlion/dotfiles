@@ -32574,7 +32574,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1509 658 520 587 0 0 2560 1417 </string>
+	<string>1006 159 605 667 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>140 141 605 627 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -32615,40 +32615,52 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.077523812651634216</real>
+				<real>0.37444460391998291</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.077522493898868561</real>
+				<real>0.83479779958724976</real>
 				<key>Red Component</key>
-				<real>0.077524803578853607</real>
+				<real>0.58215200901031494</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.40000000596046448</real>
+				<real>0.5725490196078431</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.35686275362968445</real>
+				<real>0.85490196078431369</real>
 				<key>Red Component</key>
-				<real>0.30980393290519714</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.729411780834198</real>
+				<real>0.99922901391983032</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.67843139171600342</real>
+				<real>0.82966315746307373</real>
 				<key>Red Component</key>
-				<real>0.65490198135375977</real>
+				<real>0.64329057931900024</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.90980392694473267</real>
+				<real>0.91578531265258789</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.88235294818878174</real>
+				<real>0.68636560440063477</real>
 				<key>Red Component</key>
-				<real>0.87450981140136719</real>
+				<real>0.9422835111618042</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
@@ -32733,12 +32745,16 @@
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43921568989753723</real>
+				<real>0.35596022009849548</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.52941179275512695</real>
+				<real>0.19317957758903503</real>
 				<key>Red Component</key>
-				<real>0.81568628549575806</real>
+				<real>0.88012897968292236</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -33450,7 +33466,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-05T17:52:40Z</date>
+	<date>2016-02-08T19:08:57Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
