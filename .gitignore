@@ -25,3 +25,4 @@ nbproject
 
 # dotfiles to ignore
 vim/vim.symlink/.netrwhist
+cache

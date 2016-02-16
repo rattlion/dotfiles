@@ -301,10 +301,6 @@
   let g:gist_open_browser_after_post = 1
 " }}}
 
-" Tabular wrapper for TabFirst {{{
-  command! -nargs=1 -range TabFirst exec <line1> . ',' . <line2> . 'Tabularize /^[^' . escape(<q-args>, '\^$.[?*~') . ']*\zs/l0r1'
-"}}}
-
 " Dash {{{
   nmap <silent> <leader>d <Plug>DashGlobalSearch
 "}}}
