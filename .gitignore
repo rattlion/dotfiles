@@ -26,3 +26,4 @@ nbproject
 # dotfiles to ignore
 vim/vim.symlink/.netrwhist
 cache
+term/com.googlecode.iterm2.plist
