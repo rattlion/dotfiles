@@ -81,14 +81,14 @@ rb_prompt() {
 }
 
 node_version() {
-  if (( $+commands[node] ))
-  then
-    echo "$(node -v | cut -c 2-)"
-  fi
+  echo "$(node -v | cut -c 2-)"
 }
 
 node_prompt() {
-  echo "%{$fg[green]%}⬢%{$reset_color%}%{$fg_bold[grey]%} $(node_version)%{$reset_color%}"
+  if (( $+commands[node] ))
+  then
+    echo "%{$fg[green]%}⬢%{$reset_color%}%{$fg_bold[grey]%} $(node_version)%{$reset_color%}"
+  fi
 }
 
 r_prompt() {
