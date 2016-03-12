@@ -38,11 +38,11 @@ unpushed () {
 need_push () {
   st=$($git status 2>/dev/null)
   if [[ $st =~ "diverged" ]]; then
-    echo "💥"
+    echo "%{$fg[red]%}💥%{$reset_color%}"
   elif [[ $st =~ "ahead" ]] ; then
-    echo "⚡️"
+    echo "%{$fg[yellow]%}⚡️%{$reset_color%}"
   elif [[ $st =~ "behind" ]] ; then
-    echo "✨"
+    echo "%{$fg[white]%}✨%{$reset_color%}"
   fi
 }
 
