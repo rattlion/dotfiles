@@ -32,7 +32,7 @@
   Plugin 'godlygeek/tabular'
   Plugin 'henrik/vim-open-url'
   Plugin 'itspriddle/vim-marked'
-  Plugin 'jelera/vim-javascript-syntax'
+  Plugin 'othree/yajs.vim'
   Plugin 'kana/vim-textobj-user'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'keith/swift.vim'
