@@ -200,8 +200,6 @@
   hi Folded            cterm=none ctermbg=none     ctermfg=darkgrey
   hi LineNr            cterm=none ctermbg=none     ctermfg=darkgrey
   hi VertSplit         cterm=none ctermbg=none     ctermfg=magenta
-  hi CursorLine        cterm=none ctermbg=darkgrey ctermfg=none
-  hi Visual            cterm=none ctermbg=darkgrey ctermfg=none
   hi Normal            ctermbg=none
 
   " cursor appearance in insert mode
