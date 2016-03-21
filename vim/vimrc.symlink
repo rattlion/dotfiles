@@ -30,7 +30,6 @@
   Plugin 'fadein/FIGlet.vim'
   Plugin 'garbas/vim-snipmate'
   Plugin 'godlygeek/tabular'
-  Plugin 'henrik/vim-open-url'
   Plugin 'itspriddle/vim-marked'
   Plugin 'othree/yajs.vim'
   Plugin 'kana/vim-textobj-user'
