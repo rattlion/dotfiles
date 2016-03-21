@@ -1,9 +1,8 @@
 alias sudo="sudo "
 alias dots="cd $ZSH"
+alias ls='ls --color=auto'
 alias l="ls -lAh"
-alias so="sanky-pf"
+alias grep='grep --color=auto'
 alias reload!='. ~/.zshrc'
-alias mamp="sudo vim ~/.mamp"
-alias speed="sudo find /private/var/log/asl/* -mtime +5 -exec rm -rf {} \;"
 alias selfupdate="brew update && brew upgrade --all && brew cleanup && rvm get stable"
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
