@@ -182,7 +182,6 @@
     set guioptions=t
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
   endif
-  let g:base16_shell_path="~/.dotfiles/term"
   let base16colorspace="256"
   set t_Co=256
   set background=dark

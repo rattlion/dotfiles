@@ -1,5 +1,5 @@
 #!/bin/bash
-# Base16 Monokai - Shell color setup script
+# Base17 Monokai - Shell color setup script
 # Wimer Hazenberg (http://www.monokai.nl)
 
 if [ "${TERM%%-*}" = 'linux' ]; then
@@ -83,12 +83,12 @@ printf $printf_template 21 $color21
 if [ -n "$ITERM_SESSION_ID" ]; then
   # iTerm2 proprietary escape codes
   printf $printf_template_custom Pg f8f8f2 # forground
-  printf $printf_template_custom Ph 272822 # background
+  printf $printf_template_custom Ph 000000 # background
   printf $printf_template_custom Pi f8f8f2 # bold color
   printf $printf_template_custom Pj 49483e # selection color
   printf $printf_template_custom Pk f8f8f2 # selected text color
   printf $printf_template_custom Pl f8f8f2 # cursor
-  printf $printf_template_custom Pm 272822 # cursor text
+  printf $printf_template_custom Pm 000000 # cursor text
 else
   printf $printf_template_var 10 $color_foreground
   printf $printf_template_var 11 $color_background
