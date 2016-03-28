@@ -31,7 +31,6 @@
   Plugin 'garbas/vim-snipmate'
   Plugin 'godlygeek/tabular'
   Plugin 'itspriddle/vim-marked'
-  Plugin 'othree/yajs.vim'
   Plugin 'kana/vim-textobj-user'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'keith/swift.vim'
@@ -46,6 +45,7 @@
   Plugin 'mxw/vim-jsx'
   Plugin 'nelstrom/vim-textobj-rubyblock'
   Plugin 'othree/html5.vim'
+  Plugin 'othree/yajs.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'rizzatti/dash.vim'
   Plugin 'scrooloose/nerdcommenter'
@@ -179,7 +179,11 @@
 " VIM appearance {{{
   if has("gui_running")
     set guioptions=t
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+    if has("gui_macvim")
+      set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+    else
+      set guifont=Ubuntu\ Mono\ derivative\ Powerline 14
+    endif
   endif
   let base16colorspace="256"
   set t_Co=256
@@ -273,7 +277,6 @@
   let g:ctrlp_working_path_mode = '0'
   let g:ctrlp_show_hidden = 1
   let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|node_modules\|\v[\/]\.(git|hg|svn)$'
-
 "}}}
 
 " Syntastic {{{
