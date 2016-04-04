@@ -87,7 +87,6 @@
   set hlsearch
   set ignorecase
   set incsearch
-  set iskeyword+=-
   set linebreak
   set mouse=a
   set nobackup
