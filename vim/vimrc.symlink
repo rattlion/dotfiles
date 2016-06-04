@@ -195,6 +195,7 @@
   set cmdheight=2
   set title
   set colorcolumn=81
+  hi Normal            cterm=none ctermbg=none ctermfg=none
   hi ColorColumn       cterm=none ctermbg=233  ctermfg=none
   hi SignColumn        cterm=none ctermbg=none ctermfg=none
   hi DiffAdd           cterm=bold ctermbg=none ctermfg=119
