@@ -4,7 +4,6 @@ set -g default-command "which reattach-to-user-namespace >/dev/null && reattach-
 # TERM SETTINGS
 set -gw mode-keys vi
 set -g default-terminal "screen-256color"
-set -g status-utf8 on
 set -g renumber-windows on
 set -g display-time 10000
 
