@@ -27,6 +27,7 @@
   Plugin 'cakebaker/scss-syntax.vim'
   Plugin 'chriskempson/base16-vim'
   Plugin 'edsono/vim-matchit'
+  Plugin 'evidens/vim-twig'
   Plugin 'fadein/FIGlet.vim'
   Plugin 'garbas/vim-snipmate'
   Plugin 'godlygeek/tabular'
@@ -79,7 +80,6 @@
   set completefunc=syntaxcomplete#Complete
   set copyindent
   set dictionary+=/usr/share/dict/words
-  set expandtab
   set fileformats=
   set formatoptions+=1
   set hidden
@@ -101,16 +101,16 @@
   set scrolloff=4
   set shell=sh
   set shiftround
-  set shiftwidth=2
   set showcmd
   set showmatch
   set showmode
   set smartcase
   set smarttab
+  set expandtab
+  set shiftwidth=2
   set softtabstop=2
   set switchbuf=useopen
   set synmaxcol=800
-  set tabstop=2
   set ttyfast
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
