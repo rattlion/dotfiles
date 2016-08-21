@@ -306,10 +306,6 @@
   let g:gist_open_browser_after_post = 1
 " }}}
 
-" Dash {{{
-  nmap <silent> <leader>d <Plug>DashGlobalSearch
-"}}}
-
 " Snipmate {{{
   let g:snipMate = {}
   let g:snipMate.scope_aliases = {}
