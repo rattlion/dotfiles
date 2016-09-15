@@ -180,8 +180,6 @@
       set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
     endif
   endif
-  let base16colorspace="256"
-  set t_Co=256
   set background=dark
   colorscheme base16-mrevd
   syntax on
