@@ -1,5 +1,4 @@
 .tmp/*
 .undo/*
-bundle/*
-!bundle/Vundle.vim
 NERDTreeBookmarks
+plugged
