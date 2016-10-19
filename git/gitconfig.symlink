@@ -23,7 +23,7 @@
   prompt     = false
   keepBackup = false
 [merge]
-  tool = opendiff
+  tool = fugitive
 [apply]
   whitespace = fix
 [core]
