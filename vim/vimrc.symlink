@@ -203,6 +203,8 @@
   hi ColorColumn       cterm=none ctermbg=235  ctermfg=none
   hi CursorLine        cterm=none ctermbg=235  ctermfg=none
   hi Visual            cterm=none ctermbg=248  ctermfg=none
+  hi Pmenu             cterm=none ctermbg=59   ctermfg=15
+  hi PmenuSel          cterm=none ctermbg=188  ctermfg=0
 
   " cursor appearance in insert mode
   let &t_SI = "\<Esc>[5 q"
