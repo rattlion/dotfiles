@@ -31,7 +31,6 @@
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
   Plug 'itspriddle/vim-marked'
-  Plug 'jelera/vim-javascript-syntax'
   Plug 'kana/vim-textobj-user'
   Plug 'kchmck/vim-coffee-script'
   Plug 'keith/swift.vim'
