@@ -186,6 +186,8 @@
   set cmdheight=2
   set title
   set colorcolumn=81
+
+  " Colorscheme highlight overrides
   hi Normal            cterm=none ctermbg=none ctermfg=none
   hi SignColumn        cterm=none ctermbg=none ctermfg=none
   hi DiffAdd           cterm=bold ctermbg=none ctermfg=119
@@ -207,6 +209,7 @@
   hi Search            cterm=none ctermbg=012  ctermfg=0
   hi IncSearch         cterm=none ctermbg=012  ctermfg=0
   hi StatusLine        cterm=none ctermbg=012  ctermfg=0
+  hi Todo        cterm=none ctermbg=007  ctermfg=008
 
   " cursor appearance in insert mode
   let &t_SI = "\<Esc>[5 q"
