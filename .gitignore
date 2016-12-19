@@ -27,4 +27,5 @@ nbproject
 vim/vim.symlink/.netrwhist
 cache
 term/com.googlecode.iterm2.plist
+vim/vim.symlink/autoload/plug.vim
 vim/vim.symlink/autoload/plug.vim.old
