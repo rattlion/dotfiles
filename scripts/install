@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR=~
+FILES=**/*.symlink
+
+for f in $FILES
+do
+  filename=$(basename $f)
+  link="$DIR/.${filename%.*}"
+  dest="$PWD/$f"
+  echo "Installing $link"
+  ln -sfn $dest $link
+done

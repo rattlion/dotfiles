@@ -9,7 +9,7 @@ Run this:
 ```sh
 git clone https://github.com/mrevd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-rake install
+./install
 ```
 
 Symlinks everything to your $HOME dir.
@@ -35,4 +35,6 @@ There's a few special files in the hierarchy.
 
 ## thanks
 
-I forked [Zach Holman](https://github.com/holman/)'s excellent [dotfiles](http://github.com/holman/dotfiles) who forked [Ryan Bates'](http://github.com/ryanb) and I'm now rolling out my own.
+I forked [Zach Holman](https://github.com/holman/)'s excellent
+[dotfiles](http://github.com/holman/dotfiles) who forked [Ryan Bates'](http://github.com/ryanb)
+and I'm now rolling out my own.
