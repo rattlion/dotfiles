@@ -11,6 +11,7 @@
   status = auto
   ui     = true
 [alias]
+  co   = checkout
   diff = diff --ignore-space-change
   lol  = log --graph --decorate --abbrev-commit
   lola = log --graph --decorate --abbrev-commit --all

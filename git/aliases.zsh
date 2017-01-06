@@ -7,7 +7,6 @@ alias gc!='git commit -v --amend'
 alias gc='git commit -v'
 alias gca!='git commit -v -a --amend'
 alias gca='git commit -v -a'
-alias gco='git checkout'
 alias gd='git diff'
 alias gf='git fetch --all -p'
 alias gi="git init"
