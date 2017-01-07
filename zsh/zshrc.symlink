@@ -1,14 +1,6 @@
-# shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
+export PROJECTS=~/Code
 
-# your project folder that we can `c [tab]` to
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  export PROJECTS=/srv/www
-else
-  export PROJECTS=~/Code
-fi
-
-# all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
@@ -28,7 +20,7 @@ done
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
+# load every completion file after autocomplete loads
 for file in ${(M)config_files:#**/completion.zsh}
 do
   source $file
@@ -36,8 +28,7 @@ done
 
 unset config_files
 
-# use .secretrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
+# use .secretrc for SUPER SECRET or OS specific things
 if [[ -a ~/.secretrc ]]
 then
   source ~/.secretrc

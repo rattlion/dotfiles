@@ -1,13 +1,22 @@
 #!/bin/bash
 
-DIR=~
-FILES=**/*.symlink
+SYMLINKS=**/*.symlink
+TEMPLATES=**/*.template
 
-for f in $FILES
+for f in $SYMLINKS
 do
   filename=$(basename $f)
-  link="$DIR/.${filename%.*}"
-  dest="$PWD/$f"
-  echo "Installing $link"
-  ln -sfn $dest $link
+  dest="$HOME/.${filename%.*}"
+  target="$PWD/$f"
+  echo "Installing $dest"
+  ln -sfn $target $dest
+done
+
+for f in $TEMPLATES
+do
+  filename=$(basename $f)
+  dest="$HOME/.${filename%.*}"
+  target="$PWD/$f"
+  echo "Installing $dest"
+  cp -i $target $dest
 done
