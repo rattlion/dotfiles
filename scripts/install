@@ -18,5 +18,5 @@ do
   dest="$HOME/.${filename%.*}"
   target="$PWD/$f"
   echo "Installing $dest"
-  cp -i $target $dest
+  cp -i $target $dest ||:
 done
