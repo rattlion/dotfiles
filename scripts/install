@@ -5,18 +5,18 @@ TEMPLATES=**/*.template
 
 for f in $SYMLINKS
 do
+  target="$PWD/$f"
   filename=$(basename $f)
   dest="$HOME/.${filename%.*}"
-  target="$PWD/$f"
   echo "Installing $dest"
   ln -sfn $target $dest
 done
 
 for f in $TEMPLATES
 do
+  target="$PWD/$f"
   filename=$(basename $f)
   dest="$HOME/.${filename%.*}"
-  target="$PWD/$f"
   echo "Installing $dest"
   cp -i $target $dest ||:
 done
