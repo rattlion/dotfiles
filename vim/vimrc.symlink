@@ -43,14 +43,12 @@
   Plug 'moll/vim-node'
   Plug 'mrevd/vim-insert-image'
   Plug 'mxw/vim-jsx'
-  Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'scrooloose/syntastic'
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'thoughtbot/vim-rspec'
   Plug 'tomtom/tlib_vim'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-dispatch'
@@ -222,14 +220,6 @@
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 " }}}
 
-" RSpec.vim mappings {{{
-  map <Leader>t :call RunCurrentSpecFile()<CR>
-  map <Leader>s :call RunNearestSpec()<CR>
-  map <Leader>l :call RunLastSpec()<CR>
-  map <Leader>a :call RunAllSpecs()<CR>
-  let g:rspec_command = "Dispatch rspec {spec}"
-" }}}
-
 " NERDTree settings {{{
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
   nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
@@ -302,7 +292,6 @@
 " }}}
 
 " Gist-vim {{{
-  let g:gist_clip_command = 'pbcopy'
   let g:gist_detect_filetype = 1
   let g:gist_open_browser_after_post = 1
 " }}}
