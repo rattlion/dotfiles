@@ -47,19 +47,16 @@
   Plug 'pangloss/vim-javascript'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tomtom/tlib_vim'
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-liquid'
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'vim-ruby/vim-ruby'
+  Plug 'w0rp/ale'
   call plug#end()
   "}}}
 
@@ -267,20 +264,9 @@
   let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|node_modules\|\v[\/]\.(git|hg|svn)$'
 "}}}
 
-" Syntastic {{{
-  let g:syntastic_mode_map = { 'mode': 'active',
-    \ 'active_filetypes': [],
-    \ 'passive_filetypes': ['html', 'xhtml'] }
-
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-
-  let g:syntastic_error_symbol='✗'
-  let g:syntastic_warning_symbol='⚠'
-  let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
-
-  let g:syntastic_php_checkers=['php']
-  let g:syntastic_javascript_checkers = ['eslint']
+" ALE {{{
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " }}}
 
 " Yankring {{{
