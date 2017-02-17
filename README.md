@@ -1,4 +1,4 @@
-## mattryan does dotfiles ryan bates style
+## mattryan does dotfiles
 
 A grossly opinionated set of system configurations, specific to UNIX.
 
@@ -9,12 +9,18 @@ Run this:
 ```sh
 git clone https://github.com/mrevd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install
+make
 ```
 
-Symlinks everything to your $HOME dir.
+## uninstall
+```sh
+cd ~/.dotfiles
+make clean
+```
 
-Update this `git/gitconfig.symlink`.
+Symlinks everything except templates to your $HOME dir. Templates are copied.
+
+For example: `~/.gitconfig` is copied from `~/.dotfiles/git/gitconfig.template`.
 
 ## components
 
@@ -32,9 +38,13 @@ There's a few special files in the hierarchy.
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
+- **topic/\*.template**: Any files ending in `*.template` get copied into
+  your `$HOME`. This is so you can keep the file versioned and prepared for
+  other systems while maintaining unique settings across environments.
 
 ## thanks
 
-I forked [Zach Holman](https://github.com/holman/)'s excellent
-[dotfiles](http://github.com/holman/dotfiles) who forked [Ryan Bates'](http://github.com/ryanb)
-and I'm now rolling out my own.
+This project started out as a fork of
+[Zach Holman](https://github.com/holman/)'s excellent
+[dotfiles](http://github.com/holman/dotfiles) which at the time was a fork of
+[Ryan Bates'](http://github.com/ryanb). I've been updating this set since 2012.
