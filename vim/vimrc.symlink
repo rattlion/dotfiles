@@ -363,8 +363,8 @@
       autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
     augroup end
 
-    augroup liquid
-      autocmd BufNewFile,BufReadPost *.fr.liquid let b:liquid_subtype = 'html'
+    augroup readme
+      autocmd BufNewFile,BufReadPost *.md set spell
     augroup end
 
     augroup dots
