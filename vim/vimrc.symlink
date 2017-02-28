@@ -167,9 +167,9 @@
   if has("gui_running")
     set guioptions=t
     if has("gui_macvim")
-      set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
     else
-      set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
     endif
   endif
   set background=dark
