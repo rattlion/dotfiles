@@ -27,7 +27,7 @@
   Plug 'bling/vim-airline'
   Plug 'cakebaker/scss-syntax.vim'
   Plug 'chriskempson/base16-vim'
-  Plug 'fadein/FIGlet.vim'
+  Plug 'fadein/vim-FIGlet'
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
   Plug 'itspriddle/vim-marked'
