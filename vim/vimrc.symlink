@@ -12,17 +12,14 @@
 
   " vim-scripts repos
   Plug 'L9'
-  Plug 'PDV--phpDocumentor-for-Vim'
   Plug 'YankRing.vim'
   Plug 'vim-json-bundle'
   Plug 'matchit.zip'
 
   " github repos
-  Plug '2072/PHP-Indenting-for-VIm'
   Plug 'Arkham/vim-quickfixdo'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'Raimondi/delimitMate'
-  Plug 'StanAngeloff/php.vim'
   Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
   Plug 'cakebaker/scss-syntax.vim'
