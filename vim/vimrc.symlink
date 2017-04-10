@@ -239,7 +239,8 @@
   let NERDTreeMouseMode=2
 
   " Don't flatten single child directories
-  let NERDTreeCascadeOpenSingleChildDir=1
+  let NERDTreeCascadeSingleChildDir=0
+  let NERDTreeCascadeOpenSingleChildDir=0
 
   " Don't display these kinds of files
   let NERDTreeIgnore=[ '^\.git$', '\.DS_Store', '^\.sass-cache' ]
