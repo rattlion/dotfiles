@@ -65,8 +65,7 @@
   set completefunc=syntaxcomplete#Complete
   set copyindent
   set dictionary+=/usr/share/dict/words
-  set fileformats=
-  set formatoptions+=1
+  set formatoptions+=1,j
   set hidden
   set history=100
   set hlsearch
@@ -139,7 +138,7 @@
   " Edit the snippets file
   nmap <silent> <leader>es :vsp $HOME/.vim/snippets/_.snippets<CR>
 
-  " Remove trailing whitespace on save
+  " " Remove trailing whitespace on save
   function! s:TrimTrailingWhitespace()
     let s:view = winsaveview()
     try
@@ -263,8 +262,8 @@
 "}}}
 
 " ALE {{{
-  let g:ale_set_loclist = 0
-  let g:ale_set_quickfix = 1
+  let g:ale_set_quickfix = 0
+  let g:ale_set_loclist = 1
 " }}}
 
 " Yankring {{{
