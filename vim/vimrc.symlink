@@ -11,10 +11,10 @@
   command! PU PlugUpdate | PlugUpgrade
 
   " vim-scripts repos
-  Plug 'L9'
-  Plug 'YankRing.vim'
-  Plug 'vim-json-bundle'
-  Plug 'matchit.zip'
+  Plug 'vim-scripts/L9'
+  Plug 'vim-scripts/YankRing.vim'
+  Plug 'vim-scripts/vim-json-bundle'
+  Plug 'vim-scripts/matchit.zip'
 
   " github repos
   Plug 'Arkham/vim-quickfixdo'
@@ -27,6 +27,7 @@
   Plug 'fadein/vim-FIGlet'
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
+  Plug 'hashivim/vim-terraform'
   Plug 'itspriddle/vim-marked'
   Plug 'kana/vim-textobj-user'
   Plug 'kchmck/vim-coffee-script'
@@ -327,6 +328,10 @@
 
 " JSX "{{{
   let g:jsx_ext_required = 0
+"}}}
+
+" Terraform "{{{
+  let g:terraform_align=1
 "}}}
 
 "}}}
