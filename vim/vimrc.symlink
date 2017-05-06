@@ -16,7 +16,7 @@
   Plug 'vim-scripts/vim-json-bundle'
   Plug 'vim-scripts/matchit.zip'
 
-  " github repos
+  " Github repos
   Plug 'Arkham/vim-quickfixdo'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'Raimondi/delimitMate'
@@ -30,10 +30,8 @@
   Plug 'hashivim/vim-terraform'
   Plug 'itspriddle/vim-marked'
   Plug 'kana/vim-textobj-user'
-  Plug 'kchmck/vim-coffee-script'
   Plug 'keith/swift.vim'
   Plug 'kien/ctrlp.vim'
-  Plug 'lumiliet/vim-twig'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
   Plug 'mhinz/vim-signify'
@@ -164,13 +162,13 @@
   if has("gui_running")
     set guioptions=t
     if has("gui_macvim")
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+      set guifont=Ubuntu\ Mono\ derivative\ Powerline:h12
     else
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+      set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
     endif
   endif
   set background=dark
-  colorscheme base16-mrevd
+  colorscheme base16-default-dark
   syntax on
   set termencoding=utf-8
   set encoding=utf-8
