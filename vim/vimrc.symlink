@@ -28,7 +28,6 @@
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
   Plug 'hashivim/vim-terraform'
-  Plug 'itspriddle/vim-marked'
   Plug 'kana/vim-textobj-user'
   Plug 'keith/swift.vim'
   Plug 'kien/ctrlp.vim'
