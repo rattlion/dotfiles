@@ -99,7 +99,7 @@
   set undolevels=1000
   set viminfo+=n~/.vim/.viminfo/viminfo
   set virtualedit=all
-  set visualbell
+  set novisualbell
   set wildignore+=tags
   set wildmenu
   set wildmode=list:full
