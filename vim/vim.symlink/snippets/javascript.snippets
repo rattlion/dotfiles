@@ -98,8 +98,6 @@ snippet try
 	} catch (${2:e}) {
 	}
 # console.log (Firebug)
-snippet cl
-	console.log(${1});
 snippet pd
 	preventDefault();
 snippet c
@@ -110,7 +108,9 @@ snippet c
 	 **/
 	${0}
 snippet log
-	console.log(${1})$0
+	console.log(${1});$0
+snippet warn
+	console.warn(${1});$0
 snippet doc
 	/**
 	 * ${1:Function Description}
