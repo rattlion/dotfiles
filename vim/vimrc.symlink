@@ -13,7 +13,6 @@
   " vim-scripts repos
   Plug 'vim-scripts/L9'
   Plug 'vim-scripts/YankRing.vim'
-  Plug 'vim-scripts/vim-json-bundle'
   Plug 'vim-scripts/matchit.zip'
 
   " Github repos
@@ -22,11 +21,12 @@
   Plug 'Raimondi/delimitMate'
   Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
-  Plug 'cakebaker/scss-syntax.vim'
   Plug 'chriskempson/base16-vim'
+  Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
+  Plug 'hail2u/vim-css3-syntax'
   Plug 'hashivim/vim-terraform'
   Plug 'kana/vim-textobj-user'
   Plug 'keith/swift.vim'
@@ -335,6 +335,10 @@
 
 " Terraform "{{{
   let g:terraform_align=1
+"}}}
+
+" JSON "{{{
+  let g:vim_json_syntax_conceal = 0
 "}}}
 
 "}}}
