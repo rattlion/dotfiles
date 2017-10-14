@@ -29,7 +29,6 @@
   Plug 'hail2u/vim-css3-syntax'
   Plug 'hashivim/vim-terraform'
   Plug 'kana/vim-textobj-user'
-  Plug 'keith/swift.vim'
   Plug 'kien/ctrlp.vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
@@ -158,14 +157,6 @@
 " }}}
 
 " VIM appearance {{{
-  if has("gui_running")
-    set guioptions=t
-    if has("gui_macvim")
-      set guifont=Ubuntu\ Mono\ derivative\ Powerline:h12
-    else
-      set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-    endif
-  endif
   set background=dark
   colorscheme base16-default-dark
   syntax on
@@ -247,12 +238,6 @@
   let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
-" PHP Doc {{{
-  inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
-  nnoremap <leader>pd :call PhpDocSingle()<CR>
-  vnoremap <leader>pd :call PhpDocRange()<CR>
-"}}}
-
 " CTRL-P {{{
   let g:ctrlp_working_path_mode = '0'
   let g:ctrlp_show_hidden = 1
@@ -282,10 +267,6 @@
   let g:snipMate.scope_aliases = {}
   let g:snipMate.scope_aliases['scss'] = 'css'
   let g:snipMate.scope_aliases['javascript.jsx'] = 'html'
-"}}}
-
-" Marked "{{{
-  let g:marked_app = "Marked"
 "}}}
 
 " Airline "{{{
@@ -345,62 +326,40 @@
 
 " FileType {{{
   if has("autocmd")
-    " Drupal *.module and *.install files.
-    augroup module
-      autocmd BufRead,BufNewFile *.module set filetype=php
-      autocmd BufRead,BufNewFile *.install set filetype=php
-      autocmd BufRead,BufNewFile *.test set filetype=php
-      autocmd BufRead,BufNewFile *.inc set filetype=php
-      autocmd BufRead,BufNewFile *.profile set filetype=php
-      autocmd BufRead,BufNewFile *.view set filetype=php
-      autocmd BufRead,BufNewFile *.theme set filetype=php
-    augroup END
-
     augroup conf
-      autocmd BufRead,BufNewFile *.symlink set filetype=zsh
+      autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
     augroup END
 
     augroup sh
-      autocmd BufRead,BufNewFile .profile set filetype=sh
+      autocmd BufRead,BufNewFile .profile setlocal filetype=sh
     augroup END
 
     augroup crontab
-      set nowritebackup
+      autocmd filetype crontab setlocal nobackup nowritebackup
     augroup end
 
     augroup apache
-      autocmd BufRead,BufNewFile httpd-vhosts.conf set filetype=apache
+      autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
     augroup end
 
     augroup readme
-      autocmd BufNewFile,BufReadPost *.md set spell
-    augroup end
-
-    augroup dots
-      autocmd BufRead,BufNewFile vimrc.symlink set filetype=vim
+      autocmd BufNewFile,BufReadPost *.md setlocal spell
     augroup end
   endif
 "}}}
 
 " Misc mappings {{{
-  cmap w!! %!sudo tee > /dev/null %
-
-  vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
   " Reselect text
   nnoremap <leader>gp `[v`]
 
   " Edit the vimrc file
-  nmap <silent> <leader>ev :e ~/.dotfiles/vim/vimrc.symlink<CR>
+  nmap <silent> <leader>ev :e $MYVIMRC<CR>
   nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
   " Clears the search register
   nmap <silent> <leader>/ :nohlsearch<CR>
 
-  " Pull word under cursor into LHS of a substitute (for quick search and replace)
-  nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
-
   iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
-  iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
+  iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi
+  iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi. Integer hendrerit lacus sagittis erat fermentum tincidunt. Cras vel dui neque. In sagittis commodo luctus. Mauris non metus dolor, ut suscipit dui. Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum. Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
 "}}}
