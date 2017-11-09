@@ -64,22 +64,6 @@ host_name() {
   fi
 }
 
-ruby_version() {
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt v g p | awk '{print $1}')"
-  fi
-}
-
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg[red]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
-  else
-    echo ""
-  fi
-}
-
 node_version() {
   echo "$(node -v | cut -c 2-)"
 }
@@ -92,10 +76,10 @@ node_prompt() {
 }
 
 r_prompt() {
-  echo "$(node_prompt) $(rb_prompt)"
+  echo "$(node_prompt)"
 }
 
-export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%} '
+export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
 set_prompt() {
   export RPROMPT="$(r_prompt)"
 }
