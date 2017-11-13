@@ -244,11 +244,6 @@
   let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|build\|coverage\|node_modules\|\v[\/]\.(git|hg|svn)$'
 "}}}
 
-" ALE {{{
-  "let g:ale_set_loclist = 0
-  let g:ale_set_quickfix = 1
-" }}}
-
 " Yankring {{{
   let g:yankring_history_dir = '$HOME/.vim/.tmp'
   nmap <leader>r :YRShow<CR>
