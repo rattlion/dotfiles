@@ -1,4 +1,4 @@
-" Maintained by Matt Ryan <m@mrevd.me>
+" Maintained by Matt Ryan
 
 " Plug {{{
   if empty(glob('~/.vim/autoload/plug.vim'))
