@@ -34,19 +34,14 @@ bind '\' split -h -l 80 -c "#{pane_current_path}"
 bind '_' split -c "#{pane_current_path}"
 bind '-' split -l10 -c "#{pane_current_path}"
 
-bind * list-clients
 set -g display-panes-time 4000
 
+bind a display-panes
 bind n next-window
 bind p previous-window
-
-bind a last-window
+bind q confirm-before "kill-window"
+bind w confirm-before "kill-pane"
 bind . command-prompt -p "swap-window" "swap-window -t %%"
-
-bind K confirm-before "kill-window"
-bind k confirm-before "kill-pane"
-
-# CLEAR HISTORY
 bind BSpace clear-history\; display-message "Cleared history"
 
 # LAYOUT

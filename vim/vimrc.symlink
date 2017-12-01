@@ -117,7 +117,6 @@
   vmap <Space> %
 
   " Fast buffer navigation
-  noremap K <C-w>c
   noremap <C-h> <C-w>h
   noremap <C-j> <C-w>j
   noremap <C-k> <C-w>k
