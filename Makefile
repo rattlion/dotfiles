@@ -1,4 +1,4 @@
-NAME=mrevdots
+NAME=rattliondots
 SHELL=/bin/bash
 
 RED:=\033[0;31m

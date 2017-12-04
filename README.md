@@ -8,7 +8,7 @@ aiming to run on macOS.
 Run this:
 
 ```sh
-git clone https://github.com/mrevd/dotfiles.git ~/.dotfiles
+git clone https://github.com/rattlion/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 make
 ```
