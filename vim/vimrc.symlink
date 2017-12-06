@@ -75,6 +75,7 @@
   set nocursorline
   set noerrorbells
   set nolist
+  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
   set nomodeline
   set noswapfile
   set nowrap
@@ -312,6 +313,7 @@
     augroup go
       autocmd filetype go setlocal tabstop=4
       autocmd filetype go setlocal shiftwidth=4
+      autocmd filetype go setlocal noexpandtab
     augroup end
   endif
 "}}}
