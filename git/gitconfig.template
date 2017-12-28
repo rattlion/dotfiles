@@ -20,11 +20,13 @@
   tool = fugitive
 [difftool]
   prompt = false
+[merge]
+  tool = fugitive
 [mergetool]
   prompt     = false
   keepBackup = false
-[merge]
-  tool = fugitive
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [apply]
   whitespace = fix
 [core]
@@ -33,5 +35,3 @@
   excludesfile = ~/.gitignore_global
 [help]
   autocorrect = 1
-[mergetool "fugitive"]
-  cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
