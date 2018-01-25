@@ -21,7 +21,7 @@
 [difftool]
   prompt = false
 [merge]
-  tool = fugitive
+  tool = meld
 [mergetool]
   prompt     = false
   keepBackup = false
