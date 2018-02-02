@@ -63,6 +63,7 @@
   set completefunc=syntaxcomplete#Complete
   set copyindent
   set dictionary+=/usr/share/dict/words
+  set expandtab
   set formatoptions+=1,j
   set hidden
   set history=100
@@ -70,37 +71,37 @@
   set ignorecase
   set incsearch
   set linebreak
+  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
   set mouse=a
   set nobackup
   set nocursorline
   set noerrorbells
   set nolist
-  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
   set nomodeline
   set noswapfile
+  set novisualbell
   set nowrap
   set number
   set pastetoggle=<F2>
   set scrolloff=4
   set shell=sh
   set shiftround
+  set shiftwidth=2
   set showcmd
   set showmatch
   set showmode
   set smartcase
   set smarttab
-  set expandtab
-  set shiftwidth=2
   set softtabstop=2
   set switchbuf=useopen
   set synmaxcol=800
+  set textwidth=0
   set ttyfast
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
   set undolevels=1000
   set viminfo+=n~/.vim/.viminfo/viminfo
   set virtualedit=all
-  set novisualbell
   set wildignore+=tags
   set wildmenu
   set wildmode=list:full
@@ -161,12 +162,12 @@
   set background=dark
   colorscheme base16-default-dark
   syntax on
-  set termencoding=utf-8
+  set cmdheight=2
+  set colorcolumn=81
   set encoding=utf-8
   set laststatus=2
-  set cmdheight=2
+  set termencoding=utf-8
   set title
-  set colorcolumn=81
 
   " Colorscheme highlight overrides
   hi Normal            cterm=none ctermbg=none ctermfg=none
