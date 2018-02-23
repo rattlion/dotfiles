@@ -16,7 +16,6 @@
   Plug 'vim-scripts/matchit.zip'
 
   " Github repos
-  Plug 'fatih/vim-go'
   Plug 'Arkham/vim-quickfixdo'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'Raimondi/delimitMate'
@@ -25,6 +24,7 @@
   Plug 'chriskempson/base16-vim'
   Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
+  Plug 'fatih/vim-go'
   Plug 'garbas/vim-snipmate'
   Plug 'godlygeek/tabular'
   Plug 'hail2u/vim-css3-syntax'
@@ -36,10 +36,11 @@
   Plug 'mhinz/vim-signify'
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
-  Plug 'rattlion/vim-insert-image'
   Plug 'mxw/vim-jsx'
+  Plug 'niftylettuce/vim-jinja'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
+  Plug 'rattlion/vim-insert-image'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'terryma/vim-multiple-cursors'
@@ -264,6 +265,7 @@
   let g:snipMate.scope_aliases = {}
   let g:snipMate.scope_aliases['scss'] = 'css'
   let g:snipMate.scope_aliases['javascript.jsx'] = 'html'
+  let g:snipMate.scope_aliases['jinja'] = 'html'
 "}}}
 
 " Airline "{{{
