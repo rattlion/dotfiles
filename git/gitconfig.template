@@ -16,10 +16,6 @@
   lol  = log --graph --decorate --abbrev-commit
   lola = log --graph --decorate --abbrev-commit --all
   ls   = ls-files
-[diff]
-  tool = fugitive
-[difftool]
-  prompt = false
 [merge]
   tool = meld
 [mergetool]
