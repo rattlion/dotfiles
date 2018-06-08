@@ -40,6 +40,7 @@
   Plug 'niftylettuce/vim-jinja'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
+  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'rattlion/vim-insert-image'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
@@ -200,6 +201,11 @@
 " }}}
 
 " VIM plugins {{{
+
+" Prettier {{{
+    let g:prettier#autoformat = 0
+    autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" }}}
 
 " DelimitMate  {{{
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
