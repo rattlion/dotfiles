@@ -46,6 +46,7 @@
   Plug 'scrooloose/nerdtree'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tomtom/tlib_vim'
+  Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
