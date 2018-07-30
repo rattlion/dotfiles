@@ -16,7 +16,6 @@
   Plug 'vim-scripts/matchit.zip'
 
   " Github repos
-  Plug 'Arkham/vim-quickfixdo'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'Raimondi/delimitMate'
   Plug 'alvan/vim-closetag'
