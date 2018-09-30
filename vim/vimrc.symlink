@@ -73,7 +73,6 @@
   set incsearch
   set linebreak
   set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
-  set mouse=a
   set nobackup
   set nocursorline
   set noerrorbells
@@ -190,6 +189,10 @@
   hi IncSearch         cterm=none ctermbg=012  ctermfg=0
   hi StatusLine        cterm=none ctermbg=012  ctermfg=0
   hi Todo              cterm=none ctermbg=007  ctermfg=008
+  hi QuickFixLine      cterm=none ctermbg=235  ctermfg=none
+  hi CursorColumn      cterm=none ctermbg=235  ctermfg=none
+  hi CursorLineNr      cterm=none ctermbg=235  ctermfg=none
+
 
   " cursor appearance in insert mode
   let &t_SI = "\<Esc>[5 q"
@@ -228,15 +231,14 @@
   " Highlight the selected entry in the tree
   let NERDTreeHighlightCursorline=1
 
-  " Use a single click to fold/unfold directories and a double click to open files
-  let NERDTreeMouseMode=2
-
   " Don't flatten single child directories
   let NERDTreeCascadeSingleChildDir=0
   let NERDTreeCascadeOpenSingleChildDir=0
 
   " Don't display these kinds of files
-  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store', '^\.sass-cache' ]
+  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store' ]
+
+  let NERDTreeStatusline=''
 " }}}
 
 " NERDCommenter settings {{{
@@ -287,6 +289,10 @@
 
 " FileType {{{
   if has("autocmd")
+    augroup quickfix
+      autocmd filetype quickfix setlocal cursorline
+    augroup END
+
     augroup conf
       autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
     augroup END
