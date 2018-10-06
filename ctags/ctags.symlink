@@ -1,3 +1,2 @@
 -R
---langmap=php:+.engine.inc.module.theme
---languages=-javascript,sql
+--languages=-javascript
