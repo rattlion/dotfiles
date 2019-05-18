@@ -20,7 +20,6 @@
   Plug 'Raimondi/delimitMate'
   Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
-  Plug 'chriskempson/base16-vim'
   Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
   Plug 'fatih/vim-go'
