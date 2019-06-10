@@ -212,6 +212,7 @@
 " NERDTree settings {{{
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
   nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+  nmap <leader>M :NERDTreeClose<CR>
   nmap <leader>N :NERDTreeClose<CR>
 
   " Store the bookmarks file
