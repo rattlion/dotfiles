@@ -58,6 +58,7 @@
 
 " VIM behaviour {{{
   let mapleader=","
+  set mouse=a
   set autoindent
   set backspace=indent,eol,start
   set clipboard=unnamedplus,unnamed
