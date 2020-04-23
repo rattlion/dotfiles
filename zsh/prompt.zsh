@@ -47,7 +47,7 @@ need_push () {
 }
 
 directory_name() {
-  echo "%{$fg[blue]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg[blue]%}%1/%{$reset_color%}"
 }
 
 machine_name() {
