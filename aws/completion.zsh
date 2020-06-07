@@ -1,5 +1,1 @@
-if [[ -f /usr/local/bin/aws_zsh_completer.sh ]]; then
-  source /usr/local/bin/aws_zsh_completer.sh
-fi;
-
-
+complete -C $(which aws_completer) aws
