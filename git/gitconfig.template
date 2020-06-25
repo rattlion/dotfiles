@@ -31,3 +31,5 @@
   excludesfile = ~/.gitignore_global
 [help]
   autocorrect = 1
+[pull]
+  ff = only
