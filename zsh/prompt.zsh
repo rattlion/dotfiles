@@ -65,9 +65,9 @@ host_name() {
 }
 
 ruby_version() {
-  if (( $+commands[rvm-prompt] ))
+  if (( $+commands[asdf] ))
   then
-    echo "$(rvm-prompt v g p | awk '{print $1}')"
+    echo "$(asdf list ruby | awk '{print $1}')"
   fi
 }
 
@@ -81,7 +81,10 @@ rb_prompt() {
 }
 
 node_version() {
-  echo "$(node -v | cut -c 2-)"
+  if (( $+commands[asdf] ))
+  then
+    echo "$(asdf list nodejs | awk '{print $1}')"
+  fi
 }
 
 node_prompt() {
