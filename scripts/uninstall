@@ -2,18 +2,16 @@
 
 for f in $(find . -name "*.symlink")
 do
-  target=$PWD/${f#./}
   filename=${f#./*/}
   dest=$HOME/${filename%.*}
-  echo "Installing $dest"
-  ln -sfn $target $dest
+  echo "Removing $dest"
+  rm -rf $dest
 done
 
 for f in $(find . -name "*.dot_template")
 do
-  target=$PWD/${f#./}
   filename=${f#./*/}
   dest=$HOME/${filename%.*}
-  echo "Installing $dest"
-  cp -i $target $dest ||:
+  echo "Removing $dest"
+  rm -rf $dest
 done

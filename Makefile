@@ -12,7 +12,7 @@ all: clean install
 .PHONY: clean
 clean:
 	@echo -e "${RED}Cleaning any dangling symlinks${CLEAR}"
-	@find ~ -maxdepth 1 -type l | xargs rm -rf
+	@./scripts/uninstall
 
 .PHONY: install
 install:
