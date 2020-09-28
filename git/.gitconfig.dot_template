@@ -26,7 +26,7 @@
 [apply]
   whitespace = fix
 [core]
-  editor       = vim
+  editor       = nvim
   whitespace   = space-before-tab,tab-in-indent,trailing-space
   excludesfile = ~/.gitignore_global
 [help]
