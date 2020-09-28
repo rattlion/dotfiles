@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 shopt -s globstar
-SYMLINKS=**/*.symlink
-TEMPLATES=**/*.template
+SYMLINKS=**/.*.symlink
+TEMPLATES=**/.*.template
 
 for f in $SYMLINKS
 do
   target="$PWD/$f"
   filename=$(basename $f)
-  dest="$HOME/.${filename%.*}"
+  dest="$HOME/${filename%.*}"
   echo "Installing $dest"
   ln -sfn $target $dest
 done
@@ -17,7 +17,7 @@ for f in $TEMPLATES
 do
   target="$PWD/$f"
   filename=$(basename $f)
-  dest="$HOME/.${filename%.*}"
+  dest="$HOME/${filename%.*}"
   echo "Installing $dest"
   cp -i $target $dest ||:
 done
