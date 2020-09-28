@@ -88,7 +88,7 @@ node_version() {
 }
 
 node_prompt() {
-  if (( $+commands[node] ))
+  if ! [[ -z "$(node_version)" ]]
   then
     echo "%{$fg[green]%}⬢%{$reset_color%}%{$fg_bold[grey]%} $(node_version)%{$reset_color%}"
   fi
