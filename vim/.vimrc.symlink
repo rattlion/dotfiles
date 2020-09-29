@@ -4,11 +4,9 @@
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
   endif
-  call plug#begin('~/.vim/plugged')
 
-  command! PU PlugUpdate | PlugUpgrade
+  call plug#begin('~/.vim/plugged')
 
   " vim-scripts repos
   Plug 'vim-scripts/L9'
@@ -35,6 +33,7 @@
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
   Plug 'mxw/vim-jsx'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'niftylettuce/vim-jinja'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
@@ -54,7 +53,15 @@
   Plug 'tpope/vim-unimpaired'
   Plug 'vim-ruby/vim-ruby'
   Plug 'w0rp/ale'
+
   call plug#end()
+
+  " Run PlugInstall if there are missing plugins
+  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    autocmd VimEnter * PlugInstall --sync
+  endif
+
+  command! PU PlugUpdate | PlugUpgrade
   "}}}
 
 " VIM behaviour {{{
