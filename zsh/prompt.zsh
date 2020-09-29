@@ -64,38 +64,21 @@ host_name() {
   fi
 }
 
-ruby_version() {
-  if (( $+commands[asdf] ))
-  then
-    echo "$(asdf list ruby | awk '{print $1}')"
-  fi
-}
-
 rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg[red]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(ruby_version)%{$reset_color%}"
-  else
-    echo ""
-  fi
-}
-
-node_version() {
-  if (( $+commands[asdf] ))
-  then
-    echo "$(asdf list nodejs | awk '{print $1}')"
-  fi
+  echo "%{$fg[red]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(asdf current ruby | awk '{print $2}')%{$reset_color%}"
 }
 
 node_prompt() {
-  if ! [[ -z "$(node_version)" ]]
-  then
-    echo "%{$fg[green]%}⬢%{$reset_color%}%{$fg_bold[grey]%} $(node_version)%{$reset_color%}"
-  fi
+  echo "%{$fg[green]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(asdf current nodejs | awk '{print $2}')%{$reset_color%}"
 }
 
 r_prompt() {
-  echo "$(node_prompt) $(rb_prompt)"
+  if (( $+commands[asdf] ))
+  then
+    echo "$(node_prompt) $(rb_prompt)"
+  else
+    echo "Missing asdf"
+  fi
 }
 
 export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'

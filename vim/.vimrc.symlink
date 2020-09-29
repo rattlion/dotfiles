@@ -344,8 +344,8 @@
   nnoremap <leader>gp `[v`]
 
   " Edit the vimrc file
-  nmap <silent> <leader>ev :e $MYVIMRC<CR>
-  nmap <silent> <leader>sv :so $MYVIMRC<CR>
+  nmap <silent> <leader>ev :e ~/.vimrc<CR>
+  nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
   " Clears the search register
   nmap <silent> <leader>/ :nohlsearch<CR>
