@@ -29,6 +29,7 @@
   Plug 'kien/ctrlp.vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'mhinz/vim-signify'
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
@@ -41,7 +42,6 @@
   Plug 'rattlion/vim-insert-image'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'tomtom/tlib_vim'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
