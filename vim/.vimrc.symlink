@@ -105,6 +105,7 @@
   set switchbuf=useopen
   set synmaxcol=800
   set textwidth=0
+  set ttimeoutlen=0
   set ttyfast
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
