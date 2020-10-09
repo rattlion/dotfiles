@@ -345,7 +345,7 @@
   nnoremap <leader>gp `[v`]
 
   " Edit the vimrc file
-  nmap <silent> <leader>ev :e ~/.vimrc<CR>
+  nmap <silent> <leader>ev :e ~/.dotfiles/vim/.vimrc.symlink<CR>
   nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
   " Clears the search register
