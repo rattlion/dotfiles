@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p ~/.config
+
 for f in $(find . -name "*.symlink")
 do
   target=$PWD/${f#./}

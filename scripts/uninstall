@@ -13,5 +13,5 @@ do
   filename=${f#./*/}
   dest=$HOME/${filename%.*}
   echo "Removing $dest"
-  rm -rf $dest
+  rm -rfi $dest
 done
