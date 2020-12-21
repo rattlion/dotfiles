@@ -27,6 +27,7 @@
   Plug 'hashivim/vim-terraform'
   Plug 'kana/vim-textobj-user'
   Plug 'kien/ctrlp.vim'
+  Plug 'leafgarland/typescript-vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -345,7 +346,7 @@
   nnoremap <leader>gp `[v`]
 
   " Edit the vimrc file
-  nmap <silent> <leader>ev :e ~/.dotfiles/vim/.vimrc.symlink<CR>
+  nmap <silent> <leader>ev :e ~/.vimrc<CR>
   nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
   " Clears the search register
