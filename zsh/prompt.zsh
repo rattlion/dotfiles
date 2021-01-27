@@ -7,10 +7,6 @@ else
   git="/usr/bin/git"
 fi
 
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
-
 git_dirty() {
   st=$($git status 2>/dev/null | tail -n 2)
   if [[ $st == "" ]]
@@ -19,16 +15,23 @@ git_dirty() {
   else
     if [[ "$st" =~ clean ]]
     then
-      echo "on %{$fg[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg[green]%}$(git_get_head_ref)%{$reset_color%}"
     else
-      echo "on %{$fg[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg[red]%}$(git_get_head_ref)%{$reset_color%}"
     fi
   fi
 }
 
-git_prompt_info () {
- ref=$($git symbolic-ref HEAD 2>/dev/null) || return
- echo "${ref#refs/heads/}"
+git_get_current_branch() {
+  $git symbolic-ref -q --short HEAD
+}
+
+git_get_current_tag() {
+  echo "tag: $($git describe --tags --exact-match)"
+}
+
+git_get_head_ref () {
+  git_get_current_branch || git_get_current_tag
 }
 
 unpushed () {
