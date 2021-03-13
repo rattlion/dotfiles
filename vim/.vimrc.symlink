@@ -25,6 +25,7 @@
   Plug 'godlygeek/tabular'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'hashivim/vim-terraform'
+  Plug 'justinj/vim-pico8-syntax'
   Plug 'kana/vim-textobj-user'
   Plug 'kien/ctrlp.vim'
   Plug 'leafgarland/typescript-vim'
