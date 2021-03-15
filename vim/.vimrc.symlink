@@ -36,7 +36,6 @@
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
   Plug 'mxw/vim-jsx'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'niftylettuce/vim-jinja'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
