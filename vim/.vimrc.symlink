@@ -17,7 +17,6 @@
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'Raimondi/delimitMate'
   Plug 'alvan/vim-closetag'
-  Plug 'arrufat/vala.vim'
   Plug 'bling/vim-airline'
   Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
