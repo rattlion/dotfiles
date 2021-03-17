@@ -18,6 +18,7 @@
   Plug 'Raimondi/delimitMate'
   Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
+  Plug 'dense-analysis/ale'
   Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
   Plug 'fatih/vim-go'
@@ -35,6 +36,7 @@
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
   Plug 'mxw/vim-jsx'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'niftylettuce/vim-jinja'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
@@ -52,7 +54,6 @@
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'w0rp/ale'
 
   call plug#end()
 
@@ -62,7 +63,7 @@
   endif
 
   command! PU PlugUpdate | PlugUpgrade
-  "}}}
+"}}}
 
 " VIM behaviour {{{
   let mapleader=","
@@ -219,6 +220,36 @@
 
 " VIM plugins {{{
 
+" Coc {{{
+  let g:coc_global_extensions = [
+        \'coc-css',
+        \'coc-cssmodules',
+        \'coc-eslint',
+        \'coc-fzf-preview',
+        \'coc-git',
+        \'coc-go',
+        \'coc-graphql',
+        \'coc-highlight',
+        \'coc-html',
+        \'coc-html-css-support',
+        \'coc-json',
+        \'coc-lists',
+        \'coc-lua',
+        \'coc-markdownlint',
+        \'coc-omnisharp',
+        \'coc-prettier',
+        \'coc-python',
+        \'coc-rust-analyzer',
+        \'coc-sh',
+        \'coc-sql',
+        \'coc-svg',
+        \'coc-swagger',
+        \'coc-tsserver',
+        \'coc-xml',
+        \'coc-yaml'
+        \]
+"}}}
+
 " Prettier {{{
     let g:prettier#autoformat = 0
     autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
@@ -308,28 +339,16 @@
 
 " FileType {{{
   if has("autocmd")
-    augroup quickfix
-      autocmd filetype quickfix setlocal cursorline
-    augroup END
+    augroup apache
+      autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
+    augroup end
 
     augroup conf
       autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
     augroup END
 
-    augroup sh
-      autocmd BufRead,BufNewFile .profile setlocal filetype=sh
-    augroup END
-
     augroup crontab
       autocmd filetype crontab setlocal nobackup nowritebackup
-    augroup end
-
-    augroup apache
-      autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
-    augroup end
-
-    augroup readme
-      autocmd BufNewFile,BufReadPost *.md setlocal spell
     augroup end
 
     augroup go
@@ -337,6 +356,18 @@
       autocmd filetype go setlocal shiftwidth=4
       autocmd filetype go setlocal noexpandtab
     augroup end
+
+    augroup quickfix
+      autocmd filetype quickfix setlocal cursorline
+    augroup END
+
+    augroup readme
+      autocmd BufNewFile,BufReadPost *.md setlocal spell
+    augroup end
+
+    augroup sh
+      autocmd BufRead,BufNewFile .profile setlocal filetype=sh
+    augroup END
   endif
 "}}}
 
