@@ -42,6 +42,7 @@
   Plug 'pangloss/vim-javascript'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'rattlion/vim-insert-image'
+  Plug 'rust-lang/rust.vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'tomtom/tlib_vim'
