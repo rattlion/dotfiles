@@ -31,7 +31,7 @@
   Plug 'leafgarland/typescript-vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  Plug 'mg979/vim-visual-multi'
   Plug 'mhinz/vim-signify'
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
@@ -71,7 +71,6 @@
   set mouse=a
   set autoindent
   set backspace=indent,eol,start
-  set clipboard=unnamedplus,unnamed
   set completefunc=syntaxcomplete#Complete
   set copyindent
   set dictionary+=/usr/share/dict/words
@@ -93,14 +92,15 @@
   set novisualbell
   set nowrap
   set number
-  set pastetoggle=<F2>
   set scrolloff=4
   set shell=sh
   set shiftround
   set shiftwidth=2
+  set shortmess+=c
   set showcmd
   set showmatch
   set showmode
+  set shortmess+=I
   set smartcase
   set smarttab
   set softtabstop=2
@@ -112,6 +112,7 @@
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
   set undolevels=1000
+  set updatetime=300
   set virtualedit=all
   set wildignore+=tags
   set wildmenu
@@ -176,50 +177,22 @@
 " }}}
 
 " VIM appearance {{{
-  set background=dark
-  colorscheme base16-default-dark
+  colorscheme rattlion
   syntax on
   set cmdheight=2
   set colorcolumn=81
   set encoding=utf-8
   set laststatus=2
   set termencoding=utf-8
+  set termguicolors
   set title
-
-  " Colorscheme highlight overrides
-  hi Normal            cterm=none ctermbg=none ctermfg=none
-  hi SignColumn        cterm=none ctermbg=none ctermfg=none
-  hi DiffAdd           cterm=bold ctermbg=none ctermfg=119
-  hi DiffDelete        cterm=bold ctermbg=none ctermfg=167
-  hi DiffChange        cterm=bold ctermbg=none ctermfg=227
-  hi SignifySignAdd    cterm=bold ctermbg=none ctermfg=119
-  hi SignifySignDelete cterm=bold ctermbg=none ctermfg=167
-  hi SignifySignChange cterm=bold ctermbg=none ctermfg=227
-  hi Folded            cterm=none ctermbg=none ctermfg=darkgrey
-  hi LineNr            cterm=none ctermbg=none ctermfg=darkgrey
-  hi VertSplit         cterm=none ctermbg=none ctermfg=magenta
-  hi MatchParen        cterm=bold ctermbg=none ctermfg=magenta
-  hi ColorColumn       cterm=none ctermbg=235  ctermfg=none
-  hi CursorLine        cterm=none ctermbg=235  ctermfg=none
-  hi Visual            cterm=none ctermbg=248  ctermfg=none
-  hi Pmenu             cterm=none ctermbg=59   ctermfg=15
-  hi PmenuSel          cterm=none ctermbg=188  ctermfg=0
-  hi WildMenu          cterm=none ctermbg=188  ctermfg=0
-  hi Search            cterm=none ctermbg=012  ctermfg=0
-  hi IncSearch         cterm=none ctermbg=012  ctermfg=0
-  hi StatusLine        cterm=none ctermbg=012  ctermfg=0
-  hi Todo              cterm=none ctermbg=007  ctermfg=008
-  hi QuickFixLine      cterm=none ctermbg=235  ctermfg=none
-  hi CursorColumn      cterm=none ctermbg=235  ctermfg=none
-  hi CursorLineNr      cterm=none ctermbg=235  ctermfg=none
-
-
-  " cursor appearance in insert mode
-  let &t_SI = "\<Esc>[5 q"
-  let &t_EI = "\<Esc>[0 q"
 " }}}
 
 " VIM plugins {{{
+
+" Airline "{{{
+  let g:airline_powerline_fonts = 1
+"}}}
 
 " Coc {{{
   let g:coc_global_extensions = [
@@ -246,19 +219,39 @@
         \'coc-svg',
         \'coc-swagger',
         \'coc-tsserver',
-        \'coc-xml',
         \'coc-yaml'
         \]
+
+  inoremap <silent><expr> <c-n> coc#refresh()
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
 "}}}
 
-" Prettier {{{
-    let g:prettier#autoformat = 0
-    autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
-" }}}
+" CTRL-P {{{
+  let g:ctrlp_working_path_mode = '0'
+  let g:ctrlp_show_hidden = 1
+  let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|build\|coverage\|node_modules\|\v[\/]\.(git|hg|svn)$'
+"}}}
 
 " DelimitMate  {{{
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 " }}}
+
+" Gist-vim {{{
+  let g:gist_detect_filetype = 1
+  let g:gist_open_browser_after_post = 1
+" }}}
+
+" JSON "{{{
+  let g:vim_json_syntax_conceal = 0
+"}}}
+
+" JSX "{{{
+  let g:jsx_ext_required = 0
+"}}}
 
 " NERDTree settings {{{
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
@@ -296,11 +289,10 @@
   let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
-" CTRL-P {{{
-  let g:ctrlp_working_path_mode = '0'
-  let g:ctrlp_show_hidden = 1
-  let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|build\|coverage\|node_modules\|\v[\/]\.(git|hg|svn)$'
-"}}}
+" Prettier {{{
+    let g:prettier#autoformat = 0
+    autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" }}}
 
 " Yankring {{{
   let g:yankring_history_dir = '$HOME/.vim/.tmp'
@@ -310,31 +302,13 @@
   endfunction
 " }}}
 
-" Gist-vim {{{
-  let g:gist_detect_filetype = 1
-  let g:gist_open_browser_after_post = 1
-" }}}
-
-" Airline "{{{
-  let g:airline_powerline_fonts = 1
-"}}}
-
 " Signify "{{{
   nmap <leader>sr :SignifyRefresh<CR>
-"}}}
-
-" JSX "{{{
-  let g:jsx_ext_required = 0
 "}}}
 
 " Terraform "{{{
   let g:terraform_align=1
 "}}}
-
-" JSON "{{{
-  let g:vim_json_syntax_conceal = 0
-"}}}
-
 "}}}
 
 " FileType {{{
