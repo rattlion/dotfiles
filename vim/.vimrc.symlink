@@ -19,7 +19,6 @@
   Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
   Plug 'dense-analysis/ale'
-  Plug 'elzr/vim-json'
   Plug 'fadein/vim-FIGlet'
   Plug 'fatih/vim-go'
   Plug 'godlygeek/tabular'
@@ -60,11 +59,26 @@
 
   " Run PlugInstall if there are missing plugins
   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    autocmd VimEnter * PlugInstall --sync
+    augroup PlugInstall
+      au!
+      autocmd VimEnter * PlugInstall --sync
+    augroup END
   endif
 
   command! PU PlugUpdate | PlugUpgrade
 "}}}
+
+" VIM appearance {{{
+  colorscheme rattlion
+  syntax on
+  set cmdheight=2
+  set colorcolumn=81
+  set encoding=utf-8
+  set laststatus=2
+  set termencoding=utf-8
+  set termguicolors
+  set title
+" }}}
 
 " VIM behaviour {{{
   let mapleader=","
@@ -75,6 +89,8 @@
   set copyindent
   set dictionary+=/usr/share/dict/words
   set expandtab
+  set foldlevel=0
+  set foldmethod=marker
   set formatoptions+=1,j
   set hidden
   set history=100
@@ -82,11 +98,9 @@
   set ignorecase
   set incsearch
   set linebreak
-  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
   set nobackup
   set nocursorline
   set noerrorbells
-  set nolist
   set nomodeline
   set noswapfile
   set novisualbell
@@ -103,12 +117,12 @@
   set shortmess+=I
   set smartcase
   set smarttab
+  set spellfile=~/.vim/spell/en.utf-8.add
   set softtabstop=2
   set switchbuf=useopen
-  set synmaxcol=800
+  set synmaxcol=200
   set textwidth=0
   set ttimeoutlen=0
-  set ttyfast
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
   set undolevels=1000
@@ -147,7 +161,7 @@
   nnoremap - <C-x>
 
   " Remove trailing whitespace on save
-  function! s:TrimTrailingWhitespace()
+  function! s:TrimTrailingSpace()
     let s:view = winsaveview()
     try
       %s/\s\+$//e
@@ -155,37 +169,15 @@
       call winrestview(s:view)
     endtry
   endfunction
-  autocmd BufWritePre * call s:TrimTrailingWhitespace()
+  augroup TrailingWS
+    au!
+    autocmd BufWritePre * call s:TrimTrailingSpace()
+  augroup END
 
   " Restore cursor position upon reopening files
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-  let g:netrw_home="~/.vim/.tmp"
-
-  " WSL yank support
-  let s:clip = '/mnt/c/Windows/System32/clip.exe'
-  if executable(s:clip)
-    augroup WSLYank
-      autocmd!
-      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-  endif
-
-  " Folding {{{
-    set foldmethod=marker foldlevel=0
-  "}}}
-" }}}
-
-" VIM appearance {{{
-  colorscheme rattlion
-  syntax on
-  set cmdheight=2
-  set colorcolumn=81
-  set encoding=utf-8
-  set laststatus=2
-  set termencoding=utf-8
-  set termguicolors
-  set title
+  augroup CursorPos
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  augroup END
 " }}}
 
 " VIM plugins {{{
@@ -243,32 +235,22 @@
       execute '!' . &keywordprg . " " . expand('<cword>')
     endif
   endfunction
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup CocSettings
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup END
 "}}}
 
 " CTRL-P {{{
   let g:ctrlp_working_path_mode = '0'
   let g:ctrlp_show_hidden = 1
-  let g:ctrlp_custom_ignore = '.DS_Store\|.sass-cache\|bower_components\|build\|coverage\|node_modules\|\v[\/]\.(git|hg|svn)$'
+  let g:ctrlp_custom_ignore = '.DS_Store\|node_modules\|\v[\/]\.(git|hg|svn)$'
 "}}}
-
-" DelimitMate  {{{
-    au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
-" }}}
 
 " Gist-vim {{{
   let g:gist_detect_filetype = 1
   let g:gist_open_browser_after_post = 1
 " }}}
-
-" JSON "{{{
-  let g:vim_json_syntax_conceal = 0
-"}}}
-
-" JSX "{{{
-  let g:jsx_ext_required = 0
-"}}}
 
 " NERDTree settings {{{
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
@@ -300,6 +282,9 @@
   let NERDTreeIgnore=[ '^\.git$', '\.DS_Store' ]
 
   let NERDTreeStatusline=''
+
+  " Related, netrw temp
+  let g:netrw_home="~/.vim/.tmp"
 " }}}
 
 " NERDCommenter settings {{{
@@ -308,20 +293,31 @@
 
 " Prettier {{{
     let g:prettier#autoformat = 0
-    autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+    augroup Prettier
+      autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+    augroup END
 " }}}
 
 " Yankring {{{
   let g:yankring_history_dir = '$HOME/.vim/.tmp'
+  " Show history
   nmap <leader>r :YRShow<CR>
-  function! YRRunAfterMaps()
-    vmap y ygv<Esc>
-  endfunction
-" }}}
+  " Reselect text
+  nnoremap <leader>gp `[v`]
+  " Neovim visual block and general yank support
+  if has('macunix')
+    let s:clip = '/usr/bin/pbcopy'
+  else
+    let s:clip = '/mnt/c/Windows/System32/clip.exe'
+  endif
+  if executable(s:clip)
+    augroup NeoYank
+      autocmd!
+      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+  endif
 
-" Signify "{{{
-  nmap <leader>sr :SignifyRefresh<CR>
-"}}}
+" }}}
 
 " Terraform "{{{
   let g:terraform_align=1
@@ -329,49 +325,27 @@
 "}}}
 
 " FileType {{{
-  if has("autocmd")
-    augroup apache
-      autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
-    augroup end
-
-    augroup conf
-      autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
-    augroup END
-
-    augroup crontab
-      autocmd filetype crontab setlocal nobackup nowritebackup
-    augroup end
-
-    augroup go
-      autocmd filetype go setlocal tabstop=4
-      autocmd filetype go setlocal shiftwidth=4
-      autocmd filetype go setlocal noexpandtab
-    augroup end
-
-    augroup quickfix
-      autocmd filetype quickfix setlocal cursorline
-    augroup END
-
-    augroup readme
-      autocmd BufNewFile,BufReadPost *.md setlocal spell
-    augroup end
-
-    augroup sh
-      autocmd BufRead,BufNewFile .profile setlocal filetype=sh
-    augroup END
-  endif
+  augroup FTCmds
+    au!
+    autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
+    autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
+    autocmd filetype crontab setlocal nobackup nowritebackup
+    autocmd filetype quickfix setlocal cursorline
+    autocmd BufNewFile,BufReadPost *.md setlocal spell
+    autocmd BufRead,BufNewFile .profile setlocal filetype=sh
+  augroup END
 "}}}
 
 " Misc mappings {{{
-  " Reselect text
-  nnoremap <leader>gp `[v`]
-
-  " Edit the vimrc file
+  " Editing the vimrc file
   nmap <silent> <leader>ev :e ~/.vimrc<CR>
   nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
   " Clears the search register
   nmap <silent> <leader>/ :nohlsearch<CR>
+
+  " Rebuild the spell binary
+  command! SPL exec 'silent mkspell!' . &spellfile
 
   iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
   iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi

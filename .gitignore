@@ -1,5 +1,9 @@
 cache
 vim/.vim.symlink/.netrwhist
+vim/.vim.symlink/.tmp/*
+vim/.vim.symlink/NERDTreeBookmarks
 vim/.vim.symlink/autoload/plug.vim
 vim/.vim.symlink/autoload/plug.vim.old
+vim/.vim.symlink/plugged
 vim/.vim.symlink/sessions
+vim/.vim.symlink/undo/*
