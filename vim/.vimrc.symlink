@@ -261,9 +261,6 @@
   " Store the bookmarks file
   let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 
-  " Show the bookmarks table on startup
-  let NERDTreeShowBookmarks=1
-
   " Show hidden files, too
   let NERDTreeShowFiles=1
   let NERDTreeShowHidden=1

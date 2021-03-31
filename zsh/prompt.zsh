@@ -67,29 +67,8 @@ host_name() {
   fi
 }
 
-rb_prompt() {
-  echo "%{$fg[red]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(asdf current ruby | awk '{print $2}')%{$reset_color%}"
-}
-
-node_prompt() {
-  echo "%{$fg[green]%}⬢%{$reset_color%} %{$fg_bold[grey]%}$(asdf current nodejs | awk '{print $2}')%{$reset_color%}"
-}
-
-r_prompt() {
-  if (( $+commands[asdf] ))
-  then
-    echo "$(node_prompt) $(rb_prompt)"
-  else
-    echo "Missing asdf"
-  fi
-}
-
 export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
-set_prompt() {
-  export RPROMPT="$(r_prompt)"
-}
 
 precmd() {
   title "zsh" "%m" "%55<...<%~"
-  set_prompt
 }
