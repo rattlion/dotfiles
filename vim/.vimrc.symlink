@@ -8,43 +8,26 @@
 
   call plug#begin('~/.vim/plugged')
 
-  " vim-scripts repos
-  Plug 'vim-scripts/L9'
+  " Loaded first because it has opinionated defaults that override others
   Plug 'vim-scripts/YankRing.vim'
-  Plug 'vim-scripts/matchit.zip'
 
-  " Github repos
-  Plug 'MarcWeber/vim-addon-mw-utils'
-  Plug 'Raimondi/delimitMate'
-  Plug 'alvan/vim-closetag'
   Plug 'bling/vim-airline'
   Plug 'dense-analysis/ale'
   Plug 'fadein/vim-FIGlet'
-  Plug 'fatih/vim-go'
   Plug 'godlygeek/tabular'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'hashivim/vim-terraform'
   Plug 'justinj/vim-pico8-syntax'
   Plug 'kana/vim-textobj-user'
-  Plug 'kien/ctrlp.vim'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'mattn/gist-vim'
-  Plug 'mattn/webapi-vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'mg979/vim-visual-multi'
   Plug 'mhinz/vim-signify'
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
-  Plug 'mxw/vim-jsx'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'niftylettuce/vim-jinja'
-  Plug 'othree/html5.vim'
-  Plug 'pangloss/vim-javascript'
+  Plug 'sheerun/vim-polyglot'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-  Plug 'rattlion/vim-insert-image'
-  Plug 'rust-lang/rust.vim'
+  Plug 'Raimondi/delimitMate'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
-  Plug 'tomtom/tlib_vim'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
@@ -53,7 +36,6 @@
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
-  Plug 'vim-ruby/vim-ruby'
 
   call plug#end()
 
@@ -69,8 +51,6 @@
 "}}}
 
 " VIM appearance {{{
-  colorscheme rattlion
-  syntax on
   set cmdheight=2
   set colorcolumn=81
   set encoding=utf-8
@@ -78,12 +58,13 @@
   set termencoding=utf-8
   set termguicolors
   set title
+  colorscheme rattlion
+  syntax on
 " }}}
 
 " VIM behaviour {{{
   let mapleader=","
   set mouse=a
-  set autoindent
   set backspace=indent,eol,start
   set completefunc=syntaxcomplete#Complete
   set copyindent
@@ -98,12 +79,8 @@
   set ignorecase
   set incsearch
   set linebreak
-  set nobackup
-  set nocursorline
-  set noerrorbells
   set nomodeline
   set noswapfile
-  set novisualbell
   set nowrap
   set number
   set scrolloff=4
@@ -111,12 +88,9 @@
   set shiftround
   set shiftwidth=2
   set shortmess+=c
-  set showcmd
   set showmatch
-  set showmode
   set shortmess+=I
   set smartcase
-  set smarttab
   set spellfile=~/.vim/spell/en.utf-8.add
   set softtabstop=2
   set switchbuf=useopen
@@ -126,13 +100,13 @@
   set undodir=~/.vim/.undo,~/tmp,/tmp
   set undofile
   set undolevels=1000
-  set updatetime=300
+  set updatetime=100
   set virtualedit=all
   set wildignore+=tags
-  set wildmenu
   set wildmode=list:full
 
   nnoremap ; :
+  vnoremap ; :
   nnoremap <C-e> 2<C-e>
   nnoremap <C-y> 2<C-y>
   nnoremap j gj
@@ -162,20 +136,18 @@
 
   " Remove trailing whitespace on save
   function! s:TrimTrailingSpace()
-    let s:view = winsaveview()
-    try
-      %s/\s\+$//e
-    finally
-      call winrestview(s:view)
-    endtry
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
   endfunction
-  augroup TrailingWS
+  augroup TTS
     au!
     autocmd BufWritePre * call s:TrimTrailingSpace()
   augroup END
 
   " Restore cursor position upon reopening files
   augroup CursorPos
+    au!
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   augroup END
 " }}}
@@ -250,11 +222,6 @@
   let g:ctrlp_custom_ignore = '.DS_Store\|node_modules\|\v[\/]\.(git|hg|svn)$'
 "}}}
 
-" Gist-vim {{{
-  let g:gist_detect_filetype = 1
-  let g:gist_open_browser_after_post = 1
-" }}}
-
 " NERDTree settings {{{
   nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
   nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
@@ -320,6 +287,7 @@
 " }}}
 
 " Terraform "{{{
+" included from vim-polyglot
   let g:terraform_align=1
 "}}}
 "}}}
@@ -327,17 +295,15 @@
 " FileType {{{
   augroup FTCmds
     au!
-    autocmd BufRead,BufNewFile httpd-vhosts.conf setlocal filetype=apache
+    autocmd BufNewFile,BufReadPost *.md setlocal spell
     autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
     autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd filetype quickfix setlocal cursorline
-    autocmd BufNewFile,BufReadPost *.md setlocal spell
-    autocmd BufRead,BufNewFile .profile setlocal filetype=sh
   augroup END
 "}}}
 
 " Misc mappings {{{
-  " Editing the vimrc file
+  " Editing and sourcing the vimrc file
   nmap <silent> <leader>ev :e ~/.vimrc<CR>
   nmap <silent> <leader>sv :so ~/.vimrc<CR>
 
