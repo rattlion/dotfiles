@@ -296,7 +296,6 @@
   augroup FTCmds
     au!
     autocmd BufNewFile,BufReadPost *.md setlocal spell
-    autocmd BufRead,BufNewFile *.symlink setlocal filetype=zsh
     autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd filetype quickfix setlocal cursorline
   augroup END
