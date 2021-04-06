@@ -169,7 +169,6 @@
         \'coc-fzf-preview',
         \'coc-git',
         \'coc-go',
-        \'coc-graphql',
         \'coc-highlight',
         \'coc-html',
         \'coc-html-css-support',
