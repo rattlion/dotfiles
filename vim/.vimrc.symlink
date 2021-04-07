@@ -166,7 +166,6 @@
         \'coc-css',
         \'coc-cssmodules',
         \'coc-eslint',
-        \'coc-fzf-preview',
         \'coc-git',
         \'coc-go',
         \'coc-highlight',
