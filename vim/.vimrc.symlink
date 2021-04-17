@@ -293,9 +293,11 @@
 " FileType {{{
   augroup FTCmds
     au!
-    autocmd BufNewFile,BufReadPost *.md setlocal spell
     autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd filetype quickfix setlocal cursorline
+    autocmd BufNewFile,BufReadPost *.md
+          \ setlocal spell |
+          \ setlocal tw=80
   augroup END
 "}}}
 
