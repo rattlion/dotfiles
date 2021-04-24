@@ -64,6 +64,7 @@
 
 " VIM behaviour {{{
   let mapleader=","
+  set clipboard+=unnamedplus
   set mouse=a
   set backspace=indent,eol,start
   set completefunc=syntaxcomplete#Complete
