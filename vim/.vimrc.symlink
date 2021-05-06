@@ -155,9 +155,16 @@
 
 " VIM plugins {{{
 
+" ACK "{{{
+  if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    let g:ackprg = &grepprg
+  endif
+" }}}
+
 " Airline "{{{
   let g:airline_powerline_fonts = 1
-"}}}
+" }}}
 
 " Coc {{{
   let g:coc_global_extensions = [
