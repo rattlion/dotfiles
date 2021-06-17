@@ -182,7 +182,6 @@
         \'coc-json',
         \'coc-lists',
         \'coc-lua',
-        \'coc-markdownlint',
         \'coc-omnisharp',
         \'coc-prettier',
         \'coc-python',
