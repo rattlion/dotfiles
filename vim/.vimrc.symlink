@@ -9,7 +9,6 @@
   call plug#begin('~/.vim/plugged')
 
   " Loaded first because it has opinionated defaults that override others
-  Plug 'vim-scripts/YankRing.vim'
 
   Plug 'bling/vim-airline'
   Plug 'dense-analysis/ale'
@@ -270,8 +269,7 @@
     augroup END
 " }}}
 
-" Yankring {{{
-  let g:yankring_history_dir = '$HOME/.vim/.tmp'
+" Yank {{{
   " Show history
   nmap <leader>r :YRShow<CR>
   " Reselect text
