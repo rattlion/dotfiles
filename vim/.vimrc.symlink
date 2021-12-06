@@ -270,8 +270,6 @@
 " }}}
 
 " Yank {{{
-  " Show history
-  nmap <leader>r :YRShow<CR>
   " Reselect text
   nnoremap <leader>gp `[v`]
   " Neovim visual block and general yank support
@@ -280,13 +278,6 @@
   else
     let s:clip = '/mnt/c/Windows/System32/clip.exe'
   endif
-  if executable(s:clip)
-    augroup NeoYank
-      autocmd!
-      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-  endif
-
 " }}}
 
 " Terraform "{{{
