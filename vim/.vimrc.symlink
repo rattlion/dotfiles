@@ -294,6 +294,11 @@
     autocmd BufNewFile,BufReadPost *.md
           \ setlocal spell |
           \ setlocal tw=80
+    autocmd BufNewFile,BufReadPost *.keymap
+          \ setlocal tabstop=8 |
+          \ setlocal softtabstop=4 |
+          \ setlocal shiftwidth=4 |
+          \ setlocal expandtab
   augroup END
 "}}}
 
