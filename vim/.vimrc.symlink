@@ -11,22 +11,23 @@
   " Loaded first because it has opinionated defaults that override others
 
   Plug 'bling/vim-airline'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'dense-analysis/ale'
   Plug 'fadein/vim-FIGlet'
   Plug 'godlygeek/tabular'
   Plug 'justinj/vim-pico8-syntax'
   Plug 'kana/vim-textobj-user'
-  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'lambdalisue/pastefix.vim'
   Plug 'mg979/vim-visual-multi'
   Plug 'mhinz/vim-signify'
   Plug 'mileszs/ack.vim'
   Plug 'moll/vim-node'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'sheerun/vim-polyglot'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'Raimondi/delimitMate'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
+  Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
