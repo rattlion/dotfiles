@@ -275,7 +275,7 @@
   if executable(s:clip)
     augroup WSLYank
       au!
-      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @1) | endif
+      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
   endif
 " }}}
