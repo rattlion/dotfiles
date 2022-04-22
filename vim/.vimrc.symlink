@@ -291,13 +291,12 @@
     au!
     autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd filetype quickfix setlocal cursorline
-    autocmd BufNewFile,BufReadPost *.md
-          \ setlocal spell |
-          \ setlocal tw=80
+    autocmd BufNewFile,BufReadPost *.md setlocal spell
     autocmd BufNewFile,BufReadPost *.keymap
-          \ setlocal tabstop=8 |
-          \ setlocal softtabstop=4 |
+          \ setlocal filetype=dts |
+          \ setlocal tabstop=4 |
           \ setlocal shiftwidth=4 |
+          \ setlocal softtabstop=4 |
           \ setlocal expandtab
   augroup END
 "}}}
