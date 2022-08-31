@@ -294,6 +294,7 @@
     au!
     autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd filetype quickfix setlocal cursorline
+    autocmd BufNewFile,BufReadPost .tmux.conf* setlocal filetype=tmux
     autocmd BufNewFile,BufReadPost *.md setlocal spell
     autocmd BufNewFile,BufReadPost *.keymap
           \ setlocal filetype=dts |
