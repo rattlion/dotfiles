@@ -53,6 +53,7 @@
   set colorcolumn=81
   set encoding=utf-8
   set laststatus=2
+  set synmaxcol=1000
   set termencoding=utf-8
   set termguicolors
   set title
@@ -93,7 +94,6 @@
   set spellfile=~/.vim/spell/en.utf-8.add
   set softtabstop=2
   set switchbuf=useopen
-  set synmaxcol=200
   set textwidth=0
   set ttimeoutlen=0
   set undodir=~/.vim/.undo,~/tmp,/tmp
@@ -192,7 +192,6 @@
         \'coc-yaml'
         \]
 
-  inoremap <silent><expr> <c-n> coc#refresh()
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
