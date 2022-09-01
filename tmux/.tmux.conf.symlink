@@ -1,21 +1,19 @@
 # TERM SETTINGS
-set -gw mode-keys vi
+set -g mode-keys vi
 set -g default-terminal "screen-256color"
 set -g renumber-windows on
 set -g display-time 10000
 set -g escape-time 0
 
 # THEME
-set -g status-bg colour232
+set -g status-bg colour233
 set -g status-fg white
 set -g status-left-length 20
 set -g status-right-length 60
 set -g status-left "#[fg=magenta]#(hostname -s) #[default]"
-set -g status-right "#[bg=#080808,fg=colour237]#[bg=colour237,fg=white] %a %b %d %Y %I:%M %p #[default]"
-
-
-setw -g window-status-format "#[fg=colour237]#I #[fg=white]#W#[default]"
-setw -g window-status-current-format "#[bg=white,fg=#080808] #W #[bg=#080808,fg=white]"
+set -g window-status-format "#[fg=colour237]#I #[fg=white]#W#[default]"
+set -g window-status-current-format "#[bg=white,fg=colour233] #W #[bg=colour233,fg=white]"
+set -g status-right "#[bg=colour233,fg=colour237]#[bg=colour237,fg=white] %a %b %d %Y %I:%M %p #[default]"
 
 # RELOAD KEY
 bind r source-file ~/.tmux.conf\; display-message "Sourced tmux config file"
