@@ -45,7 +45,7 @@
     augroup END
   endif
 
-  command! PU PlugUpdate | PlugUpgrade
+  command! PU PlugUpdate | PlugUpgrade | CocUpdate
 "}}}
 
 " VIM appearance {{{
