@@ -134,14 +134,14 @@
   nnoremap - <C-x>
 
   " Remove trailing whitespace on save
-  function! s:TrimTrailingSpace()
+  function! TrimTrailingSpace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
   endfunction
   augroup TTS
     au!
-    autocmd BufWritePre * call s:TrimTrailingSpace()
+    autocmd BufWritePre * call TrimTrailingSpace()
   augroup END
 
   " Restore cursor position upon reopening files
