@@ -269,6 +269,7 @@
     augroup Prettier
       autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
     augroup END
+    let g:prettier#config#print_width = '90'
 " }}}
 
 " Yank {{{
