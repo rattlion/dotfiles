@@ -165,6 +165,7 @@
 " }}}
 
 " Coc {{{
+  let g:coc_disable_startup_warning = 1
   let g:coc_global_extensions = [
         \'coc-clang-format-style-options',
         \'coc-clangd',
