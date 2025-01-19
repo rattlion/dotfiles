@@ -1,2 +1,5 @@
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+autoload is-at-least
+if is-at-least 0.48.0 $(fzf --version); then
+  source <(fzf --zsh)
+fi
