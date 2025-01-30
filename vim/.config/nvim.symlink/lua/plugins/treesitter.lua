@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "rust", "typescript" }, 
+    ensure_installed = { "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "rust", "typescript" },
     sync_install = true,
     highlight = { enable = true },
     indent = { enable = true },

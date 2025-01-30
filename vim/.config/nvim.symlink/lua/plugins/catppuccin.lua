@@ -1,6 +1,6 @@
-return { 
-  'catppuccin/nvim', 
-  name = 'catppuccin', 
+return {
+  'catppuccin/nvim',
+  name = 'catppuccin',
   priority = 1000,
   opts = {
     flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -21,7 +21,7 @@ return {
         enabled = false,
         indentscope_color = "",
       },
-      -- For more plugins integrations please scroll down 
+      -- For more plugins integrations please scroll down
       -- (https://github.com/catppuccin/nvim#integrations)
     },
   },
