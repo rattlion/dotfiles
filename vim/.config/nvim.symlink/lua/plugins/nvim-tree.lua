@@ -3,10 +3,10 @@ return {
   version = "*",
   lazy = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {},
+  config = true,
   keys = {
-    { '<leader>n', vim.cmd.NvimTreeToggle,   desc = 'Nvim Tree toggle' },
-    { '<leader>m', vim.cmd.NvimTreeFindFile, desc = 'Nvim find file in tree' },
+    { "<leader>n", vim.cmd.NvimTreeToggle,   desc = "Nvim Tree toggle" },
+    { "<leader>m", vim.cmd.NvimTreeFindFile, desc = "Nvim find file in tree" },
   },
   init = function()
     -- disable netrw at the very start of your init.lua
