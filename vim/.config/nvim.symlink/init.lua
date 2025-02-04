@@ -32,3 +32,6 @@ require("lazy").setup({
 })
 
 vim.cmd("source ~/.vimrc")
+
+-- TODO: plugins 
+-- mini.nvim

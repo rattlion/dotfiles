@@ -1,5 +1,18 @@
 return {
   {
+    -- TODO: what is this even doing?
+    -- https://github.com/folke/lazydev.nvim
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
     build = "make install_jsregexp",
@@ -20,6 +33,9 @@ return {
       local cmp = require('cmp')
       local ls = require("luasnip")
       cmp.setup({
+        enabled = function()
+          return vim.bo.filetype ~= 'gitcommit'
+        end,
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -67,6 +83,7 @@ return {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'LazyDev' },
         }, {
           { name = 'buffer' },
         })

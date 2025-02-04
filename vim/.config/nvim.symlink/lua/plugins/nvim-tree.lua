@@ -10,10 +10,10 @@ return {
     { "<leader>m", vim.cmd.NvimTreeFindFile, desc = "Nvim find file in tree" },
   },
   init = function()
-    -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     vim.cmd("autocmd VimEnter * hi NvimTreeNormal guibg=NONE")
     vim.cmd("autocmd VimEnter * hi NvimTreeNormalNC guibg=NONE")
+    -- TODO: read up on behavior, look for close tree after open file
   end,
 }
