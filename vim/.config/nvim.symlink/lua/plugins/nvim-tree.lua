@@ -3,17 +3,27 @@ return {
   version = "*",
   lazy = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = true,
+  opts = {
+    actions = {
+      open_file = {
+        quit_on_open = true
+      }
+    }
+  },
   keys = {
-    -- TODO: consolidate into single key
-    { "<leader>n", vim.cmd.NvimTreeToggle,   desc = "Nvim Tree toggle" },
-    { "<leader>m", vim.cmd.NvimTreeFindFile, desc = "Nvim find file in tree" },
+    {
+      "<leader>t",
+      function()
+        local api = require("nvim-tree.api")
+        api.tree.toggle({ find_file = true })
+      end,
+      desc = "Nvim Tree toggle",
+    },
   },
   init = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     vim.cmd("autocmd VimEnter * hi NvimTreeNormal guibg=NONE")
     vim.cmd("autocmd VimEnter * hi NvimTreeNormalNC guibg=NONE")
-    -- TODO: read up on behavior, look for close tree after open file
   end,
 }

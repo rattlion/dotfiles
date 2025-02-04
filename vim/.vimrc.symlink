@@ -1,4 +1,4 @@
-" Default Behaviour 
+" Default Behavior 
 set number
 set ignorecase
 set linebreak

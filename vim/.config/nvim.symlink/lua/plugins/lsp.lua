@@ -32,7 +32,7 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       lspconfig.lua_ls.setup({
-        -- find a way to move thee .luarc.json file, don't like it in the repo
+        -- find a way to specify .luarc.json location
         capabilities = capabilities
       })
       lspconfig.eslint.setup({
