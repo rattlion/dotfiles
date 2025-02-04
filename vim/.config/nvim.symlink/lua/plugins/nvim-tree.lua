@@ -5,6 +5,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = true,
   keys = {
+    -- TODO: consolidate into single key
     { "<leader>n", vim.cmd.NvimTreeToggle,   desc = "Nvim Tree toggle" },
     { "<leader>m", vim.cmd.NvimTreeFindFile, desc = "Nvim find file in tree" },
   },

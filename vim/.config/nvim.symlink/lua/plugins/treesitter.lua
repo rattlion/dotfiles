@@ -2,6 +2,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
+      "bash",
+      "css",
+      "html",
       "javascript",
       "jsdoc",
       "json",
@@ -10,11 +13,12 @@ return {
       "make",
       "markdown",
       "markdown_inline",
+      "ruby",
       "rust",
+      "scss",
       "typescript",
     },
     auto_install = true,
-    sync_install = true,
     highlight = { enable = true },
     indent = { enable = true },
   },
