@@ -1,325 +1,80 @@
-" Maintained by Matt Ryan
+" Default Behaviour 
+set number
+set ignorecase
+set linebreak
+set copyindent
+set expandtab
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set scrolloff=1
+set sidescroll=1
+set sidescrolloff=2
+set nowrap
+set undofile
+set undolevels=1000
+set noswapfile
+set switchbuf=useopen
+set virtualedit=all
+set formatoptions+=1,j
+set nrformats-=octal
+set clipboard+=unnamedplus
 
-" Plug {{{
-  if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  endif
+" Movement
+nnoremap ; :
+vnoremap ; :
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
-  call plug#begin('~/.vim/plugged')
+" Fast buffer navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
-  Plug 'bling/vim-airline'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'dense-analysis/ale'
-  Plug 'fadein/vim-FIGlet'
-  Plug 'godlygeek/tabular'
-  Plug 'justinj/vim-pico8-syntax'
-  Plug 'kana/vim-textobj-user'
-  Plug 'lambdalisue/pastefix.vim'
-  Plug 'mg979/vim-visual-multi'
-  Plug 'mhinz/vim-signify'
-  Plug 'mileszs/ack.vim'
-  Plug 'moll/vim-node'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-  Plug 'Raimondi/delimitMate'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'scrooloose/nerdtree'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-markdown'
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-rhubarb'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-unimpaired'
+" Jump to matching pairs easily, with space
+nmap <Space> %
+vmap <Space> %
 
-  call plug#end()
+" Increment and decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
 
-  " Run PlugInstall if there are missing plugins
-  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    augroup PlugInstall
-      au!
-      autocmd VimEnter * PlugInstall --sync
-    augroup END
-  endif
-
-  command! PU PlugUpdate | PlugUpgrade | CocUpdate
-"}}}
-
-" VIM appearance {{{
-  set cmdheight=2
-  set colorcolumn=81
-  set encoding=utf-8
-  set laststatus=2
-  set synmaxcol=1000
-  set termencoding=utf-8
-  set termguicolors
-  set title
-  colorscheme rattlion
-  syntax on
-" }}}
-
-" VIM behaviour {{{
-  let mapleader=","
-  set clipboard+=unnamedplus
-  set mouse=a
-  set backspace=indent,eol,start
-  set completefunc=syntaxcomplete#Complete
-  set copyindent
-  set dictionary+=/usr/share/dict/words
-  set expandtab
-  set foldlevel=0
-  set foldmethod=marker
-  set formatoptions+=1,j
-  set hidden
-  set history=100
-  set hlsearch
-  set ignorecase
-  set incsearch
-  set linebreak
-  set nomodeline
-  set noswapfile
-  set nowrap
-  set number
-  set scrolloff=4
-  set shell=sh
-  set shiftround
-  set shiftwidth=2
-  set shortmess+=c
-  set showmatch
-  set shortmess+=I
-  set smartcase
-  set spellfile=~/.vim/spell/en.utf-8.add
-  set softtabstop=2
-  set switchbuf=useopen
-  set textwidth=0
-  set ttimeoutlen=0
-  set undodir=~/.vim/.undo,~/tmp,/tmp
-  set undofile
-  set undolevels=1000
-  set updatetime=100
-  set virtualedit=all
-  set wildignore+=tags
-  set wildmode=list:full
-
-  nnoremap ; :
-  vnoremap ; :
-  nnoremap <C-e> 2<C-e>
-  nnoremap <C-y> 2<C-y>
-  nnoremap j gj
-  nnoremap k gk
-  vnoremap j gj
-  vnoremap k gk
-
-  " Jump to matching pairs easily, with space
-  nmap <Space> %
-  vmap <Space> %
-
-  " Fast buffer navigation
-  noremap <C-h> <C-w>h
-  noremap <C-j> <C-w>j
-  noremap <C-k> <C-w>k
-  noremap <C-l> <C-w>l
-
-  " Command mode navigation
-  cnoremap <C-h> <Left>
-  cnoremap <C-l> <Right>
-  cnoremap <C-k> <Up>
-  cnoremap <C-j> <Down>
-
-  " increment and decrement
-  nnoremap + <C-a>
-  nnoremap - <C-x>
-
-  " Remove trailing whitespace on save
-  function! TrimTrailingSpace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-  endfunction
-  augroup TTS
+" Copy/Paste 
+nnoremap <leader>gp `[v`]
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+  augroup WSLYank
     au!
-    autocmd BufWritePre * call TrimTrailingSpace()
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
   augroup END
+endif
 
-  " Restore cursor position upon reopening files
-  augroup CursorPos
-    au!
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-  augroup END
-" }}}
+" FileType 
+augroup FTCmds
+  au!
+  autocmd filetype crontab setlocal nobackup nowritebackup
+  autocmd filetype quickfix setlocal cursorline
+  autocmd BufNewFile,BufReadPost .tmux.conf* setlocal filetype=tmux
+  autocmd BufNewFile,BufReadPost *.md setlocal spell
+  autocmd BufNewFile,BufReadPost *.keymap
+        \ setlocal filetype=dts |
+        \ setlocal tabstop=4 |
+        \ setlocal shiftwidth=4 |
+        \ setlocal softtabstop=4 |
+        \ setlocal expandtab
+augroup END
 
-" VIM plugins {{{
+" Editing and sourcing the vimrc file
+nmap <silent> <leader>ev :e ~/.config/nvim/init.lua<CR>
+nmap <silent> <leader>sv :so ~/.config/nvim/init.lua<CR>
 
-" ACK "{{{
-  if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-    let g:ackprg = &grepprg
-  endif
-" }}}
+" Clears the search register
+nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Airline "{{{
-  let g:airline_powerline_fonts = 1
-" }}}
-
-" Coc {{{
-  let g:coc_disable_startup_warning = 1
-  let g:coc_global_extensions = [
-        \'coc-clang-format-style-options',
-        \'coc-clangd',
-        \'coc-cmake',
-        \'coc-css',
-        \'coc-cssmodules',
-        \'coc-eslint',
-        \'coc-git',
-        \'coc-go',
-        \'coc-highlight',
-        \'coc-html',
-        \'coc-html-css-support',
-        \'coc-json',
-        \'coc-lists',
-        \'coc-lua',
-        \'coc-omnisharp',
-        \'coc-prettier',
-        \'coc-python',
-        \'coc-rust-analyzer',
-        \'coc-sh',
-        \'coc-sql',
-        \'coc-svg',
-        \'coc-swagger',
-        \'coc-tsserver',
-        \'coc-yaml'
-        \]
-
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    elseif (coc#rpc#ready())
-      call CocActionAsync('doHover')
-    else
-      execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
-  endfunction
-
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-  augroup CocSettings
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  augroup END
-"}}}
-
-" CTRL-P {{{
-  let g:ctrlp_working_path_mode = '0'
-  let g:ctrlp_show_hidden = 1
-  let g:ctrlp_custom_ignore = '.DS_Store\|node_modules\|\v[\/]\.(git|hg|svn)$'
-"}}}
-
-" NERDTree settings {{{
-  nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-  nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
-  nmap <leader>M :NERDTreeClose<CR>
-  nmap <leader>N :NERDTreeClose<CR>
-
-  " Store the bookmarks file
-  let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
-
-  " Show hidden files, too
-  let NERDTreeShowFiles=1
-  let NERDTreeShowHidden=1
-
-  " Quit on opening files from the tree
-  let NERDTreeQuitOnOpen=1
-
-  " Highlight the selected entry in the tree
-  let NERDTreeHighlightCursorline=1
-
-  " Don't flatten single child directories
-  let NERDTreeCascadeSingleChildDir=0
-  let NERDTreeCascadeOpenSingleChildDir=0
-
-  " Don't display these kinds of files
-  let NERDTreeIgnore=[ '^\.git$', '\.DS_Store' ]
-
-  let NERDTreeStatusline=''
-
-  " Related, netrw temp
-  let g:netrw_home="~/.vim/.tmp"
-" }}}
-
-" NERDCommenter settings {{{
-  let g:NERDTrimTrailingWhitespace = 1
-" }}}
-
-" Prettier {{{
-    let g:prettier#autoformat = 0
-    augroup Prettier
-      autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
-    augroup END
-    let g:prettier#config#print_width = '90'
-" }}}
-
-" Yank {{{
-  " Reselect text
-  nnoremap <leader>gp `[v`]
-  let s:clip = '/mnt/c/Windows/System32/clip.exe'
-  if executable(s:clip)
-    augroup WSLYank
-      au!
-      autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-  endif
-" }}}
-
-" Terraform "{{{
-" included from vim-polyglot
-  let g:terraform_align=1
-"}}}
-"}}}
-
-" FileType {{{
-  augroup FTCmds
-    au!
-    autocmd filetype crontab setlocal nobackup nowritebackup
-    autocmd filetype quickfix setlocal cursorline
-    autocmd BufNewFile,BufReadPost .tmux.conf* setlocal filetype=tmux
-    autocmd BufNewFile,BufReadPost *.md setlocal spell
-    autocmd BufNewFile,BufReadPost *.keymap
-          \ setlocal filetype=dts |
-          \ setlocal tabstop=4 |
-          \ setlocal shiftwidth=4 |
-          \ setlocal softtabstop=4 |
-          \ setlocal expandtab
-  augroup END
-"}}}
-
-" Misc mappings {{{
-  " Editing and sourcing the vimrc file
-  nmap <silent> <leader>ev :e ~/.vimrc<CR>
-  nmap <silent> <leader>sv :so ~/.vimrc<CR>
-
-  " Clears the search register
-  nmap <silent> <leader>/ :nohlsearch<CR>
-
-  " Rebuild the spell binary
-  command! SPL exec 'silent mkspell!' . &spellfile
-
-  iab hrule ================================================================================
-  iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi
-  iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi. Integer hendrerit lacus sagittis erat fermentum tincidunt. Cras vel dui neque. In sagittis commodo luctus. Mauris non metus dolor, ut suscipit dui. Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum. Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
-"}}}
+iab hrule ================================================================================
+iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
+iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi
+iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu. Nulla non quam erat, luctus consequat nisi. Integer hendrerit lacus sagittis erat fermentum tincidunt. Cras vel dui neque. In sagittis commodo luctus. Mauris non metus dolor, ut suscipit dui. Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum. Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor

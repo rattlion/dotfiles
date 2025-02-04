@@ -1,2 +1,8 @@
---nosql
---ignore-file=is:tags
+# Search hidden files / directories (e.g. dotfiles) by default
+--hidden
+
+# Using glob patterns to include/exclude files or folders
+--glob=!.git/*
+
+# Ignore case differences unless the pattern contains any uppercase letters. 
+--smart-case
