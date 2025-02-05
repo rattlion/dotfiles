@@ -26,16 +26,16 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
-      "hrsh7th/cmp-nvim-lsp"
     },
     config = function()
       local cmp = require('cmp')
       local ls = require("luasnip")
       cmp.setup({
-        enabled = function()
-          return vim.bo.filetype ~= 'gitcommit'
-        end,
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -86,6 +86,8 @@ return {
           { name = 'LazyDev' },
         }, {
           { name = 'buffer' },
+          { name = 'cmdline' },
+          { name = 'path' },
         })
       })
     end

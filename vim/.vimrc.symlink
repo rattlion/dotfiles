@@ -1,6 +1,8 @@
 " Default Behavior 
-set number
+set number  
 set ignorecase
+"set completefunc=syntaxcomplete#Complete
+"unsetting this until i remember how it works
 set linebreak
 set copyindent
 set expandtab
