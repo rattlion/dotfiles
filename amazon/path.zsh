@@ -1,1 +1,2 @@
-export PATH=$PATH:/Users/mcjryan/.toolbox/bin
+# corp tools
+export PATH=$PATH:~$HOME/.toolbox/bin

@@ -1,4 +1,3 @@
-export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 fpath=($ZSH/functions $fpath)
@@ -20,18 +19,14 @@ setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 setopt CORRECT
-setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 setopt INTERACTIVECOMMENTS
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
-
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
-
-zle -N newtab
 
 bindkey -v
 bindkey '^N' history-beginning-search-forward

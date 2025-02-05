@@ -1,50 +1,15 @@
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
-setopt auto_menu         # show completion menu on succesive tab press
-setopt complete_in_word
-setopt always_to_end
+# complete file extensions, compdef funcs, and attempt to fix misspellings
+zstyle ':completion:*' completer _extensions _expand_alias _complete _approximate
 
-WORDCHARS=''
+# highlight the currently selected option in the menu
+zstyle ':completion:*' menu select
 
-zmodload -i zsh/complist
+# matches case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
-
-# should this be in keybindings?
-bindkey -M menuselect '^o' accept-and-infer-next-history
-
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-
-# disable named-directories autocompletion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-cdpath=(.)
-
-# use /etc/hosts and known_hosts for hostname completion
-[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _global_ssh_hosts=()
-[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
-[ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-hosts=(
-  "$_ssh_config[@]"
-  "$_global_ssh_hosts[@]"
-  "$_ssh_hosts[@]"
-  "$_etc_hosts[@]"
-  "$HOST"
-  localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
-zstyle ':completion:*' users off
-
-# Use caching so that commands like apt and dpkg complete are useable
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH/cache/
-
-expand-or-complete-with-dots() {
-  echo -n "\e[31m......\e[0m"
-  zle expand-or-complete
-  zle redisplay
-}
-zle -N expand-or-complete-with-dots
+# some light completion styling
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*' group-name ''
