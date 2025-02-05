@@ -12,6 +12,7 @@ return {
           "lua_ls",
           "eslint",
           "ts_ls",
+          "bashls",
         },
       })
     end,
@@ -39,6 +40,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.bashls.setup({
         capabilities = capabilities
       })
     end,
