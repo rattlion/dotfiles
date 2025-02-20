@@ -45,7 +45,7 @@ need_push () {
   elif [[ $st =~ "ahead" ]] ; then
     echo "%{$fg[yellow]%}⚡️%{$reset_color%}"
   elif [[ $st =~ "behind" ]] ; then
-    echo "%{$fg[white]%}✨%{$reset_color%}"
+    echo "%{$fg[white]%}%{$reset_color%}"
   fi
 }
 
@@ -67,8 +67,9 @@ host_name() {
   fi
 }
 
-export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push)\n%{$fg_bold[white]%}➜ %{$reset_color%}'
-
-precmd() {
-  title "zsh" "%m" "%55<...<%~"
+arrow_line() {
+ echo "%{$fg_bold[white]%}\n %{$reset_color%}"
 }
+
+export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_dirty) $(need_push) $(arrow_line)'
+
