@@ -1,0 +1,3 @@
+# Global Order: zshenv, zprofile, zshrc, zlogin
+# Ubuntu /etc/zsh/zshrc attempts to run compinit
+skip_global_compinit=1
