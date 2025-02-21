@@ -46,6 +46,21 @@ nnoremap - <C-x>
 
 " Copy/Paste 
 nnoremap <leader>gp `[v`]
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+  let g:clipboard = {
+        \   'name': 'WslClipboard',
+        \   'copy': {
+        \      '+': 'clip.exe',
+        \      '*': 'clip.exe',
+        \    },
+        \   'paste': {
+        \      '+': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        \      '*': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        \   },
+        \   'cache_enabled': 0,
+        \ }
+endif
 
 " FileType 
 augroup FTCmds
