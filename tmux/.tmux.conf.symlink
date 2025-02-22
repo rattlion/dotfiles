@@ -8,8 +8,9 @@ set -g escape-time 1
 # THEME
 set -g status-bg colour233
 set -g status-fg white
-set -g status-left-length 20
-set -g status-right-length 60
+set -g pane-border-indicators arrows
+set -g pane-border-style fg=colour233
+set -g pane-active-border-style fg=white
 set -g status-left "#[fg=magenta] #(hostname -s) #[default]"
 set -g window-status-format "#[fg=colour237]#I #[fg=white]#W#[default]"
 set -g window-status-current-format "#[bg=white,fg=colour233] #W #[bg=colour233,fg=white]"
