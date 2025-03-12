@@ -35,4 +35,3 @@ require("lazy").setup({
 -- TODO: plugins 
 -- mini.nvim
 -- https://github.com/folke/trouble.nvim
--- https://github.com/folke/todo-comments.nvim?tab=readme-ov-file
