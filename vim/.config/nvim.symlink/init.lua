@@ -25,8 +25,6 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
   -- don't automatically load changes to config
   -- in most cases you must restart vim
   -- so do it manually to avoid confusing behaviors
