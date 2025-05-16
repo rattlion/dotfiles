@@ -1,3 +1,5 @@
+-- TODO: clean this up, https://lsp-zero.netlify.app/blog/lsp-config-overview.html
+
 return {
   {
     'williamboman/mason.nvim',
