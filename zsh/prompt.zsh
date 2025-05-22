@@ -62,7 +62,7 @@ directory_name() {
 }
 
 arrow_line() {
- echo "%{$fg_bold[white]%}\n %{$reset_color%}"
+ echo "%{$fg_bold[white]%}\n %{$reset_color%}"
 }
 
 export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_status) $(arrow_line)'
