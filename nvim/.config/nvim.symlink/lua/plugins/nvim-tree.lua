@@ -8,6 +8,9 @@ return {
       open_file = {
         quit_on_open = true
       }
+    },
+    filters = {
+      git_ignored = false
     }
   },
   keys = {
