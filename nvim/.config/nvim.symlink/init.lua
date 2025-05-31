@@ -17,7 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
-vim.cmd("source ~/.vimrc")
+
+-- Load core configuration
+require("config.options")
+require("config.autocmds")
+require("config.clipboard")
+require("config.keymaps")
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -30,6 +35,8 @@ require("lazy").setup({
   -- so do it manually to avoid confusing behaviors
   change_detection = { enabled = false },
 })
+
 -- TODO: plugins 
 -- mini.nvim
 -- https://github.com/folke/trouble.nvim
+-- LSPs continue to evolve, reconfigure this when actually needed
