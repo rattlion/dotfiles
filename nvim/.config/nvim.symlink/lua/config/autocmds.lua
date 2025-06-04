@@ -4,6 +4,20 @@ local augroup = vim.api.nvim_create_augroup('FTCmds', { clear = true })
 local autocmds = {
   {
     event = 'FileType',
+    pattern = 'sh',
+    callback = function()
+      local opts = { 
+        tabstop = 4, 
+        shiftwidth = 4, 
+        softtabstop = 4, 
+      }
+      for k, v in pairs(opts) do
+        vim.opt_local[k] = v
+      end
+    end,
+  },
+  {
+    event = 'FileType',
     pattern = 'crontab',
     callback = function()
       vim.opt_local.backup = false
@@ -36,7 +50,11 @@ local autocmds = {
     pattern = { '*.keymap' },
     callback = function()
       vim.bo.filetype = 'dts'
-      local opts = { tabstop = 4, shiftwidth = 4, softtabstop = 4, expandtab = true }
+      local opts = { 
+        tabstop = 4, 
+        shiftwidth = 4, 
+        softtabstop = 4, 
+      }
       for k, v in pairs(opts) do
         vim.opt_local[k] = v
       end
