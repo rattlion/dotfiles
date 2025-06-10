@@ -37,7 +37,6 @@ tooltip {
 }
 #clock:hover, 
 #custom-pacman:hover, 
-#custom-notification:hover,
 #bluetooth:hover,
 #network:hover,
 #battery:hover, 
@@ -47,19 +46,12 @@ tooltip {
   transition: all .3s ease;
   color: @base09;
 }
-#custom-notification {
+#clock,
+#custom-pacman,
+#tray {
   padding: 0px 5px;
   transition: all .3s ease;
   color: @base07;
-}
-#clock {
-  padding: 0px 5px;
-  color: @base07;
-  transition: all .3s ease;
-}
-#tray{
-  padding: 0px 5px;
-  transition: all .3s ease; 
 }
 /* #tray menu * { */
 /*   padding: 0px 5px; */
@@ -69,11 +61,6 @@ tooltip {
 /*   padding: 0px 5px; */
 /*   transition: all .3s ease;  */
 /* } */
-#custom-pacman {
-  padding: 0px 5px;
-  transition: all .3s ease;
-  color: @base07;
-}
 #workspaces {
   padding: 0px 5px;
 }
@@ -106,19 +93,16 @@ tooltip {
   text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
   transition: all 1s ease;
 }
-#cpu,#memory,#temperature{
-  padding: 0px 5px;
-  transition: all .3s ease; 
-  color: @base07;
-}
-#bluetooth {
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#bluetooth,
+#network {
   padding: 0px 5px;
   transition: all .3s ease;
   color: @base07;
 }
 #network{
-  padding: 0px 5px;
-  transition: all .3s ease;
-  color:@base07;
   margin-right: 8px;
 }

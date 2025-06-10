@@ -13,7 +13,7 @@
 
   "modules-left": ["clock","custom/pacman","tray"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["cpu","memory","temperature","bluetooth","network"],
+  "modules-right": ["cpu","memory","temperature","pulseaudio","bluetooth","network"],
 
   "clock": {
     "format": "{:%b %d %Y %I:%M:%S %p} ",
@@ -65,6 +65,15 @@
   "temperature": {
     "critical-threshold": 70,
     "format": "{}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
   },
   "bluetooth": {
     "format-on": "󰂯",
