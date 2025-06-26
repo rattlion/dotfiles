@@ -4,6 +4,7 @@ set -g display-time 10000
 set -g escape-time 1
 set -g mode-keys vi
 set -g renumber-windows on
+set -g focus-events on
 
 # Theme
 set -g pane-active-border-style fg=colour237
@@ -13,7 +14,9 @@ set -g pane-border-style fg=colour237
 set -g status-bg colour233
 set -g status-fg white
 set -g status-left "#[fg=magenta] #(hostname -s) #[default]"
+set -g status-left-length 40
 set -g status-right "#[bg=colour233,fg=colour237]#[bg=colour237,fg=white] %a %b %d %Y %I:%M %p #[default]"
+set -g status-right-length 40
 set -g window-status-current-format "#[bg=white,fg=colour233] #W #[bg=colour233,fg=white]"
 set -g window-status-format "#[fg=colour237]#I #[fg=white]#W#[default]"
 
