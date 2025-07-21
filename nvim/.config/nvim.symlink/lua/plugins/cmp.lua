@@ -20,12 +20,17 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lsp',
       'saadparwaiz1/cmp_luasnip',
     },
     config = function()
       local cmp = require('cmp')
       local ls = require("luasnip")
       cmp.setup({
+        enabled = function()
+          local line = vim.api.nvim_get_current_line()
+          return not line:match("^%s*$")
+        end,
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
