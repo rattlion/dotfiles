@@ -1,35 +1,49 @@
 export ZSH=$HOME/.dotfiles
 export PROJECTS=$HOME/Documents/Code
 
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+# Define what to load in each phase
+typeset -a preload_files path_files config_files completion_files postload_files
 
-# load the path files
-for file in ${(M)config_files:#*/*path.zsh}
-do
-  source $file
+# Categorize all zsh files
+for file in $ZSH/**/*.zsh; do
+  case ${file:t} in
+    *-preload.zsh)  preload_files+=($file) ;;
+    *path.zsh)      path_files+=($file) ;;
+    completion.zsh) completion_files+=($file) ;;
+    *-postload.zsh) postload_files+=($file) ;;
+    *)              config_files+=($file) ;;
+  esac
 done
 
-# load everything but the path, fpath and completion files
-for file in ${${config_files:#*/*path.zsh}:#**/completion.zsh}
-do
-  source $file
-done
+# Set to 1 to enable debug output for dotfiles loading
+DOTFILES_DEBUG=${DOTFILES_DEBUG:-0}
+
+# Debug output if enabled
+if (( DOTFILES_DEBUG )); then
+  print "Loading ${#preload_files} preload files:"
+  for file in $preload_files; do print "  $file"; done
+  print "Loading ${#path_files} path files:"
+  for file in $path_files; do print "  $file"; done
+  print "Loading ${#config_files} config files:"
+  for file in $config_files; do print "  $file"; done
+  print "Loading ${#completion_files} completion files:"
+  for file in $completion_files; do print "  $file"; done
+  print "Loading ${#postload_files} postload files:"
+  for file in $postload_files; do print "  $file"; done
+fi
+
+# Load in phases
+(( ${#preload_files} )) && for file in $preload_files; do source $file; done
+(( ${#path_files} )) && for file in $path_files; do source $file; done
+(( ${#config_files} )) && for file in $config_files; do source $file; done
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U +X compinit bashcompinit
 compinit && bashcompinit
 
-# load every completion file after autocomplete loads
-for file in ${(M)config_files:#**/completion.zsh}
-do
-  source $file
-done
-
-unset config_files
+(( ${#completion_files} )) && for file in $completion_files; do source $file; done
 
 # use .secretrc for SUPER SECRET or OS specific things
-if [[ -a ~/.secretrc ]]
-then
-  source ~/.secretrc
-fi
+[[ -f ~/.secretrc ]] && source ~/.secretrc
+
+(( ${#postload_files} )) && for file in $postload_files; do source $file; done
