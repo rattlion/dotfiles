@@ -28,7 +28,8 @@ return {
       vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { desc = "Show signature help" })
       vim.keymap.set({ 'n', 'x' }, "<F3>", vim.lsp.buf.format, { desc = "Format current file" })
       vim.keymap.set({ "n", "v" }, "<F4>", vim.lsp.buf.code_action, { desc = "Show code actions" })
-      vim.keymap.set("n", "<F5>", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+      vim.keymap.set("n", "<F5>", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 
       local lspconfig = require("lspconfig")
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
