@@ -1,0 +1,17 @@
+return {
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+      vim.keymap.set("n", "go", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
+      vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+      vim.keymap.set({ 'n', 'x' }, "<F3>", vim.lsp.buf.format, { desc = "Format current file" })
+      vim.keymap.set({ "n", "v" }, "<F4>", vim.lsp.buf.code_action, { desc = "Show code actions" })
+      vim.keymap.set("n", "<F5>", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+    end,
+  },
+}

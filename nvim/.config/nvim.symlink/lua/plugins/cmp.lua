@@ -24,6 +24,9 @@ return {
       'saadparwaiz1/cmp_luasnip',
     },
     config = function()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      vim.lsp.config('*', { capabilities = capabilities })
+
       local cmp = require('cmp')
       local ls = require("luasnip")
       cmp.setup({
@@ -80,5 +83,5 @@ return {
         })
       })
     end
-  }
+  },
 }
