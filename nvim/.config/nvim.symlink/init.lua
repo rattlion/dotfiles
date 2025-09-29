@@ -19,10 +19,12 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
 -- Load core configuration
-require("config.options")
 require("config.autocmds")
 require("config.clipboard")
+require("config.diagnostics")
 require("config.keymaps")
+require("config.options")
+
 
 -- Setup lazy.nvim
 require("lazy").setup({
