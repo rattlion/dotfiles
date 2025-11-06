@@ -7,10 +7,10 @@ typeset -a preload_files path_files config_files completion_files postload_files
 # Categorize all zsh files
 for file in $ZSH/**/*.zsh; do
   case ${file:t} in
-    *-preload.zsh)  preload_files+=($file) ;;
+    *pre.zsh)       preload_files+=($file) ;;
     *path.zsh)      path_files+=($file) ;;
     completion.zsh) completion_files+=($file) ;;
-    *-postload.zsh) postload_files+=($file) ;;
+    *post.zsh)      postload_files+=($file) ;;
     *)              config_files+=($file) ;;
   esac
 done
