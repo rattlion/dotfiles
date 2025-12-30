@@ -1,1 +1,1 @@
-export LESS="iRX"
+export LESS="iRXFM"
