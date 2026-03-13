@@ -1,5 +1,5 @@
 export ZSH=$HOME/.dotfiles
-export PROJECTS=$HOME/Documents/Code
+export PROJECTS=$HOME/Code
 
 # Define what to load in each phase
 typeset -a preload_files path_files config_files completion_files postload_files
