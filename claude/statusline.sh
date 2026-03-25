@@ -15,7 +15,7 @@ source ~/.dotfiles/zsh/prompt.zsh
 cd "$cwd" 2>/dev/null
 
 # (e) expands command substitutions, -P expands %{...%} prompt escapes, strip arrow line
-left=$(print -Pn "${(e)PROMPT}" | head -1)
+prompt_line=$(print -Pn "${(e)PROMPT}" | head -1)
 
 # --- Right side: model, context bar, cost, tokens ---
 
@@ -59,8 +59,8 @@ fi
 
 pct_fmt=$(printf "%.1f%%" "$used_pct")
 
-right=$(printf "\033[0;36m%s\033[0m  \033[0;%sm%s\033[0m %s  %s  %s tok" \
+status_line=$(printf "\033[0;36m%s\033[0m  \033[0;%sm%s\033[0m %s  %s  %s tok" \
   "$model" "$bar_color" "$bar" "$pct_fmt" "$cost_fmt" "$tokens_fmt")
 
 # --- Combine ---
-printf "%s    %s" "$left" "$right"
+printf "%s\n%s" "$status_line" "$prompt_line"
