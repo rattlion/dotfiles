@@ -24,6 +24,8 @@ require("config.clipboard")
 require("config.diagnostics")
 require("config.keymaps")
 require("config.options")
+require("config.colortheme")
+
 
 
 -- Setup lazy.nvim
@@ -38,7 +40,7 @@ require("lazy").setup({
   change_detection = { enabled = false },
 })
 
--- TODO: plugins 
+-- TODO: plugins
 -- mini.nvim
 -- https://github.com/folke/trouble.nvim
 -- LSPs continue to evolve, reconfigure this when actually needed
