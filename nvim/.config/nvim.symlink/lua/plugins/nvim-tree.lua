@@ -21,11 +21,17 @@ return {
         local cwd = vim.fn.getcwd()
         local api = require('nvim-tree.api').tree
 
-        if not vim.startswith(buffer_directory, cwd) then
-          api.change_root(buffer_directory)
-          api.open({ find_file = true })
+        local in_cwd = vim.startswith(buffer_directory, cwd)
+        local root = in_cwd and cwd or buffer_directory
+
+        if api.is_visible() then
+          if in_cwd then
+            api.close()
+          else
+            api.open({ path = root, find_file = true })
+          end
         else
-          api.toggle({ find_file = true })
+          api.open({ path = root, find_file = true })
         end
       end,
       desc = "Nvim Tree toggle",
