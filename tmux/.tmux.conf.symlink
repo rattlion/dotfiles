@@ -1,5 +1,7 @@
 # Terminal settings
 set -g default-terminal "xterm-256color"
+set -g set-titles on
+set -g set-titles-string "#T"
 set -g display-time 10000
 set -g escape-time 1
 set -g mode-keys vi
