@@ -43,3 +43,5 @@ bind q confirm-before "kill-window"
 bind w confirm-before "kill-pane"
 bind . command-prompt -p "swap-window" "swap-window -t %%"
 bind BSpace clear-history\; display-message "Cleared history"
+bind -T copy-mode-vi v send-keys -X begin-selection
+bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
