@@ -1,0 +1,23 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "footer": {
+      "items": [
+        "workspace",
+        "sandbox",
+        "model-name",
+        "quota",
+        "context-used",
+        "memory-usage",
+        "token-count"
+      ]
+    }
+  },
+  "general": {
+    "vimMode": true
+  }
+}
