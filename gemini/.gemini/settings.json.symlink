@@ -7,7 +7,6 @@
   "ui": {
     "footer": {
       "items": [
-        "workspace",
         "sandbox",
         "model-name",
         "quota",
@@ -15,9 +14,19 @@
         "memory-usage",
         "token-count"
       ]
-    }
+    },
+    "showLineNumbers": false,
+    "terminalBuffer": false
   },
   "general": {
-    "vimMode": true
+    "vimMode": true,
+    "sessionRetention": {
+      "enabled": true,
+      "maxAge": "30d",
+      "warningAcknowledged": true
+    },
+    "preferredEditor": "neovim",
+    "enableAutoUpdate": true,
+    "enableNotifications": true
   }
 }
