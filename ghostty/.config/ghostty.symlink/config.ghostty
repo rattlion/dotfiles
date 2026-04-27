@@ -1,1 +1,4 @@
-config-file = ?auto/theme.ghostty                                                     
+term = xterm-256color
+theme = Adwaita Dark
+background = 000
+font-size = 12
