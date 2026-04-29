@@ -2,3 +2,6 @@ term = xterm-256color
 theme = Adwaita Dark
 background = 000
 font-size = 12
+
+clipboard-read = allow
+clipboard-write = allow
