@@ -1,6 +1,5 @@
 term = xterm-256color
-theme = Adwaita Dark
-background = 000
+theme = light:Builtin Tango Light, dark:Builtin Tango Dark
 font-size = 12
 
 clipboard-read = allow
