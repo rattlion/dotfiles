@@ -1,5 +1,5 @@
 term = xterm-256color
-theme = light:Builtin Tango Light, dark:Builtin Tango Dark
+theme = dark:rattlion, light:iTerm2 Solarized Light
 font-size = 12
 
 clipboard-read = allow
