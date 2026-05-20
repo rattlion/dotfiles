@@ -1,5 +1,5 @@
 term = xterm-256color
-theme = dark:rattlion, light:iTerm2 Solarized Light
+theme = dark:rattlion, light:Catppuccin Latte
 font-size = 12
 
 clipboard-read = allow
