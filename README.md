@@ -84,14 +84,14 @@ The installation process:
 5. **Adds** `bin/` directory to your PATH
 
 ### Example Transformations
-- `git/gitconfig.template` → `~/.gitconfig` (copied)
+- `git/gitconfig.dot_template` → `~/.gitconfig` (copied)
 - `zsh/zshrc.symlink` → `~/.zshrc` (symlinked)
 - `bin/myip` → Available globally as `myip` command
 
 ## 🛠️ Customization
 
 ### Templates
-Files ending in `.template` are copied (not symlinked) so you can customize them:
+Files ending in `.dot_template` are copied (not symlinked) so you can customize them:
 
 ```bash
 # Edit your personal git config
