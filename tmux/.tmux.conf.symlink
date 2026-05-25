@@ -1,6 +1,6 @@
 # Terminal settings
-set -as terminal-features 'xterm*:extkeys'
-set -g default-terminal "xterm-256color"
+set -as terminal-features 'xterm*:extkeys,cstyle'
+set -g default-terminal "tmux-256color"
 set -g display-panes-time 4000
 set -g display-time 10000
 set -g escape-time 1

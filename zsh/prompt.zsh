@@ -67,3 +67,18 @@ arrow_line() {
 
 export PROMPT=$'$(user_name)$(host_name) in $(directory_name) $(git_status) $(arrow_line)'
 
+_cursor_beam() { printf '\e[6 q' }
+_cursor_block() { printf '\e[2 q' }
+
+zle-keymap-select() {
+    case $KEYMAP in
+        vicmd|visual) _cursor_block ;;
+        *)            _cursor_beam ;;
+    esac
+}
+zle -N zle-keymap-select
+
+zle-line-init() { _cursor_beam }
+zle -N zle-line-init
+
+precmd_functions+=(_cursor_beam)
