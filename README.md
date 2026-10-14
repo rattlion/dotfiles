@@ -171,7 +171,7 @@ This will:
 
 ## 🙏 Acknowledgments
 
-Several years ago this project started out as a fork of 
+A long time ago this project started out as a fork of 
 [Zach Holman's](https://github.com/holman/) excellent 
 [dotfiles](http://github.com/holman/dotfiles) which at the time was a fork of 
 [Ryan Bates'](http://github.com/ryanb). I've been updating this set since 2012.
