@@ -81,3 +81,5 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+**/.claude/settings.local.json

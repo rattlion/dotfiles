@@ -25,7 +25,8 @@ set -g status-left "#[fg=magenta] #(hostname -s) #[default]"
 set -g status-left-length 40
 set -g status-right "#[bg=colour233,fg=colour237]#[bg=colour237,fg=white] %a %b %d %Y %I:%M %p #[default]"
 set -g status-right-length 40
-set -g window-status-current-format "#[bg=white,fg=colour233] #W #[bg=colour233,fg=white]"
+set -g window-status-current-style none
+set -g window-status-current-format"#[bg=white,fg=colour233] #W #[bg=colour233,fg=white]"
 set -g window-status-format "#[fg=colour237]#I #[fg=white]#W#[default]"
 
 unbind C-b
